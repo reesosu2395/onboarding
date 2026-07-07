@@ -1,0 +1,62 @@
+# ==============================================================================
+# "Welcome to Work" First-Time Login Script (Shortcuts & Portals Only)
+# ==============================================================================
+
+# 1. Check if the script has already run in the past to prevent duplication
+$FlagPath = "$env:USERPROFILE\AppData\Local\CompanyWelcomeFlag.txt"
+
+if (Test-Path $FlagPath) {
+    # The script has already run for this user profile. Exit quietly.
+    Exit
+}
+
+# 2. Map Necessary Network Drives
+$DriveLetter = "X:"
+$NetworkPath = "\\yourserver\shared\company-files"
+
+Write-Host "Mapping network drive $DriveLetter..."
+if (Test-Path $DriveLetter) {
+    # Drive letter is already in use, remove it first to avoid conflicts
+    (New-Object -ComObject WScript.Network).RemoveNetworkDrive($DriveLetter, $true, $true)
+}
+New-PSDrive -Name ($DriveLetter.TrimEnd(':')) -PSProvider FileSystem -Root $NetworkPath -Persist -Scope Global
+
+
+# 3. Create Desktop Shortcuts to Common Areas
+$WshShell = New-Object -ComObject WScript.Shell
+$DesktopPath = [System.IO.Path]::Combine($env:USERPROFILE, "Desktop")
+
+# Shortcut 1: Link to the newly mapped Shared Network Drive
+Write-Host "Creating network folder shortcut..."
+$SharedFolderShortcut = $WshShell.CreateShortcut("$DesktopPath\Company Shared Drive.lnk")
+$SharedFolderShortcut.TargetPath = "$DriveLetter"
+$SharedFolderShortcut.Description = "Access to company shared files and folders."
+$SharedFolderShortcut.Save()
+
+# Shortcut 2: Link to a specific URL (e.g., the HR Onboarding Portal)
+Write-Host "Creating HR Portal shortcut..."
+$HRShortcut = $WshShell.CreateShortcut("$DesktopPath\HR Portal.lnk")
+$HRShortcut.TargetPath = "https://hr.yourcompany.com/onboarding"
+$HRShortcut.Description = "Open the company HR and onboarding dashboard."
+$HRShortcut.Save()
+
+
+# 4. Open Core Browser Tabs Immediately
+# This launches their default browser to ensure they see these links day one
+Write-Host "Opening core company portals in browser..."
+$Urls = @(
+    "https://intranet.yourcompany.com",
+    "https://hr.yourcompany.com/onboarding",
+    "https://helpdesk.yourcompany.com"
+)
+
+foreach ($Url in $Urls) {
+    Start-Process $Url
+}
+
+
+# 5. Create the "Flag" file so this script never runs again for this user
+$DateStamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
+"Welcome script successfully executed on $DateStamp" | Out-File -FilePath $FlagPath
+
+Write-Host "Onboarding environment configured successfully!"

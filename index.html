@@ -4,15 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Employee Onboarding Hub</title>
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans antialiased">
 
-    <!-- Header / Navigation -->
     <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-            <!-- Brand Logo Integration -->
             <div class="flex items-center">
                 <img src="image_1d6c3a.png.png" alt="Gemini Industries, Inc. Logo" class="h-12 w-auto object-contain">
             </div>
@@ -22,7 +19,6 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section class="bg-slate-900 text-white py-12 px-4 sm:px-6 lg:px-8">
         <div class="max-w-4xl mx-auto text-center">
             <h1 class="text-4xl font-extrabold sm:text-5xl tracking-tight">Welcome to the Team! 🎉</h1>
@@ -32,11 +28,9 @@
         </div>
     </section>
 
-    <!-- Main Content Grid -->
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
             
-            <!-- Left & Middle: Checklist (Takes up 2/3 space) -->
             <div class="lg:col-span-2 space-y-6">
                 <div class="bg-white rounded-xl shadow-xs border border-slate-200 p-6 sm:p-8">
                     <div class="flex items-center justify-between border-b border-slate-100 pb-4 mb-6">
@@ -44,23 +38,22 @@
                         <span id="progress-text" class="text-sm font-semibold bg-blue-50 text-blue-700 px-3 py-1 rounded-full">0% Completed</span>
                     </div>
 
-                    <!-- Progress Bar -->
                     <div class="w-full bg-slate-100 rounded-full h-2 mb-8">
                         <div id="progress-bar" class="bg-blue-600 h-2 rounded-full transition-all duration-500" style="width: 0%"></div>
                     </div>
 
-                    <!-- Steps -->
                     <div class="space-y-6">
-                        <!-- Step 1: EHS/Safety Induction -->
-                        <div class="flex items-start space-x-4 p-4 rounded-lg hover:bg-slate-50 transition">
-                            <input type="checkbox" class="todo-item mt-1.5 h-5 w-5 rounded-sm border-slate-300 text-blue-600 focus:ring-blue-500 cursor-pointer">
+                        <div id="safety-step-container" class="flex items-start space-x-4 p-4 rounded-lg bg-slate-100/50 opacity-60 transition duration-300">
+                            <input type="checkbox" id="safety-checkbox" disabled class="todo-item mt-1.5 h-5 w-5 rounded-sm border-slate-300 text-blue-600 focus:ring-blue-500 cursor-not-allowed">
                             <div>
-                                <h3 class="text-lg font-semibold text-slate-900 item-title">Review Safety Guidelines & EHS Protocols</h3>
+                                <h3 class="text-lg font-semibold text-slate-900 item-title flex items-center gap-2">
+                                    Review Safety Guidelines & EHS Protocols 
+                                    <span id="lock-badge" class="text-xs font-normal bg-slate-200 text-slate-600 px-2 py-0.5 rounded border border-slate-300">🔒 Locked (Take Test)</span>
+                                </h3>
                                 <p class="text-slate-500 text-sm mt-1">Review the facility safety manual, locate emergency exits, and complete your initial Environmental, Health, and Safety (EHS) orientation.</p>
                             </div>
                         </div>
 
-                        <!-- Step 2: Mobile Apps Installation -->
                         <div class="flex items-start space-x-4 p-4 rounded-lg hover:bg-slate-50 transition">
                             <input type="checkbox" class="todo-item mt-1.5 h-5 w-5 rounded-sm border-slate-300 text-blue-600 focus:ring-blue-500 cursor-pointer">
                             <div>
@@ -69,7 +62,6 @@
                             </div>
                         </div>
 
-                        <!-- Step 3: MFA Setup -->
                         <div class="flex items-start space-x-4 p-4 rounded-lg hover:bg-slate-50 transition">
                             <input type="checkbox" class="todo-item mt-1.5 h-5 w-5 rounded-sm border-slate-300 text-blue-600 focus:ring-blue-500 cursor-pointer">
                             <div>
@@ -78,7 +70,6 @@
                             </div>
                         </div>
 
-                        <!-- Step 4: Comms -->
                         <div class="flex items-start space-x-4 p-4 rounded-lg hover:bg-slate-50 transition">
                             <input type="checkbox" class="todo-item mt-1.5 h-5 w-5 rounded-sm border-slate-300 text-blue-600 focus:ring-blue-500 cursor-pointer">
                             <div>
@@ -87,7 +78,6 @@
                             </div>
                         </div>
 
-                        <!-- Step 5: KnowBe4 Training -->
                         <div class="flex items-start space-x-4 p-4 rounded-lg hover:bg-slate-50 transition">
                             <input type="checkbox" class="todo-item mt-1.5 h-5 w-5 rounded-sm border-slate-300 text-blue-600 focus:ring-blue-500 cursor-pointer">
                             <div>
@@ -99,9 +89,7 @@
                 </div>
             </div>
 
-            <!-- Right Sidebar: Quick Resources -->
             <div class="space-y-6">
-                <!-- EHS & Safety Quick References (Updated with Video & Test Placeholders) -->
                 <div class="bg-amber-50 border border-amber-200 rounded-xl p-6">
                     <h3 class="text-xl font-bold text-amber-900 mb-3 flex items-center gap-2">
                         ⚠️ Safety & EHS Resources
@@ -114,11 +102,10 @@
                         <li><a href="https://www.geminiindustriesinc.com/product-pds-sds-search/" target="_blank" rel="noopener noreferrer" class="underline hover:text-amber-700">🦺 Product PDS & SDS Search</a></li>
                         <li><a href="#" class="underline hover:text-amber-700">🚨 Emergency Action Plan</a></li>
                         <li><a href="#" target="_blank" rel="noopener noreferrer" class="underline hover:text-amber-700">🎥 Safety Orientation Video</a></li>
-                        <li><a href="#" target="_blank" rel="noopener noreferrer" class="underline hover:text-amber-700">📝 Required Safety Test</a></li>
+                        <li><a href="#" onclick="simulatePassingTest(event)" class="underline text-blue-700 hover:text-blue-900 font-bold">📝 Required Safety Test</a></li>
                     </ul>
                 </div>
 
-                <!-- Resource Links -->
                 <div class="bg-white rounded-xl shadow-xs border border-slate-200 p-6">
                     <h3 class="text-xl font-bold text-slate-900 mb-4">Essential Links</h3>
                     <ul class="space-y-3">
@@ -179,7 +166,6 @@
                     </ul>
                 </div>
 
-                <!-- Clean Bookmark Folder Card -->
                 <div class="bg-slate-900 rounded-xl p-6 text-white border border-slate-800">
                     <h3 class="text-sm font-bold mb-4 flex items-center gap-2 text-blue-400">
                         📁 Bookmark Folder Location
@@ -200,12 +186,10 @@
         </div>
     </main>
 
-    <!-- Footer -->
     <footer class="bg-white border-t border-slate-200 mt-20 py-6 text-center text-sm text-slate-400">
         &copy; 2026 Corporate Internal Portal. All rights reserved.
     </footer>
 
-    <!-- JavaScript Module -->
     <script>
         // --- Progress Tracker Logic ---
         const checkboxes = document.querySelectorAll('.todo-item');
@@ -214,6 +198,7 @@
 
         function updateProgress() {
             const total = checkboxes.length;
+            // Target all checked checkboxes, including disabled ones if they become checked
             const checked = document.querySelectorAll('.todo-item:checked').length;
             const percentage = Math.round((checked / total) * 100);
 
@@ -240,6 +225,33 @@
                 updateProgress();
             });
         });
+
+        // --- Unlock Logic for Safety Checklist ---
+        function simulatePassingTest(event) {
+            // Prevent standard anchor jumping behavior for this demonstration link
+            event.preventDefault();
+
+            const container = document.getElementById('safety-step-container');
+            const checkbox = document.getElementById('safety-checkbox');
+            const badge = document.getElementById('lock-badge');
+
+            // 1. Remove greyed out styles and add active styles
+            container.classList.remove('bg-slate-100/50', 'opacity-60');
+            container.classList.add('hover:bg-slate-50');
+
+            // 2. Enable checkbox and switch cursor
+            checkbox.removeAttribute('disabled');
+            checkbox.classList.remove('cursor-not-allowed');
+            checkbox.classList.add('cursor-pointer');
+
+            // 3. Update the badge status
+            badge.innerText = "✅ Test Passed";
+            badge.classList.remove('bg-slate-200', 'text-slate-600', 'border-slate-300');
+            badge.classList.add('bg-green-50', 'text-green-700', 'border-green-200');
+
+            // Optional alert to let user know it unlocked
+            alert("Congratulations! You passed the safety test. The first item on your checklist is now unlocked.");
+        }
 
         // --- Safe Clipboard Handler ---
         function copyNetworkPath() {

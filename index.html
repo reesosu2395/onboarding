@@ -4,29 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Employee Onboarding Portal | Gemini Coatings</title>
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 <body class="bg-gray-100 font-sans antialiased text-gray-800 min-h-screen flex flex-col">
 
+    <!-- Header Banner -->
     <header class="bg-slate-900 text-white shadow-md">
         <div class="max-w-7xl mx-auto px-4 py-5 flex flex-col sm:flex-row justify-between items-center gap-4">
             <div class="flex items-center space-x-3">
                 <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center font-bold text-xl tracking-wider">G</div>
                 <div>
                     <h1 class="text-xl font-bold tracking-tight">Gemini Coatings</h1>
-                    <p class="text-xs text-slate-400">Employee Workspace & Portal</p>
+                    <p class="text-xs text-slate-400">Employee Workspace & Onboarding Portal</p>
                 </div>
             </div>
             <div class="text-sm bg-slate-800 px-4 py-2 rounded-full text-slate-300 border border-slate-700">
-                Logged in as: <span class="font-semibold text-blue-400">ITAdmin</span>
+                Welcome to the Team!
             </div>
         </div>
     </header>
 
+    <!-- Main Grid Workspace Layout -->
     <main class="flex-grow max-w-7xl w-full mx-auto px-4 py-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
         
+        <!-- Left 2 Columns: Primary Task Modules & Documentation (2/3 Width) -->
         <div class="lg:col-span-2 space-y-6">
             
+            <!-- NEW HIRE INTERACTIVE PROGRESS CHECKLIST -->
             <div id="checklist" class="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
                 <div class="flex justify-between items-start mb-4">
                     <div>
@@ -53,7 +58,7 @@
                     </label>
                     <label class="flex items-start p-3 hover:bg-slate-50 rounded-lg border border-gray-100 transition cursor-pointer">
                         <input type="checkbox" class="checklist-item mt-1 w-4 h-4 text-blue-600 rounded border-gray-300 focus:ring-blue-500">
-                        <span class="ml-3 text-sm text-gray-700 font-medium">Verify structural file share accessibility paths directly inside Windows File Explorer (\＼gemfs\Fileshare).</span>
+                        <span class="ml-3 text-sm text-gray-700 font-medium">Verify structural file share accessibility paths directly inside Windows File Explorer (＼＼gemfs＼Fileshare).</span>
                     </label>
                     <label class="flex items-start p-3 hover:bg-slate-50 rounded-lg border border-gray-100 transition cursor-pointer">
                         <input type="checkbox" class="checklist-item mt-1 w-4 h-4 text-blue-600 rounded border-gray-300 focus:ring-blue-500">
@@ -66,6 +71,7 @@
                 </div>
             </div>
 
+            <!-- ENVIRONMENTAL HEALTH & SAFETY COMPLIANCE -->
             <div id="safety" class="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
                 <h2 class="text-xl font-bold text-gray-900 mb-2">EHS Safety Resources & Reporting</h2>
                 <p class="text-sm text-gray-500 mb-4">Crucial standard operating parameters for facilities floor access.</p>
@@ -82,8 +88,10 @@
             </div>
         </div>
 
+        <!-- Right 1 Column: Essential System Links & Live Directory Lookups (1/3 Width) -->
         <div class="lg:col-span-1 space-y-6">
             
+            <!-- ESSENTIAL CORPORATE LINKS HUB -->
             <div class="bg-white rounded-xl p-5 shadow-sm border border-gray-200">
                 <h2 class="text-lg font-bold text-gray-900 mb-1">Essential Systems</h2>
                 <p class="text-xs text-gray-500 mb-4">Direct access links to external tools and internal workflows.</p>
@@ -120,6 +128,7 @@
                 </div>
             </div>
 
+            <!-- CORPORATE COMMUNICATIONS DIRECTORY ENGINE -->
             <div class="bg-white rounded-xl p-5 shadow-sm border border-gray-200 relative">
                 <h2 class="text-lg font-bold text-gray-900 mb-1">Corporate Directory Lookup</h2>
                 <p class="text-xs text-gray-500 mb-4">Live lookups for local system extensions and regional sales staff contacts.</p>
@@ -136,19 +145,23 @@
                     </div>
                 </div>
                 
+                <!-- Floating Results Overlay Node -->
                 <div 
                     id="searchResults" 
                     class="hidden absolute z-50 left-5 right-5 mt-2 bg-white rounded-lg shadow-2xl border border-gray-200 max-h-80 overflow-y-auto divide-y divide-gray-100"
                 >
-                    </div>
+                    <!-- Populated dynamically via JS lookup index -->
+                </div>
             </div>
         </div>
     </main>
 
+    <!-- Footer Network Status Block -->
     <footer class="bg-white border-t border-gray-200 mt-12 py-6 text-center text-xs text-gray-500">
         <p>&copy; 2026 Gemini Coatings. Corporate Internal Resource Deployment Hub. All rights reserved.</p>
     </footer>
 
+    <!-- RUNTIME LOGIC ENGINE -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             

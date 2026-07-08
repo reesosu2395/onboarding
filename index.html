@@ -29,6 +29,7 @@
     </section>
 
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10">
+        <!-- Top Section Grid -->
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
             
             <div class="lg:col-span-2 space-y-6">
@@ -190,229 +191,18 @@
             </div>
         </div>
 
+        <!-- Dynamic Card Phone Directory Section -->
         <div class="bg-white rounded-xl shadow-xs border border-slate-200 p-6">
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
-                <div class="sm:col-span-2 relative">
-                    <input type="text" id="directory-search" onkeyup="filterDirectory()" placeholder="Search by name, title, region, or phone detail..." class="w-full pl-4 pr-10 py-2 border border-slate-300 rounded-lg focus:outline-hidden focus:ring-2 focus:ring-blue-500 text-sm bg-slate-50/50">
-                </div>
-                <div>
-                    <select id="directory-dept" onchange="filterDirectory()" class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-hidden focus:ring-2 focus:ring-blue-500 text-sm bg-slate-50/50">
-                        <option value="">All Departments / Sites</option>
-                        <option value="IT">IT Support</option>
-                        <option value="HR">Human Resources</option>
-                        <option value="EHS">Safety / EHS</option>
-                        <option value="Finance">Finance / Payroll</option>
-                        <option value="Executive">Executive Team</option>
-                        <option value="El Reno">El Reno Facility</option>
-                        <option value="Grand Prairie">Grand Prairie Facility</option>
-                        <option value="Holbrook">Holbrook Facility</option>
-                        <option value="Remote">Remote Operations</option>
-                    </select>
-                </div>
-            </div>
-
-            <div class="overflow-x-auto border border-slate-100 rounded-lg">
-                <table class="min-w-full divide-y divide-slate-200 text-sm text-left">
-                    <thead class="bg-slate-50 text-slate-600 font-semibold uppercase text-xs tracking-wider">
-                        <tr>
-                            <th scope="col" class="px-6 py-3">Name</th>
-                            <th scope="col" class="px-6 py-3">Title / Facility</th>
-                            <th scope="col" class="px-6 py-3">Extension / Contact Details</th>
-                            <th scope="col" class="px-6 py-3">Email Address</th>
-                        </tr>
-                    </thead>
-                    <tbody id="directory-body" class="divide-y divide-slate-200 text-slate-700 bg-white">
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="IT El Reno">
-                            <td class="px-6 py-4 font-medium text-slate-900">IT Helpdesk Desk</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-blue-50 text-blue-700 mr-2">IT</span> Technical Operations (El Reno)</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2300 / 4357</td>
-                            <td class="px-6 py-4"><a href="mailto:helpdesk@gemini-coatings.com" class="text-blue-600 hover:underline">helpdesk@gemini-coatings.com</a></td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="HR El Reno">
-                            <td class="px-6 py-4 font-medium text-slate-900">Human Resources Team (Marti Canida)</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-purple-50 text-purple-700 mr-2">HR</span> Personnel Admin (El Reno)</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2028 / (405) 694-5945</td>
-                            <td class="px-6 py-4"><a href="mailto:hr@gemini-coatings.com" class="text-blue-600 hover:underline">hr@gemini-coatings.com</a></td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="EHS El Reno">
-                            <td class="px-6 py-4 font-medium text-slate-900">EHS Office</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-amber-50 text-amber-700 mr-2">EHS</span> Safety Coordination</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2240</td>
-                            <td class="px-6 py-4"><a href="mailto:safety@gemini-coatings.com" class="text-blue-600 hover:underline">safety@gemini-coatings.com</a></td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="Finance El Reno">
-                            <td class="px-6 py-4 font-medium text-slate-900">Payroll Dept</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-emerald-50 text-emerald-700 mr-2">Finance</span> Accounting (El Reno)</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 1050</td>
-                            <td class="px-6 py-4"><a href="mailto:payroll@gemini-coatings.com" class="text-blue-600 hover:underline">payroll@gemini-coatings.com</a></td>
-                        </tr>
-                        
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="Executive">
-                            <td class="px-6 py-4 font-medium text-slate-900">Chris Hicks</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-700 mr-2">Executive</span> Executive Team</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">(817) 247-9696</td>
-                            <td class="px-6 py-4">-</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="Executive">
-                            <td class="px-6 py-4 font-medium text-slate-900">Rodney Wickersham</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-700 mr-2">Executive</span> Executive Team</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">(405) 834-1210</td>
-                            <td class="px-6 py-4">-</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="Executive">
-                            <td class="px-6 py-4 font-medium text-slate-900">Jason Melton</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-700 mr-2">Executive</span> Executive Team</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">(405) 664-7901</td>
-                            <td class="px-6 py-4">-</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="Executive">
-                            <td class="px-6 py-4 font-medium text-slate-900">Jenny Cripps</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-700 mr-2">Executive</span> Executive Team</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">(405) 827-6209</td>
-                            <td class="px-6 py-4">-</td>
-                        </tr>
-
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="El Reno">
-                            <td class="px-6 py-4 font-medium text-slate-900">Adam Stevenson</td>
-                            <td class="px-6 py-4">El Reno Site Operations</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2065</td>
-                            <td class="px-6 py-4">-</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="El Reno">
-                            <td class="px-6 py-4 font-medium text-slate-900">Amy McClain</td>
-                            <td class="px-6 py-4">El Reno Site Operations</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2061</td>
-                            <td class="px-6 py-4">-</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="El Reno">
-                            <td class="px-6 py-4 font-medium text-slate-900">Austin Ferguson</td>
-                            <td class="px-6 py-4">El Reno Site Operations</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2075</td>
-                            <td class="px-6 py-4">-</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="El Reno">
-                            <td class="px-6 py-4 font-medium text-slate-900">Danielle Waddle</td>
-                            <td class="px-6 py-4">El Reno Site Operations</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2003</td>
-                            <td class="px-6 py-4">-</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="El Reno">
-                            <td class="px-6 py-4 font-medium text-slate-900">David Jackson</td>
-                            <td class="px-6 py-4">El Reno Site Operations</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2054</td>
-                            <td class="px-6 py-4">-</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="El Reno">
-                            <td class="px-6 py-4 font-medium text-slate-900">Haylee Hunt</td>
-                            <td class="px-6 py-4">El Reno Site Operations</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2013</td>
-                            <td class="px-6 py-4">-</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="El Reno">
-                            <td class="px-6 py-4 font-medium text-slate-900">Jamie Gulickson</td>
-                            <td class="px-6 py-4">El Reno Site Operations</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2005</td>
-                            <td class="px-6 py-4">-</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="El Reno">
-                            <td class="px-6 py-4 font-medium text-slate-900">Jeff Williams</td>
-                            <td class="px-6 py-4">El Reno Site Operations</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2072</td>
-                            <td class="px-6 py-4">-</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="El Reno">
-                            <td class="px-6 py-4 font-medium text-slate-900">Marie Stevens</td>
-                            <td class="px-6 py-4">El Reno Site Operations</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2057</td>
-                            <td class="px-6 py-4">-</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="El Reno">
-                            <td class="px-6 py-4 font-medium text-slate-900">Mark Newman</td>
-                            <td class="px-6 py-4">El Reno Site Operations</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2049</td>
-                            <td class="px-6 py-4">-</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="El Reno">
-                            <td class="px-6 py-4 font-medium text-slate-900">Matt Peterman</td>
-                            <td class="px-6 py-4">El Reno Site Operations</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2068</td>
-                            <td class="px-6 py-4">-</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="El Reno">
-                            <td class="px-6 py-4 font-medium text-slate-900">Vickie Scharp</td>
-                            <td class="px-6 py-4">El Reno Site Operations</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2026</td>
-                            <td class="px-6 py-4">-</td>
-                        </tr>
-
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="Grand Prairie">
-                            <td class="px-6 py-4 font-medium text-slate-900">Andres Cruz</td>
-                            <td class="px-6 py-4">Grand Prairie Facility</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 5108</td>
-                            <td class="px-6 py-4">-</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="Grand Prairie">
-                            <td class="px-6 py-4 font-medium text-slate-900">Anthony Golriz</td>
-                            <td class="px-6 py-4">Grand Prairie Facility</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2302</td>
-                            <td class="px-6 py-4">-</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="Grand Prairie">
-                            <td class="px-6 py-4 font-medium text-slate-900">Brian Hansen</td>
-                            <td class="px-6 py-4">Grand Prairie Facility</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 5110</td>
-                            <td class="px-6 py-4">-</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="Grand Prairie">
-                            <td class="px-6 py-4 font-medium text-slate-900">John Casillas</td>
-                            <td class="px-6 py-4">Grand Prairie Facility</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 3715</td>
-                            <td class="px-6 py-4">-</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="Grand Prairie">
-                            <td class="px-6 py-4 font-medium text-slate-900">Martin Negrete</td>
-                            <td class="px-6 py-4">Grand Prairie Facility</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 5115</td>
-                            <td class="px-6 py-4">-</td>
-                        </tr>
-
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="Holbrook">
-                            <td class="px-6 py-4 font-medium text-slate-900">Larry Blevins</td>
-                            <td class="px-6 py-4">Holbrook Facility</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 4010</td>
-                            <td class="px-6 py-4">-</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="Holbrook">
-                            <td class="px-6 py-4 font-medium text-slate-900">Holbrook Main Desk</td>
-                            <td class="px-6 py-4">Holbrook Main Intake</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 5800</td>
-                            <td class="px-6 py-4">-</td>
-                        </tr>
-
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="Remote">
-                            <td class="px-6 py-4 font-medium text-slate-900">Brannon Townsend</td>
-                            <td class="px-6 py-4">Remote Operations</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 3712</td>
-                            <td class="px-6 py-4">-</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="Remote">
-                            <td class="px-6 py-4 font-medium text-slate-900">Bryce Sanders</td>
-                            <td class="px-6 py-4">Remote Operations</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2498</td>
-                            <td class="px-6 py-4">-</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="Remote">
-                            <td class="px-6 py-4 font-medium text-slate-900">Keith Jones</td>
-                            <td class="px-6 py-4">Remote Operations</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 7000</td>
-                            <td class="px-6 py-4">-</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+            <h2 class="text-xl font-bold text-slate-900 mb-2">Company Phone Directory</h2>
+            <p class="text-xs text-slate-500 mb-4">Search contacts across all physical facilities, corporate departments, and regional structures.</p>
             
-            <div id="no-results" class="hidden text-center py-6 text-slate-400 text-sm">
-                No internal extensions found matching that criteria.
+            <div class="mb-4">
+                <input type="text" id="directory-search" onkeyup="filterDirectory()" placeholder="Type a name, department, or region to search..." class="w-full pl-4 pr-4 py-2 border border-slate-300 rounded-lg focus:outline-hidden focus:ring-2 focus:ring-blue-500 text-sm bg-slate-50/50">
+            </div>
+
+            <!-- Dynamic Card Container -->
+            <div id="directory-results" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <p class="text-sm text-center text-slate-500 col-span-full py-6">Type a name or department to begin searching.</p>
             </div>
         </div>
     </main>
@@ -497,33 +287,223 @@
             });
         }
 
-        // --- Multi-Field Directory Searching Logic ---
+        // --- Complete Consolidated Phone Directory Dataset ---
+        const phoneDirectory = [
+            // --- EXECUTIVE TEAM ---
+            { name: "Chris Hicks", phone: "(817) 247-9696", dept: "Executive Team", location: "Corporate" },
+            { name: "Rodney Wickersham", phone: "(405) 834-1210", dept: "Executive Team", location: "Corporate" },
+            { name: "Jason Melton", phone: "(405) 664-7901", dept: "Executive Team", location: "Corporate" },
+            { name: "Jenny Cripps", phone: "(405) 827-6209", dept: "Executive Team", location: "Corporate" },
+            { name: "Bob Bein", phone: "(516) 639-4331", dept: "Executive Team", location: "Corporate" },
+            { name: "David Potter", phone: "(630) 715-9425", dept: "Executive Team", location: "Corporate" },
+            { name: "Marti Canida", phone: "(405) 694-5945", dept: "Executive Team", location: "Corporate" },
+            { name: "Kevin Laughlin", phone: "(774) 764-7564", dept: "Executive Team", location: "Corporate" },
+
+            // --- CUSTOMER SERVICE / INSIDE SALES ---
+            { name: "Eric Palmer", phone: "(405) 345-2017", dept: "Customer Service / Inside Sales", location: "Oklahoma" },
+            { name: "Tim Strohsnitter", phone: "(405) 345-5815", dept: "Customer Service / Inside Sales", location: "New York" },
+            { name: "Danielle Waddle", phone: "(405) 345-2003", dept: "Customer Service / Inside Sales", location: "Oklahoma" },
+            { name: "Haylee Hunt", phone: "(405) 345-2013", dept: "Customer Service / Inside Sales", location: "Oklahoma" },
+            { name: "Jamie Gulickson", phone: "(405) 345-2005", dept: "Customer Service / Inside Sales", location: "Oklahoma" },
+            { name: "Carly McCaslin", phone: "(405) 345-2014", dept: "Customer Service / Inside Sales", location: "Oklahoma" },
+            { name: "Nao Vang", phone: "(405) 345-2313", dept: "Customer Service / Inside Sales", location: "Washington" },
+            { name: "Tori Brite", phone: "(405) 345-2012", dept: "Customer Service / Inside Sales", location: "Oklahoma" },
+            { name: "Baylee Williams", phone: "(405) 345-2033", dept: "Customer Service / Inside Sales", location: "Oklahoma" },
+
+            // --- GEMINI SALESMEN (Do Not Release Number To Public) ---
+            { name: "Albert Flores", phone: "(626) 533-2118", dept: "Gemini Outside Sales", location: "Regional" },
+            { name: "Albert Rodriguez", phone: "(469) 571-1065", dept: "Gemini Outside Sales", location: "Regional" },
+            { name: "Anah Goryl", phone: "(920) 420-5405", dept: "Gemini Outside Sales", location: "Regional" },
+            { name: "Bob Bein (Sales)", phone: "(516) 639-4331", dept: "Gemini Outside Sales", location: "Regional" },
+            { name: "Billy Huse", phone: "(405) 702-2257", dept: "Gemini Outside Sales", location: "Regional" },
+            { name: "Brett Burrows", phone: "(626) 826-2786", dept: "Gemini Outside Sales", location: "Regional" },
+            { name: "Brian Hansen", phone: "(817) 715-6107", dept: "Gemini Outside Sales", location: "Regional" },
+            { name: "Brian Hilton", phone: "(913) 201-2555", dept: "Gemini Outside Sales", location: "Regional" },
+            { name: "Carla Zenn", phone: "(469) 815-3708", dept: "Gemini Outside Sales", location: "Regional" },
+            { name: "Chris Marban", phone: "(480) 868-6517", dept: "Gemini Outside Sales", location: "Regional" },
+            { name: "Christy Norton", phone: "(816) 682-7233", dept: "Gemini Outside Sales", location: "Regional" },
+            { name: "David Hopkins", phone: "(469) 670-7254", dept: "Gemini Outside Sales", location: "Regional" },
+            { name: "David Potter (Sales)", phone: "(630) 715-9425", dept: "Gemini Outside Sales", location: "Regional" },
+            { name: "Dean Orteig", phone: "(206) 550-1821", dept: "Gemini Outside Sales", location: "Regional" },
+            { name: "Dustin McCartney", phone: "(786) 914-2707", dept: "Gemini Outside Sales", location: "Regional" },
+            { name: "Germain Sanchez", phone: "(559) 552-3343", dept: "Gemini Outside Sales", location: "Regional" },
+            { name: "Greg McCorkindale", phone: "(252) 470-8718", dept: "Gemini Outside Sales", location: "Regional" },
+            { name: "Jarrad Biffinger", phone: "(413) 531-6522", dept: "Gemini Outside Sales", location: "Regional" },
+            { name: "Jeremy Farmer", phone: "(913) 249-5132", dept: "Gemini Outside Sales", location: "Regional" },
+            { name: "Joey Harrison", phone: "(305) 968-9821", dept: "Gemini Outside Sales", location: "Regional" },
+            { name: "John Toole", phone: "(404) 710-2758", dept: "Gemini Outside Sales", location: "Regional" },
+            { name: "Julie Russell", phone: "(206) 445-2646", dept: "Gemini Outside Sales", location: "Regional" },
+            { name: "Kirby Smith", phone: "(256) 440-9304", dept: "Gemini Outside Sales", location: "Regional" },
+            { name: "Larry Moore", phone: "(303) 720-0434", dept: "Gemini Outside Sales", location: "Regional" },
+            { name: "Lon Vaughn", phone: "(206) 979-0431", dept: "Gemini Outside Sales", location: "Regional" },
+            { name: "Madison Howard", phone: "(205) 223-9994", dept: "Gemini Outside Sales", location: "Regional" },
+            { name: "Mark Baltzley", phone: "(515) 620-9673", dept: "Gemini Outside Sales", location: "Regional" },
+            { name: "Michael McCully", phone: "(219) 869-8312", dept: "Gemini Outside Sales", location: "Regional" },
+            { name: "Michael Griffin", phone: "(620) 779-0669", dept: "Gemini Outside Sales", location: "Regional" },
+            { name: "Michael Mulvenna", phone: "(317) 373-3666", dept: "Gemini Outside Sales", location: "Regional" },
+            { name: "Mike Arndt", phone: "(612) 868-1904", dept: "Gemini Outside Sales", location: "Regional" },
+            { name: "Mike Green", phone: "(405) 550-3076", dept: "Gemini Outside Sales", location: "Regional" },
+            { name: "Pat Abernethy", phone: "(541) 816-8982", dept: "Gemini Outside Sales", location: "Regional" },
+            { name: "Paul Korytkowski", phone: "(347) 967-6334", dept: "Gemini Outside Sales", location: "Regional" },
+            { name: "Randell Burd", phone: "(412) 627-9260", dept: "Gemini Outside Sales", location: "Regional" },
+            { name: "Rich Ruiz", phone: "(631) 459-6096", dept: "Gemini Outside Sales", location: "Regional" },
+            { name: "Rob Dolman", phone: "(405) 641-7390", dept: "Gemini Outside Sales", location: "Regional" },
+            { name: "Syd Light", phone: "(954) 729-1246", dept: "Gemini Outside Sales", location: "Regional" },
+            { name: "Tim Strohsnitter (Sales)", phone: "(516) 650-2213", dept: "Gemini Outside Sales", location: "Regional" },
+            { name: "Tyler Due", phone: "(707) 344-2837", dept: "Gemini Outside Sales", location: "Regional" },
+            { name: "Tyler Stutts", phone: "(817) 876-5111", dept: "Gemini Outside Sales", location: "Regional" },
+
+            // --- F-H & ASSOCIATES, INC. ---
+            { name: "Jonathan Nunez", phone: "Mob: (210) 722-4093 / Fax: (972) 394-2811", dept: "F-H & Associates (San Antonio/Valley/Houston)", location: "Texas" },
+            { name: "AR Brown", phone: "Mob: (512) 422-4802 / Fax: (972) 394-2811", dept: "F-H & Associates (Austin Area/Bryan/College Station)", location: "Texas" },
+            { name: "Betsy Valente", phone: "Mob: (713) 876-3093 / Fax: (972) 394-2811", dept: "F-H & Associates (Houston/Coastal)", location: "Texas" },
+            { name: "Brent Shouse", phone: "Mob: (405) 423-1344 / Fax: (972) 394-2811", dept: "F-H & Associates (Oklahoma/Arkansas)", location: "Regional" },
+            { name: "Bruce Smoot", phone: "Mob: (832) 704-9091 / Fax: (972) 394-2811", dept: "F-H & Associates (Houston-North)", location: "Texas" },
+            { name: "Carrie Hicks", phone: "Mob: (817) 946-4617 / Fax: (972) 394-2811", dept: "F-H & Associates (Finance)", location: "Corporate" },
+            { name: "Caleb Holt", phone: "Mob: (214) 597-9073 / Fax: (972) 394-2811", dept: "F-H & Associates (Office Administrator/Corporate Office)", location: "Corporate" },
+            { name: "Jamie Holt", phone: "Mob: (469) 867-0618 / Fax: (972) 394-2811", dept: "F-H & Associates (Owner - All Areas)", location: "Corporate" },
+            { name: "JC Cornia", phone: "Mob: (817) 709-4126 / Fax: (972) 394-2811", dept: "F-H & Associates (Dallas/Fort Worth/West Texas/Mid-Tex)", location: "Texas" },
+            { name: "Ron Denne", phone: "Mob: (972) 832-5050 / Fax: (972) 394-2811", dept: "F-H & Associates (Dallas/E.TX/North to OK Border/NE Louisiana)", location: "Regional" },
+            { name: "Roy Young", phone: "Mob: (713) 494-6028 / Fax: (972) 394-2811", dept: "F-H & Associates (Houston/Louisiana)", location: "Regional" },
+            { name: "Shannon Holt", phone: "Mob: (469) 569-7783 / Fax: (972) 394-2811", dept: "F-H & Associates (General Manager)", location: "Corporate" },
+
+            // --- INDEPENDENT SALES REPRESENTATIVES ---
+            { name: "Bill Bratton", phone: "(417) 425-2559", dept: "Independent Sales Representative", location: "External" },
+            { name: "Rogelio Garza", phone: "(477) 580-0597", dept: "Independent Sales Representative", location: "External" },
+
+            // --- LOCAL FACILITY EXTENSIONS & DEPARTMENTS ---
+            { name: "Adam Stevenson", phone: "Ext. 2065", dept: "Site Operations", location: "El Reno" },
+            { name: "Amy McClain", phone: "Ext. 2061", dept: "Site Operations", location: "El Reno" },
+            { name: "Andres Cruz", phone: "Ext. 5108", dept: "Production Facility", location: "Grand Prairie" },
+            { name: "Anthony Golriz", phone: "Ext. 2302", dept: "Production Facility", location: "Grand Prairie" },
+            { name: "Austin Ferguson", phone: "Ext. 2075", dept: "Site Operations", location: "El Reno" },
+            { name: "Bradey Burge", phone: "Ext. 2007", dept: "Site Operations", location: "El Reno" },
+            { name: "Brandon Bosler", phone: "Ext. 2032", dept: "Site Operations", location: "El Reno" },
+            { name: "Brandon McMillan", phone: "Ext. 2152", dept: "Site Operations", location: "Harrisonburg" },
+            { name: "Brandon Murray", phone: "Ext. 2063", dept: "Maintenance", location: "El Reno" },
+            { name: "Brannon Townsend", phone: "Ext. 3712", dept: "Remote Systems", location: "Remote" },
+            { name: "Breakroom (Virginia)", phone: "Ext. 4023", dept: "Facility Infrastructure", location: "Harrisonburg" },
+            { name: "Brent Cooksey", phone: "Ext. 2024", dept: "Site Operations", location: "El Reno" },
+            { name: "Brett Hawkins", phone: "Ext. 2039", dept: "Site Operations", location: "El Reno" },
+            { name: "Brian Hansen (Ext)", phone: "Ext. 5110", dept: "Production Facility", location: "Grand Prairie" },
+            { name: "Bryce Sanders", phone: "Ext. 2498", dept: "Remote Operations", location: "Remote" },
+            { name: "Carly McCaslin (Ext)", phone: "Ext. 2014", dept: "Site Operations", location: "El Reno" },
+            { name: "Catherine Wright", phone: "Ext. 2307", dept: "Site Operations", location: "El Reno" },
+            { name: "Cecilia Jaimes", phone: "Ext. 5130", dept: "Production Facility", location: "Grand Prairie" },
+            { name: "Chad Hubbard", phone: "Ext. 2064", dept: "Site Operations", location: "El Reno" },
+            { name: "Chris Hicks (Ext 2050)", phone: "Ext. 2050", dept: "Executive Team", location: "El Reno" },
+            { name: "Chris Hicks (Ext 2120)", phone: "Ext. 2120", dept: "Executive Team", location: "Grand Prairie" },
+            { name: "Clayton Frizzell", phone: "Ext. 2308", dept: "Site Operations", location: "El Reno" },
+            { name: "Conference Room (El Reno)", phone: "Ext. 2069", dept: "Facility Infrastructure", location: "El Reno" },
+            { name: "Curtis Roach", phone: "Ext. 2048", dept: "Site Operations", location: "El Reno" },
+            { name: "Danielle Waddle (Ext)", phone: "Ext. 2003", dept: "Site Operations", location: "El Reno" },
+            { name: "David Jackson", phone: "Ext. 2054", dept: "Site Operations", location: "El Reno" },
+            { name: "David Smith", phone: "Ext. 2317", dept: "Site Operations", location: "El Reno" },
+            { name: "Devan Moschella", phone: "Ext. 2312", dept: "Site Operations", location: "El Reno" },
+            { name: "GP Front Desk", phone: "Ext. 5107", dept: "Main Intake / Administration", location: "Grand Prairie" },
+            { name: "GP QC", phone: "Ext. 5113", dept: "Quality Control", location: "Grand Prairie" },
+            { name: "GP QC 2", phone: "Ext. 5120", dept: "Quality Control", location: "Grand Prairie" },
+            { name: "GP Conference", phone: "Ext. 5112", dept: "Facility Infrastructure", location: "Grand Prairie" },
+            { name: "Harmon Ray", phone: "Ext. 2016", dept: "Site Operations", location: "El Reno" },
+            { name: "Haylee Hunt (Ext)", phone: "Ext. 2013", dept: "Site Operations", location: "El Reno" },
+            { name: "Holbrook Main", phone: "Ext. 5803", dept: "Main Intake / Administration", location: "Holbrook" },
+            { name: "Holbrook Shipping", phone: "Ext. 5805", dept: "Logistics / Dispatch", location: "Holbrook" },
+            { name: "I.T. Department", phone: "Ext. 2300", dept: "Information Technology", location: "El Reno" },
+            { name: "Jacob Archer", phone: "Ext. 2306", dept: "Site Operations", location: "El Reno" },
+            { name: "Jamie Gulickson (Ext)", phone: "Ext. 2005", dept: "Site Operations", location: "El Reno" },
+            { name: "Jason Melton (Ext)", phone: "Ext. 2037", dept: "Executive Team", location: "El Reno" },
+            { name: "Jason Williams", phone: "Ext. 5806", dept: "Site Operations", location: "Holbrook" },
+            { name: "Jeff Williams", phone: "Ext. 2072", dept: "Site Operations", location: "El Reno" },
+            { name: "Jeffrey Thomas", phone: "Ext. 2067", dept: "Site Operations", location: "El Reno" },
+            { name: "Jennifer Awbrey", phone: "Ext. 2040", dept: "Site Operations", location: "El Reno" },
+            { name: "Jennifer Sorrels", phone: "Ext. 2036", dept: "Site Operations", location: "El Reno" },
+            { name: "Jenny Cripps (Ext)", phone: "Ext. 2056", dept: "Executive Team", location: "El Reno" },
+            { name: "John Broyles", phone: "Ext. 2052", dept: "Site Operations", location: "El Reno" },
+            { name: "John Casillas", phone: "Ext. 3715", dept: "Production Facility", location: "Grand Prairie" },
+            { name: "Juan Garcia", phone: "---", dept: "Maintenance", location: "El Reno" },
+            { name: "Katherine Newsome", phone: "Ext. 2015", dept: "Site Operations", location: "El Reno" },
+            { name: "Keith Jones", phone: "Ext. 7000", dept: "Remote Systems", location: "Sparks" },
+            { name: "Kelly Lawrence", phone: "Ext. 2305", dept: "Site Operations", location: "El Reno" },
+            { name: "Kevin Cloyd", phone: "Ext. 2043", dept: "Site Operations", location: "El Reno" },
+            { name: "Klay Turk", phone: "Ext. 2009", dept: "Site Operations", location: "El Reno" },
+            { name: "Larry Blevins", phone: "Ext. 2051", dept: "Site Operations", location: "El Reno" },
+            { name: "Lea Cole", phone: "Ext. 2030", dept: "Site Operations", location: "El Reno" },
+            { name: "Lonnie Gresham", phone: "---", dept: "Maintenance", location: "El Reno" },
+            { name: "Marie Stevens", phone: "Ext. 2057", dept: "Site Operations", location: "El Reno" },
+            { name: "Mark Newman", phone: "Ext. 2049", dept: "Site Operations", location: "El Reno" },
+            { name: "Marti Canida (Ext)", phone: "Ext. 2028", dept: "Executive Team", location: "El Reno" },
+            { name: "Martin Negrete", phone: "Ext. 5115", dept: "Production Facility", location: "Grand Prairie" },
+            { name: "Marvin John", phone: "Ext. 5123", dept: "Production Facility", location: "Grand Prairie" },
+            { name: "Matt Peterman", phone: "Ext. 2068", dept: "Site Operations", location: "El Reno" },
+            { name: "Maygan Mitchell", phone: "Ext. 2315", dept: "Site Operations", location: "El Reno" },
+            { name: "Michael Boblit", phone: "Ext. 2035", dept: "Site Operations", location: "El Reno" },
+            { name: "Mike Boyd", phone: "Ext. 5122", dept: "Production Facility", location: "Grand Prairie" },
+            { name: "Nick Alles", phone: "Ext. 5807", dept: "Site Operations", location: "Holbrook" },
+            { name: "Nick Minichello", phone: "Ext. 5805", dept: "Site Operations", location: "Holbrook" },
+            { name: "Q. A.", phone: "Ext. 2038", dept: "Site Operations", location: "El Reno" },
+            { name: "Receiving (El Reno)", phone: "Ext. 2006", dept: "Facility Infrastructure", location: "El Reno" },
+            { name: "Rees Nelson", phone: "Ext. 2042", dept: "Site Operations", location: "El Reno" },
+            { name: "Richard Gulickson", phone: "Ext. 2045", dept: "Site Operations", location: "El Reno" },
+            { name: "Rings All Phones", phone: "Ext. 5816", dept: "Facility Infrastructure", location: "Holbrook" },
+            { name: "Rodney Wickersham (Ext)", phone: "Ext. 2023", dept: "Executive Team", location: "El Reno" },
+            { name: "Scott McAvoy", phone: "Ext. 4021", dept: "Site Operations", location: "Harrisonburg" },
+            { name: "Scott Rott", phone: "Ext. 2066", dept: "Site Operations", location: "El Reno" },
+            { name: "Sergio Estela-Zevala", phone: "Ext. 4018", dept: "Site Operations", location: "Harrisonburg" },
+            { name: "Shane Darnell", phone: "Ext. 2022", dept: "Site Operations", location: "El Reno" },
+            { name: "Shawnee Jones", phone: "Ext. 2076", dept: "Site Operations", location: "El Reno" },
+            { name: "Shweta Sajish", phone: "Ext. 2318", dept: "Site Operations", location: "El Reno" },
+            { name: "Steven Garza", phone: "Ext. 8000", dept: "Remote Systems", location: "Sparks" },
+            { name: "Terra Awbrey", phone: "Ext. 2053", dept: "Site Operations", location: "El Reno" },
+            { name: "Tia Johnson", phone: "Ext. 5117", dept: "Site Operations", location: "El Reno" },
+            { name: "Tim Strohsnitter (Ext)", phone: "Ext. 5812", dept: "Site Operations", location: "Holbrook" },
+            { name: "Tyler Headley", phone: "Ext. 2021", dept: "Site Operations", location: "El Reno" },
+            { name: "VA Customer Service", phone: "Ext. 4010", dept: "Customer Service", location: "Harrisonburg" },
+            { name: "Vanessa Blevins", phone: "Ext. 2071", dept: "Site Operations", location: "El Reno" },
+            { name: "Vickie Scharp", phone: "Ext. 2026", dept: "Site Operations", location: "El Reno" },
+            { name: "William Barnes", phone: "Ext. 3722", dept: "Site Operations", location: "El Reno" },
+            { name: "Zachary Kouba", phone: "Ext. 2045", dept: "Site Operations", location: "El Reno" },
+            { name: "Zakry Rios", phone: "Ext. 2320", dept: "Site Operations", location: "El Reno" }
+        ];
+
+        // --- Dynamic Card Search Renderer ---
         function filterDirectory() {
-            const query = document.getElementById('directory-search').value.toLowerCase().trim();
-            const deptFilter = document.getElementById('directory-dept').value.toLowerCase();
-            const rows = document.querySelectorAll('.directory-row');
-            let matchedAny = false;
-
-            rows.forEach(row => {
-                const text = row.innerText.toLowerCase();
-                const rowDept = row.getAttribute('data-dept').toLowerCase();
-                
-                const matchesSearch = text.includes(query);
-                const matchesDept = !deptFilter || rowDept.includes(deptFilter);
-
-                if (matchesSearch && matchesDept) {
-                    row.classList.remove('hidden');
-                    matchedAny = true;
-                } else {
-                    row.classList.add('hidden');
-                }
+            const searchInput = document.getElementById('directory-search').value.toLowerCase().trim();
+            const resultsContainer = document.getElementById('directory-results');
+            
+            resultsContainer.innerHTML = '';
+            
+            if (searchInput === '') {
+                resultsContainer.innerHTML = '<p class="text-sm text-center text-slate-500 col-span-full py-6">Type a name or department to begin searching.</p>';
+                return;
+            }
+            
+            const filtered = phoneDirectory.filter(contact => {
+                return contact.name.toLowerCase().includes(searchInput) || 
+                       contact.dept.toLowerCase().includes(searchInput) ||
+                       contact.location.toLowerCase().includes(searchInput);
             });
-
-            const noResultsEl = document.getElementById('no-results');
-            if (matchedAny) {
-                noResultsEl.classList.add('hidden');
+            
+            if (filtered.length > 0) {
+                filtered.forEach(contact => {
+                    const contactCard = `
+                        <div class="p-4 bg-white rounded-lg border border-slate-200 shadow-xs flex justify-between items-center transition-all hover:bg-slate-50">
+                            <div>
+                                <h4 class="text-sm font-semibold text-slate-900">${contact.name}</h4>
+                                <p class="text-xs text-slate-500">${contact.dept} • ${contact.location}</p>
+                            </div>
+                            <a href="tel:${contact.phone.replace(/[^0-9]/g, '')}" class="inline-flex items-center text-sm font-medium text-blue-600 hover:underline">
+                                ${contact.phone}
+                            </a>
+                        </div>
+                    `;
+                    resultsContainer.innerHTML += contactCard;
+                });
             } else {
-                noResultsEl.classList.remove('hidden');
+                resultsContainer.innerHTML = `
+                    <div class="p-4 text-sm text-center text-slate-500 bg-slate-50 rounded-lg border border-dashed border-slate-300 col-span-full py-6">
+                        No contacts found matching "${searchInput}".
+                    </div>
+                `;
             }
         }
     </script>

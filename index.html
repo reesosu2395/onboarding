@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Onboarding Hub</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased">
+
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center">
+                <img src="image_1d6c3a.png.png" alt="Gemini Industries, Inc. Logo" class="h-12 w-auto object-contain">
+            </div>
+            <div class="flex items-center space-x-4">
+                <span class="text-sm text-slate-500">Need help? <a href="mailto:helpdesk@gemini-coatings.com" class="text-blue-600 hover:underline">Contact IT Helpdesk</a></span>
+            </div>
+        </div>
+    </header>
+
+    <section class="bg-slate-900 text-white py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto text-center">
+            <h1 class="text-4xl font-extrabold sm:text-5xl tracking-tight">Welcome to the Team! 🎉</h1>
+            <p class="mt-4 text-xl text-slate-300 max-w-2xl mx-auto">
+                We're thrilled to have you here. This portal contains everything you need to get set up, secure, and ready for your first week.
+            </p>
+        </div>
+    </section>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            
+            <div class="lg:col-span-2 space-y-6">
+                <div class="bg-white rounded-xl shadow-xs border border-slate-200 p-6 sm:p-8">
+                    <div class="flex items-center justify-between border-b border-slate-100 pb-4 mb-6">
+                        <h2 class="text-2xl font-bold text-slate-900">Your Onboarding Checklist</h2>
+                        <span id="progress-text" class="text-sm font-semibold bg-blue-50 text-blue-700 px-3 py-1 rounded-full">0% Completed</span>
+                    </div>
+
+                    <div class="w-full bg-slate-100 rounded-full h-2 mb-8">
+                        <div id="progress-bar" class="bg-blue-600 h-2 rounded-full transition-all duration-500" style="width: 0%"></div>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4 p-4 rounded-lg hover:bg-slate-50 transition">
+                            <input type="checkbox" class="todo-item mt-1.5 h-5 w-5 rounded-sm border-slate-300 text-blue-600 focus:ring-blue-500 cursor-pointer">
+                            <div>
+                                <h3 class="text-lg font-semibold text-slate-900 item-title">Review Safety Guidelines & EHS Protocols</h3>
+                                <p class="text-slate-500 text-sm mt-1">Review the facility safety manual, locate emergency exits, and complete your initial Environmental, Health, and Safety (EHS) orientation.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4 p-4 rounded-lg hover:bg-slate-50 transition">
+                            <input type="checkbox" class="todo-item mt-1.5 h-5 w-5 rounded-sm border-slate-300 text-blue-600 focus:ring-blue-500 cursor-pointer">
+                            <div>
+                                <h3 class="text-lg font-semibold text-slate-900 item-title">Configure Cell Phone Applications</h3>
+                                <p class="text-slate-500 text-sm mt-1">Install **Microsoft Outlook** and **Microsoft Authenticator** from your device's app store. Register your corporate profile to safely access email and approve security prompts on the go.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4 p-4 rounded-lg hover:bg-slate-50 transition">
+                            <input type="checkbox" class="todo-item mt-1.5 h-5 w-5 rounded-sm border-slate-300 text-blue-600 focus:ring-blue-500 cursor-pointer">
+                            <div>
+                                <h3 class="text-lg font-semibold text-slate-900 item-title">Set Up Multi-Factor Authentication (MFA)</h3>
+                                <p class="text-slate-500 text-sm mt-1">Secure your corporate account. Set up your baseline credentials and prepare for secondary verification challenges on your workstation.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4 p-4 rounded-lg hover:bg-slate-50 transition">
+                            <input type="checkbox" class="todo-item mt-1.5 h-5 w-5 rounded-sm border-slate-300 text-blue-600 focus:ring-blue-500 cursor-pointer">
+                            <div>
+                                <h3 class="text-lg font-semibold text-slate-900 item-title">Join Team Communication Channels</h3>
+                                <p class="text-slate-500 text-sm mt-1">Log into Slack/Teams and say hello to your department in the main chat channels.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4 p-4 rounded-lg hover:bg-slate-50 transition">
+                            <input type="checkbox" class="todo-item mt-1.5 h-5 w-5 rounded-sm border-slate-300 text-blue-600 focus:ring-blue-500 cursor-pointer">
+                            <div>
+                                <h3 class="text-lg font-semibold text-slate-900 item-title">Complete KnowBe4 Security Awareness Training</h3>
+                                <p class="text-slate-500 text-sm mt-1">Log into your corporate email, find the automated invitation link from KnowBe4, and complete your baseline cybersecurity training modules.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="space-y-6">
+                <div class="bg-amber-50 border border-amber-200 rounded-xl p-6">
+                    <h3 class="text-xl font-bold text-amber-900 mb-3 flex items-center gap-2">
+                        ⚠️ Safety & EHS Resources
+                    </h3>
+                    <p class="text-amber-800 text-sm mb-4">
+                        Safety is our top priority. Please ensure you familiarize yourself with our facility policies on your first day.
+                    </p>
+                    <ul class="space-y-2 text-sm font-medium text-amber-900">
+                        <li><a href="#" class="underline hover:text-amber-700">📄 Incident Report Portal</a></li>
+                        <li><a href="https://www.geminiindustriesinc.com/product-pds-sds-search/" target="_blank" rel="noopener noreferrer" class="underline hover:text-amber-700">🦺 Product PDS & SDS Search</a></li>
+                        <li><a href="#" class="underline hover:text-amber-700">🚨 Emergency Action Plan</a></li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-xs border border-slate-200 p-6">
+                    <h3 class="text-xl font-bold text-slate-900 mb-4">Essential Links</h3>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="https://www.geminiindustriesinc.com/" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between p-3 rounded-lg bg-slate-50 hover:bg-blue-50 transition">
+                                <span class="font-medium text-slate-700 group-hover:text-blue-700">Company Public Website</span>
+                                <span class="text-slate-400 group-hover:text-blue-600">→</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.geminiindustriesinc.com/inside-gemini/" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between p-3 rounded-lg bg-slate-50 hover:bg-blue-50 transition">
+                                <span class="font-medium text-slate-700 group-hover:text-blue-700">Company Knowledge Base</span>
+                                <span class="text-slate-400 group-hover:text-blue-600">→</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://10.1.1.42/assistics/index.jsp?menuKey=0" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between p-3 rounded-lg bg-slate-50 hover:bg-blue-50 transition">
+                                <span class="font-medium text-slate-700 group-hover:text-blue-700">Assistics</span>
+                                <span class="text-slate-400 group-hover:text-blue-600">→</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://10.1.1.60:8124/auth/login/page" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between p-3 rounded-lg bg-slate-50 hover:bg-blue-50 transition">
+                                <span class="font-medium text-slate-700 group-hover:text-blue-700">Sage X3</span>
+                                <span class="text-slate-400 group-hover:text-blue-600">→</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://tools.gemini-coatings.com/new/login.php?_gl=1*1auo44t*_gcl_au*MTU3MDkwNzQ1Mi4xNzgzNDU0ODU4" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between p-3 rounded-lg bg-slate-50 hover:bg-blue-50 transition">
+                                <span class="font-medium text-slate-700 group-hover:text-blue-700">Gemini Tools</span>
+                                <span class="text-slate-400 group-hover:text-blue-600">→</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:helpdesk@gemini-coatings.com?subject=IT Helpdesk Ticket Submission" class="group flex items-center justify-between p-3 rounded-lg bg-slate-50 hover:bg-blue-50 transition">
+                                <span class="font-medium text-slate-700 group-hover:text-blue-700">IT Ticket Submission</span>
+                                <span class="text-slate-400 group-hover:text-blue-600">→</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.concursolutions.com/" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between p-3 rounded-lg bg-slate-50 hover:bg-blue-50 transition">
+                                <span class="font-medium text-slate-700 group-hover:text-blue-700">SAP Concur Expenses</span>
+                                <span class="text-slate-400 group-hover:text-blue-600">→</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-slate-900 rounded-xl p-6 text-white border border-slate-800">
+                    <h3 class="text-sm font-bold mb-4 flex items-center gap-2 text-blue-400">
+                        📁 Bookmark Folder Location
+                    </h3>
+                    
+                    <button id="copy-btn" onclick="copyNetworkPath()" class="w-full cursor-pointer bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-3 rounded-lg text-xs text-center transition mb-4">
+                        📋 Copy Folder Path
+                    </button>
+
+                    <div class="text-slate-400 text-xs space-y-2 border-t border-slate-800 pt-3">
+                        <p><strong class="text-slate-200">1.</strong> Press <kbd class="bg-slate-800 px-1 rounded text-slate-300 font-mono">Win + E</kbd> to open File Explorer.</p>
+                        <p><strong class="text-slate-200">2.</strong> Paste the path into the address bar at the top and press Enter.</p>
+                        <p><strong class="text-slate-200">3.</strong> Right-click <strong class="text-slate-300">Quick Access</strong> (or <strong class="text-slate-300">Home/Favorites</strong>) in the left sidebar and choose <span class="text-blue-400">"Pin current folder to Quick Access"</span>.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="bg-white border-t border-slate-200 mt-20 py-6 text-center text-sm text-slate-400">
+        &copy; 2026 Corporate Internal Portal. All rights reserved.
+    </footer>
+
+    <script>
+        // --- Progress Tracker Logic ---
+        const checkboxes = document.querySelectorAll('.todo-item');
+        const progressBar = document.getElementById('progress-bar');
+        const progressText = document.getElementById('progress-text');
+
+        function updateProgress() {
+            const total = checkboxes.length;
+            const checked = document.querySelectorAll('.todo-item:checked').length;
+            const percentage = Math.round((checked / total) * 100);
+
+            progressBar.style.width = `${percentage}%`;
+            progressText.innerText = `${percentage}% Completed`;
+
+            if (percentage === 100) {
+                progressText.classList.remove('bg-blue-50', 'text-blue-700');
+                progressText.classList.add('bg-green-50', 'text-green-700');
+            } else {
+                progressText.classList.remove('bg-green-50', 'text-green-700');
+                progressText.classList.add('bg-blue-50', 'text-blue-700');
+            }
+        }
+
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', (e) => {
+                const title = e.target.nextElementSibling.querySelector('.item-title');
+                if (e.target.checked) {
+                    title.classList.add('line-through', 'text-slate-400');
+                } else {
+                    title.classList.remove('line-through', 'text-slate-400');
+                }
+                updateProgress();
+            });
+        });
+
+        // --- Safe Clipboard Handler ---
+        function copyNetworkPath() {
+            const path = "\\\\gemfs\\Fileshare";
+            navigator.clipboard.writeText(path).then(() => {
+                const btn = document.getElementById('copy-btn');
+                btn.innerText = "✓ Path Copied!";
+                btn.classList.remove('bg-blue-600', 'hover:bg-blue-700');
+                btn.classList.add('bg-green-600');
+                
+                setTimeout(() => {
+                    btn.innerText = "📋 Copy Folder Path";
+                    btn.classList.remove('bg-green-600');
+                    btn.classList.add('bg-blue-600', 'hover:bg-blue-700');
+                }, 2500);
+            }).catch(err => {
+                console.error('Failed to copy text: ', err);
+            });
+        }
+    </script>
+</body>
+</html>

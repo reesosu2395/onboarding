@@ -1,509 +1,63 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Employee Onboarding Hub</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-</head>
-<body class="bg-slate-50 text-slate-800 font-sans antialiased">
+<script>
+    let currentUserEmail = null;
 
-    <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-            <div class="flex items-center">
-                <img src="image_1d6c3a.png.png" alt="Gemini Industries, Inc. Logo" class="h-12 w-auto object-contain">
-            </div>
-            <div class="flex items-center space-x-4">
-                <span class="text-sm text-slate-500">Need help? <a href="mailto:helpdesk@gemini-coatings.com" class="text-blue-600 hover:underline">Contact IT Helpdesk</a></span>
-            </div>
-        </div>
-    </header>
+    // --- AUTHENTICATION WITH FLASK ---
+    async function handleAuthSubmit(event) {
+        event.preventDefault();
+        const email = document.getElementById('auth-email').value.trim().toLowerCase();
+        const password = document.getElementById('auth-password').value;
+        const mode = currentAuthMode; // 'signup' or 'signin'
 
-    <section class="bg-slate-900 text-white py-12 px-4 sm:px-6 lg:px-8">
-        <div class="max-w-4xl mx-auto text-center">
-            <h1 class="text-4xl font-extrabold sm:text-5xl tracking-tight">Welcome to the Team! 🎉</h1>
-            <p class="mt-4 text-xl text-slate-300 max-w-2xl mx-auto">
-                We're thrilled to have you here. This portal contains everything you need to get set up, secure, and ready for your first week.
-            </p>
-        </div>
-    </section>
-
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10">
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            
-            <div class="lg:col-span-2 space-y-6">
-                <div class="bg-white rounded-xl shadow-xs border border-slate-200 p-6 sm:p-8">
-                    <div class="flex items-center justify-between border-b border-slate-100 pb-4 mb-6">
-                        <h2 class="text-2xl font-bold text-slate-900">Your Onboarding Checklist</h2>
-                        <span id="progress-text" class="text-sm font-semibold bg-blue-50 text-blue-700 px-3 py-1 rounded-full">0% Completed</span>
-                    </div>
-
-                    <div class="w-full bg-slate-100 rounded-full h-2 mb-8">
-                        <div id="progress-bar" class="bg-blue-600 h-2 rounded-full transition-all duration-500" style="width: 0%"></div>
-                    </div>
-
-                    <div class="space-y-6">
-                        <div id="safety-step-container" class="flex items-start space-x-4 p-4 rounded-lg bg-slate-100/50 opacity-60 transition duration-300">
-                            <input type="checkbox" id="safety-checkbox" disabled class="todo-item mt-1.5 h-5 w-5 rounded-sm border-slate-300 text-blue-600 focus:ring-blue-500 cursor-not-allowed">
-                            <div>
-                                <h3 class="text-lg font-semibold text-slate-900 item-title flex items-center gap-2">
-                                    Review Safety Guidelines & EHS Protocols 
-                                    <span id="lock-badge" class="text-xs font-normal bg-slate-200 text-slate-600 px-2 py-0.5 rounded border border-slate-300">🔒 Locked (Take Test)</span>
-                                </h3>
-                                <p class="text-slate-500 text-sm mt-1">Review the facility safety manual, locate emergency exits, and complete your initial Environmental, Health, and Safety (EHS) orientation.</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start space-x-4 p-4 rounded-lg hover:bg-slate-50 transition">
-                            <input type="checkbox" class="todo-item mt-1.5 h-5 w-5 rounded-sm border-slate-300 text-blue-600 focus:ring-blue-500 cursor-pointer">
-                            <div>
-                                <h3 class="text-lg font-semibold text-slate-900 item-title">Configure Cell Phone Applications</h3>
-                                <p class="text-slate-500 text-sm mt-1">Install **Microsoft Outlook** and **Microsoft Authenticator** from your device's app store. Register your corporate profile to safely access email and approve security prompts on the go.</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start space-x-4 p-4 rounded-lg hover:bg-slate-50 transition">
-                            <input type="checkbox" class="todo-item mt-1.5 h-5 w-5 rounded-sm border-slate-300 text-blue-600 focus:ring-blue-500 cursor-pointer">
-                            <div>
-                                <h3 class="text-lg font-semibold text-slate-900 item-title">Set Up Multi-Factor Authentication (MFA)</h3>
-                                <p class="text-slate-500 text-sm mt-1">Secure your corporate account. Set up your baseline credentials and prepare for secondary verification challenges on your workstation.</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start space-x-4 p-4 rounded-lg hover:bg-slate-50 transition">
-                            <input type="checkbox" class="todo-item mt-1.5 h-5 w-5 rounded-sm border-slate-300 text-blue-600 focus:ring-blue-500 cursor-pointer">
-                            <div>
-                                <h3 class="text-lg font-semibold text-slate-900 item-title">Join Team Communication Channels</h3>
-                                <p class="text-slate-500 text-sm mt-1">Log into Microsoft Teams and ensure your mobile device is added to the relevant department text groups to stay connected with your unit.</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start space-x-4 p-4 rounded-lg hover:bg-slate-50 transition">
-                            <input type="checkbox" class="todo-item mt-1.5 h-5 w-5 rounded-sm border-slate-300 text-blue-600 focus:ring-blue-500 cursor-pointer">
-                            <div>
-                                <h3 class="text-lg font-semibold text-slate-900 item-title">Complete KnowBe4 Security Awareness Training</h3>
-                                <p class="text-slate-500 text-sm mt-1">Log into your corporate email, find the automated invitation link from KnowBe4, and complete your baseline cybersecurity training modules.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-xl shadow-xs border border-slate-200 p-6">
-                    <h2 class="text-xl font-bold text-slate-900 mb-2">Company Phone Directory</h2>
-                    <p class="text-xs text-slate-500 mb-4">Search contacts across all physical facilities, corporate departments, and regional structures.</p>
-                    
-                    <div class="mb-4">
-                        <input type="text" id="directory-search" onkeyup="filterDirectory()" placeholder="Type a name, department, or region to search..." class="w-full pl-4 pr-4 py-2 border border-slate-300 rounded-lg focus:outline-hidden focus:ring-2 focus:ring-blue-500 text-sm bg-slate-50/50">
-                    </div>
-
-                    <div id="directory-results" class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <p class="text-sm text-center text-slate-500 col-span-full py-6">Type a name or department to begin searching.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="space-y-6">
-                <div class="bg-amber-50 border border-amber-200 rounded-xl p-6">
-                    <h3 class="text-xl font-bold text-amber-900 mb-3 flex items-center gap-2">
-                        ⚠️ Safety & EHS Resources
-                    </h3>
-                    <p class="text-amber-800 text-sm mb-4">
-                        Safety is our top priority. Please ensure you familiarize yourself with our facility policies on your first day.
-                    </p>
-                    <ul class="space-y-2 text-sm font-medium text-amber-900">
-                        <li><a href="#" class="underline hover:text-amber-700">📄 Incident Report Portal</a></li>
-                        <li><a href="https://www.geminiindustriesinc.com/product-pds-sds-search/" target="_blank" rel="noopener noreferrer" class="underline hover:text-amber-700">🦺 Product PDS & SDS Search</a></li>
-                        <li><a href="#" class="underline hover:text-amber-700">🚨 Emergency Action Plan</a></li>
-                        <li><a href="#" target="_blank" rel="noopener noreferrer" class="underline hover:text-amber-700">🎥 Safety Orientation Video</a></li>
-                        <li><a href="#" onclick="simulatePassingTest(event)" class="underline text-blue-700 hover:text-blue-900 font-bold">📝 Required Safety Test</a></li>
-                    </ul>
-                </div>
-
-                <div class="bg-white rounded-xl shadow-xs border border-slate-200 p-6">
-                    <h3 class="text-xl font-bold text-slate-900 mb-4">Essential Links</h3>
-                    <ul class="space-y-3">
-                        <li>
-                            <a href="https://www.geminiindustriesinc.com/" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between p-3 rounded-lg bg-slate-50 hover:bg-blue-50 transition">
-                                <span class="font-medium text-slate-700 group-hover:text-blue-700">Company Public Website</span>
-                                <span class="text-slate-400 group-hover:text-blue-600">→</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.geminiindustriesinc.com/inside-gemini/" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between p-3 rounded-lg bg-slate-50 hover:bg-blue-50 transition">
-                                <span class="font-medium text-slate-700 group-hover:text-blue-700">Inside Gemini</span>
-                                <span class="text-slate-400 group-hover:text-blue-600">→</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.geminiindustriesinc.com/employee-resources/" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between p-3 rounded-lg bg-slate-50 hover:bg-blue-50 transition">
-                                <span class="font-medium text-slate-700 group-hover:text-blue-700">Employee Resources</span>
-                                <span class="text-slate-400 group-hover:text-blue-600">→</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://10.1.1.42/assistics/index.jsp?menuKey=0" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between p-3 rounded-lg bg-slate-50 hover:bg-blue-50 transition">
-                                <span class="font-medium text-slate-700 group-hover:text-blue-700">Assistics</span>
-                                <span class="text-slate-400 group-hover:text-blue-600">→</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://10.1.1.60:8124/auth/login/page" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between p-3 rounded-lg bg-slate-50 hover:bg-blue-50 transition">
-                                <span class="font-medium text-slate-700 group-hover:text-blue-700">Sage X3</span>
-                                <span class="text-slate-400 group-hover:text-blue-600">→</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://tools.gemini-coatings.com/new/login.php?_gl=1*1auo44t*_gcl_au*MTU3MDkwNzQ1Mi4xNzgzNDU0ODU4" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between p-3 rounded-lg bg-slate-50 hover:bg-blue-50 transition">
-                                <span class="font-medium text-slate-700 group-hover:text-blue-700">Gemini Tools</span>
-                                <span class="text-slate-400 group-hover:text-blue-600">→</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://reports.gemini-coatings.com/jeff-netreportrunnerwebportal/login.aspx" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between p-3 rounded-lg bg-slate-50 hover:bg-blue-50 transition">
-                                <span class="font-medium text-slate-700 group-hover:text-blue-700">Report Runner</span>
-                                <span class="text-slate-400 group-hover:text-blue-600">→</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.paycomonline.net/v4/ee/web.php/app/login" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between p-3 rounded-lg bg-slate-50 hover:bg-blue-50 transition">
-                                <span class="font-medium text-slate-700 group-hover:text-blue-700">Paycom</span>
-                                <span class="text-slate-400 group-hover:text-blue-600">→</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="mailto:helpdesk@gemini-coatings.com?subject=IT Helpdesk Ticket Submission" class="group flex items-center justify-between p-3 rounded-lg bg-slate-50 hover:bg-blue-50 transition">
-                                <span class="font-medium text-slate-700 group-hover:text-blue-700">IT Ticket Submission</span>
-                                <span class="text-slate-400 group-hover:text-blue-600">→</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.concursolutions.com/" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between p-3 rounded-lg bg-slate-50 hover:bg-blue-50 transition">
-                                <span class="font-medium text-slate-700 group-hover:text-blue-700">SAP Concur Expenses</span>
-                                <span class="text-slate-400 group-hover:text-blue-600">→</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="bg-slate-900 rounded-xl p-6 text-white border border-slate-800">
-                    <h3 class="text-sm font-bold mb-4 flex items-center gap-2 text-blue-400">
-                        📁 Bookmark Folder Location
-                    </h3>
-                    
-                    <button id="copy-btn" onclick="copyNetworkPath()" class="w-full cursor-pointer bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-3 rounded-lg text-xs text-center transition mb-4">
-                        📋 Copy Folder Path
-                    </button>
-
-                    <div class="text-slate-400 text-xs space-y-2 border-t border-slate-800 pt-3">
-                        <p><strong class="text-slate-200">1.</strong> Press <kbd class="bg-slate-800 px-1 rounded text-slate-300 font-mono">Win + E</kbd> to open File Explorer.</p>
-                        <p><strong class="text-slate-200">2.</strong> Paste the path into the address bar at the top and press Enter.</p>
-                        <p><strong class="text-slate-200">3.</strong> Right-click <strong class="text-slate-300">Quick Access</strong> (or <strong class="text-slate-300">Home/Favorites</strong>) in the left sidebar and choose <span class="text-blue-400">"Pin current folder to Quick Access"</span>.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <footer class="bg-white border-t border-slate-200 mt-20 py-6 text-center text-sm text-slate-400">
-        &copy; 2026 Corporate Internal Portal. All rights reserved.
-    </footer>
-
-    <script>
-        // --- Progress Tracker Logic ---
-        const checkboxes = document.querySelectorAll('.todo-item');
-        const progressBar = document.getElementById('progress-bar');
-        const progressText = document.getElementById('progress-text');
-
-        function updateProgress() {
-            const total = checkboxes.length;
-            const checked = document.querySelectorAll('.todo-item:checked').length;
-            const percentage = Math.round((checked / total) * 100);
-
-            progressBar.style.width = `${percentage}%`;
-            progressText.innerText = `${percentage}% Completed`;
-
-            if (percentage === 100) {
-                progressText.classList.remove('bg-blue-50', 'text-blue-700');
-                progressText.classList.add('bg-green-50', 'text-green-700');
-            } else {
-                progressText.classList.remove('bg-green-50', 'text-green-700');
-                progressText.classList.add('bg-blue-50', 'text-blue-700');
-            }
-        }
-
-        checkboxes.forEach(checkbox => {
-            checkbox.addEventListener('change', (e) => {
-                const title = e.target.nextElementSibling.querySelector('.item-title');
-                if (e.target.checked) {
-                    title.classList.add('line-through', 'text-slate-400');
-                } else {
-                    title.classList.remove('line-through', 'text-slate-400');
-                }
-                updateProgress();
-            });
+        const response = await fetch('/api/auth', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email, password, mode, name: document.getElementById('auth-username').value })
         });
 
-        // --- Unlock Logic for Safety Checklist ---
-        function simulatePassingTest(event) {
-            event.preventDefault();
+        const result = await response.json();
 
-            const container = document.getElementById('safety-step-container');
-            const checkbox = document.getElementById('safety-checkbox');
-            const badge = document.getElementById('lock-badge');
-
-            container.classList.remove('bg-slate-100/50', 'opacity-60');
-            container.classList.add('hover:bg-slate-50');
-
-            checkbox.removeAttribute('disabled');
-            checkbox.classList.remove('cursor-not-allowed');
-            checkbox.classList.add('cursor-pointer');
-
-            badge.innerText = "✅ Test Passed";
-            badge.classList.remove('bg-slate-200', 'text-slate-600', 'border-slate-300');
-            badge.classList.add('bg-green-50', 'text-green-700', 'border-green-200');
-
-            alert("Congratulations! You passed the safety test. The first item on your checklist is now unlocked.");
+        if (result.status === 'success') {
+            initializeUserPortal(result.user);
+        } else {
+            showAuthError(result.message);
         }
+    }
 
-        // --- Safe Clipboard Handler ---
-        function copyNetworkPath() {
-            const path = "\\\\gemfs\\Fileshare";
-            navigator.clipboard.writeText(path).then(() => {
-                const btn = document.getElementById('copy-btn');
-                btn.innerText = "✓ Path Copied!";
-                btn.classList.remove('bg-blue-600', 'hover:bg-blue-700');
-                btn.classList.add('bg-green-600');
-                
-                setTimeout(() => {
-                    btn.innerText = "📋 Copy Folder Path";
-                    btn.classList.remove('bg-green-600');
-                    btn.classList.add('bg-blue-600', 'hover:bg-blue-700');
-                }, 2500);
-            }).catch(err => {
-                console.error('Failed to copy text: ', err);
-            });
-        }
+    // --- PERSIST PROGRESS TO PYTHON BACKEND ---
+    async function saveCurrentProgress() {
+        if (!currentUserEmail) return;
 
-        // --- Complete Consolidated Phone Directory Dataset ---
-        const phoneDirectory = [
-            // --- EXECUTIVE TEAM ---
-            { name: "Chris Hicks", phone: "(817) 247-9696", dept: "Executive Team", location: "Corporate" },
-            { name: "Rodney Wickersham", phone: "(405) 834-1210", dept: "Executive Team", location: "Corporate" },
-            { name: "Jason Melton", phone: "(405) 664-7901", dept: "Executive Team", location: "Corporate" },
-            { name: "Jenny Cripps", phone: "(405) 827-6209", dept: "Executive Team", location: "Corporate" },
-            { name: "Bob Bein", phone: "(516) 639-4331", dept: "Executive Team", location: "Corporate" },
-            { name: "David Potter", phone: "(630) 715-9425", dept: "Executive Team", location: "Corporate" },
-            { name: "Marti Canida", phone: "(405) 694-5945", dept: "Executive Team", location: "Corporate" },
-            { name: "Kevin Laughlin", phone: "(774) 764-7564", dept: "Executive Team", location: "Corporate" },
+        const progress = {};
+        checkboxes.forEach(box => {
+            progress[box.getAttribute('data-id')] = box.checked;
+        });
 
-            // --- CUSTOMER SERVICE / INSIDE SALES ---
-            { name: "Eric Palmer", phone: "(405) 345-2017", dept: "Customer Service / Inside Sales", location: "Oklahoma" },
-            { name: "Tim Strohsnitter", phone: "(405) 345-5815", dept: "Customer Service / Inside Sales", location: "New York" },
-            { name: "Danielle Waddle", phone: "(405) 345-2003", dept: "Customer Service / Inside Sales", location: "Oklahoma" },
-            { name: "Haylee Hunt", phone: "(405) 345-2013", dept: "Customer Service / Inside Sales", location: "Oklahoma" },
-            { name: "Jamie Gulickson", phone: "(405) 345-2005", dept: "Customer Service / Inside Sales", location: "Oklahoma" },
-            { name: "Carly McCaslin", phone: "(405) 345-2014", dept: "Customer Service / Inside Sales", location: "Oklahoma" },
-            { name: "Nao Vang", phone: "(405) 345-2313", dept: "Customer Service / Inside Sales", location: "Washington" },
-            { name: "Tori Brite", phone: "(405) 345-2012", dept: "Customer Service / Inside Sales", location: "Oklahoma" },
-            { name: "Baylee Williams", phone: "(405) 345-2033", dept: "Customer Service / Inside Sales", location: "Oklahoma" },
+        await fetch('/api/save-progress', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email: currentUserEmail, progress })
+        });
+    }
 
-            // --- GEMINI SALESMEN (Do Not Release Number To Public) ---
-            { name: "Albert Flores", phone: "(626) 533-2118", dept: "Gemini Outside Sales", location: "Regional" },
-            { name: "Albert Rodriguez", phone: "(469) 571-1065", dept: "Gemini Outside Sales", location: "Regional" },
-            { name: "Anah Goryl", phone: "(920) 420-5405", dept: "Gemini Outside Sales", location: "Regional" },
-            { name: "Bob Bein (Sales)", phone: "(516) 639-4331", dept: "Gemini Outside Sales", location: "Regional" },
-            { name: "Billy Huse", phone: "(405) 702-2257", dept: "Gemini Outside Sales", location: "Regional" },
-            { name: "Brett Burrows", phone: "(626) 826-2786", dept: "Gemini Outside Sales", location: "Regional" },
-            { name: "Brian Hansen", phone: "(817) 715-6107", dept: "Gemini Outside Sales", location: "Regional" },
-            { name: "Brian Hilton", phone: "(913) 201-2555", dept: "Gemini Outside Sales", location: "Regional" },
-            { name: "Carla Zenn", phone: "(469) 815-3708", dept: "Gemini Outside Sales", location: "Regional" },
-            { name: "Chris Marban", phone: "(480) 868-6517", dept: "Gemini Outside Sales", location: "Regional" },
-            { name: "Christy Norton", phone: "(816) 682-7233", dept: "Gemini Outside Sales", location: "Regional" },
-            { name: "David Hopkins", phone: "(469) 670-7254", dept: "Gemini Outside Sales", location: "Regional" },
-            { name: "David Potter (Sales)", phone: "(630) 715-9425", dept: "Gemini Outside Sales", location: "Regional" },
-            { name: "Dean Orteig", phone: "(206) 550-1821", dept: "Gemini Outside Sales", location: "Regional" },
-            { name: "Dustin McCartney", phone: "(786) 914-2707", dept: "Gemini Outside Sales", location: "Regional" },
-            { name: "Germain Sanchez", phone: "(559) 552-3343", dept: "Gemini Outside Sales", location: "Regional" },
-            { name: "Greg McCorkindale", phone: "(252) 470-8718", dept: "Gemini Outside Sales", location: "Regional" },
-            { name: "Jarrad Biffinger", phone: "(413) 531-6522", dept: "Gemini Outside Sales", location: "Regional" },
-            { name: "Jeremy Farmer", phone: "(913) 249-5132", dept: "Gemini Outside Sales", location: "Regional" },
-            { name: "Joey Harrison", phone: "(305) 968-9821", dept: "Gemini Outside Sales", location: "Regional" },
-            { name: "John Toole", phone: "(404) 710-2758", dept: "Gemini Outside Sales", location: "Regional" },
-            { name: "Julie Russell", phone: "(206) 445-2646", dept: "Gemini Outside Sales", location: "Regional" },
-            { name: "Kirby Smith", phone: "(256) 440-9304", dept: "Gemini Outside Sales", location: "Regional" },
-            { name: "Larry Moore", phone: "(303) 720-0434", dept: "Gemini Outside Sales", location: "Regional" },
-            { name: "Lon Vaughn", phone: "(206) 979-0431", dept: "Gemini Outside Sales", location: "Regional" },
-            { name: "Madison Howard", phone: "(205) 223-9994", dept: "Gemini Outside Sales", location: "Regional" },
-            { name: "Mark Baltzley", phone: "(515) 620-9673", dept: "Gemini Outside Sales", location: "Regional" },
-            { name: "Michael McCully", phone: "(219) 869-8312", dept: "Gemini Outside Sales", location: "Regional" },
-            { name: "Michael Griffin", phone: "(620) 779-0669", dept: "Gemini Outside Sales", location: "Regional" },
-            { name: "Michael Mulvenna", phone: "(317) 373-3666", dept: "Gemini Outside Sales", location: "Regional" },
-            { name: "Mike Arndt", phone: "(612) 868-1904", dept: "Gemini Outside Sales", location: "Regional" },
-            { name: "Mike Green", phone: "(405) 550-3076", dept: "Gemini Outside Sales", location: "Regional" },
-            { name: "Pat Abernethy", phone: "(541) 816-8982", dept: "Gemini Outside Sales", location: "Regional" },
-            { name: "Paul Korytkowski", phone: "(347) 967-6334", dept: "Gemini Outside Sales", location: "Regional" },
-            { name: "Randell Burd", phone: "(412) 627-9260", dept: "Gemini Outside Sales", location: "Regional" },
-            { name: "Rich Ruiz", phone: "(631) 459-6096", dept: "Gemini Outside Sales", location: "Regional" },
-            { name: "Rob Dolman", phone: "(405) 641-7390", dept: "Gemini Outside Sales", location: "Regional" },
-            { name: "Syd Light", phone: "(954) 729-1246", dept: "Gemini Outside Sales", location: "Regional" },
-            { name: "Tim Strohsnitter (Sales)", phone: "(516) 650-2213", dept: "Gemini Outside Sales", location: "Regional" },
-            { name: "Tyler Due", phone: "(707) 344-2837", dept: "Gemini Outside Sales", location: "Regional" },
-            { name: "Tyler Stutts", phone: "(817) 876-5111", dept: "Gemini Outside Sales", location: "Regional" },
+    function initializeUserPortal(userData) {
+        currentUserEmail = userData.email;
+        document.getElementById('user-display-name').innerText = userData.name;
+        document.getElementById('welcome-name').innerText = userData.name;
+        document.getElementById('user-avatar').innerText = userData.name.charAt(0).toUpperCase();
 
-            // --- F-H & ASSOCIATES, INC. ---
-            { name: "Jonathan Nunez", phone: "Mob: (210) 722-4093 / Fax: (972) 394-2811", dept: "F-H & Associates (San Antonio/Valley/Houston)", location: "Texas" },
-            { name: "AR Brown", phone: "Mob: (512) 422-4802 / Fax: (972) 394-2811", dept: "F-H & Associates (Austin Area/Bryan/College Station)", location: "Texas" },
-            { name: "Betsy Valente", phone: "Mob: (713) 876-3093 / Fax: (972) 394-2811", dept: "F-H & Associates (Houston/Coastal)", location: "Texas" },
-            { name: "Brent Shouse", phone: "Mob: (405) 423-1344 / Fax: (972) 394-2811", dept: "F-H & Associates (Oklahoma/Arkansas)", location: "Regional" },
-            { name: "Bruce Smoot", phone: "Mob: (832) 704-9091 / Fax: (972) 394-2811", dept: "F-H & Associates (Houston-North)", location: "Texas" },
-            { name: "Carrie Hicks", phone: "Mob: (817) 946-4617 / Fax: (972) 394-2811", dept: "F-H & Associates (Finance)", location: "Corporate" },
-            { name: "Caleb Holt", phone: "Mob: (214) 597-9073 / Fax: (972) 394-2811", dept: "F-H & Associates (Office Administrator/Corporate Office)", location: "Corporate" },
-            { name: "Jamie Holt", phone: "Mob: (469) 867-0618 / Fax: (972) 394-2811", dept: "F-H & Associates (Owner - All Areas)", location: "Corporate" },
-            { name: "JC Cornia", phone: "Mob: (817) 709-4126 / Fax: (972) 394-2811", dept: "F-H & Associates (Dallas/Fort Worth/West Texas/Mid-Tex)", location: "Texas" },
-            { name: "Ron Denne", phone: "Mob: (972) 832-5050 / Fax: (972) 394-2811", dept: "F-H & Associates (Dallas/E.TX/North to OK Border/NE Louisiana)", location: "Regional" },
-            { name: "Roy Young", phone: "Mob: (713) 494-6028 / Fax: (972) 394-2811", dept: "F-H & Associates (Houston/Louisiana)", location: "Regional" },
-            { name: "Shannon Holt", phone: "Mob: (469) 569-7783 / Fax: (972) 394-2811", dept: "F-H & Associates (General Manager)", location: "Corporate" },
-
-            // --- INDEPENDENT SALES REPRESENTATIVES ---
-            { name: "Bill Bratton", phone: "(417) 425-2559", dept: "Independent Sales Representative", location: "External" },
-            { name: "Rogelio Garza", phone: "(477) 580-0597", dept: "Independent Sales Representative", location: "External" },
-
-            // --- LOCAL FACILITY EXTENSIONS & DEPARTMENTS ---
-            { name: "Adam Stevenson", phone: "Ext. 2065", dept: "Site Operations", location: "El Reno" },
-            { name: "Amy McClain", phone: "Ext. 2061", dept: "Site Operations", location: "El Reno" },
-            { name: "Andres Cruz", phone: "Ext. 5108", dept: "Production Facility", location: "Grand Prairie" },
-            { name: "Anthony Golriz", phone: "Ext. 2302", dept: "Production Facility", location: "Grand Prairie" },
-            { name: "Austin Ferguson", phone: "Ext. 2075", dept: "Site Operations", location: "El Reno" },
-            { name: "Bradey Burge", phone: "Ext. 2007", dept: "Site Operations", location: "El Reno" },
-            { name: "Brandon Bosler", phone: "Ext. 2032", dept: "Site Operations", location: "El Reno" },
-            { name: "Brandon McMillan", phone: "Ext. 2152", dept: "Site Operations", location: "Harrisonburg" },
-            { name: "Brandon Murray", phone: "Ext. 2063", dept: "Maintenance", location: "El Reno" },
-            { name: "Brannon Townsend", phone: "Ext. 3712", dept: "Remote Systems", location: "Remote" },
-            { name: "Breakroom (Virginia)", phone: "Ext. 4023", dept: "Facility Infrastructure", location: "Harrisonburg" },
-            { name: "Brent Cooksey", phone: "Ext. 2024", dept: "Site Operations", location: "El Reno" },
-            { name: "Brett Hawkins", phone: "Ext. 2039", dept: "Site Operations", location: "El Reno" },
-            { name: "Brian Hansen (Ext)", phone: "Ext. 5110", dept: "Production Facility", location: "Grand Prairie" },
-            { name: "Bryce Sanders", phone: "Ext. 2498", dept: "Remote Operations", location: "Remote" },
-            { name: "Carly McCaslin (Ext)", phone: "Ext. 2014", dept: "Site Operations", location: "El Reno" },
-            { name: "Catherine Wright", phone: "Ext. 2307", dept: "Site Operations", location: "El Reno" },
-            { name: "Cecilia Jaimes", phone: "Ext. 5130", dept: "Production Facility", location: "Grand Prairie" },
-            { name: "Chad Hubbard", phone: "Ext. 2064", dept: "Site Operations", location: "El Reno" },
-            { name: "Chris Hicks (Ext 2050)", phone: "Ext. 2050", dept: "Executive Team", location: "El Reno" },
-            { name: "Chris Hicks (Ext 2120)", phone: "Ext. 2120", dept: "Executive Team", location: "Grand Prairie" },
-            { name: "Clayton Frizzell", phone: "Ext. 2308", dept: "Site Operations", location: "El Reno" },
-            { name: "Conference Room (El Reno)", phone: "Ext. 2069", dept: "Facility Infrastructure", location: "El Reno" },
-            { name: "Curtis Roach", phone: "Ext. 2048", dept: "Site Operations", location: "El Reno" },
-            { name: "Danielle Waddle (Ext)", phone: "Ext. 2003", dept: "Site Operations", location: "El Reno" },
-            { name: "David Jackson", phone: "Ext. 2054", dept: "Site Operations", location: "El Reno" },
-            { name: "David Smith", phone: "Ext. 2317", dept: "Site Operations", location: "El Reno" },
-            { name: "Devan Moschella", phone: "Ext. 2312", dept: "Site Operations", location: "El Reno" },
-            { name: "GP Front Desk", phone: "Ext. 5107", dept: "Main Intake / Administration", location: "Grand Prairie" },
-            { name: "GP QC", phone: "Ext. 5113", dept: "Quality Control", location: "Grand Prairie" },
-            { name: "GP QC 2", phone: "Ext. 5120", dept: "Quality Control", location: "Grand Prairie" },
-            { name: "GP Conference", phone: "Ext. 5112", dept: "Facility Infrastructure", location: "Grand Prairie" },
-            { name: "Harmon Ray", phone: "Ext. 2016", dept: "Site Operations", location: "El Reno" },
-            { name: "Haylee Hunt (Ext)", phone: "Ext. 2013", dept: "Site Operations", location: "El Reno" },
-            { name: "Holbrook Main", phone: "Ext. 5803", dept: "Main Intake / Administration", location: "Holbrook" },
-            { name: "Holbrook Shipping", phone: "Ext. 5805", dept: "Logistics / Dispatch", location: "Holbrook" },
-            { name: "I.T. Department", phone: "Ext. 2300", dept: "Information Technology", location: "El Reno" },
-            { name: "Jacob Archer", phone: "Ext. 2306", dept: "Site Operations", location: "El Reno" },
-            { name: "Jamie Gulickson (Ext)", phone: "Ext. 2005", dept: "Site Operations", location: "El Reno" },
-            { name: "Jason Melton (Ext)", phone: "Ext. 2037", dept: "Executive Team", location: "El Reno" },
-            { name: "Jason Williams", phone: "Ext. 5806", dept: "Site Operations", location: "Holbrook" },
-            { name: "Jeff Williams", phone: "Ext. 2072", dept: "Site Operations", location: "El Reno" },
-            { name: "Jeffrey Thomas", phone: "Ext. 2067", dept: "Site Operations", location: "El Reno" },
-            { name: "Jennifer Awbrey", phone: "Ext. 2040", dept: "Site Operations", location: "El Reno" },
-            { name: "Jennifer Sorrels", phone: "Ext. 2036", dept: "Site Operations", location: "El Reno" },
-            { name: "Jenny Cripps (Ext)", phone: "Ext. 2056", dept: "Executive Team", location: "El Reno" },
-            { name: "John Broyles", phone: "Ext. 2052", dept: "Site Operations", location: "El Reno" },
-            { name: "John Casillas", phone: "Ext. 3715", dept: "Production Facility", location: "Grand Prairie" },
-            { name: "Juan Garcia", phone: "---", dept: "Maintenance", location: "El Reno" },
-            { name: "Katherine Newsome", phone: "Ext. 2015", dept: "Site Operations", location: "El Reno" },
-            { name: "Keith Jones", phone: "Ext. 7000", dept: "Remote Systems", location: "Sparks" },
-            { name: "Kelly Lawrence", phone: "Ext. 2305", dept: "Site Operations", location: "El Reno" },
-            { name: "Kevin Cloyd", phone: "Ext. 2043", dept: "Site Operations", location: "El Reno" },
-            { name: "Klay Turk", phone: "Ext. 2009", dept: "Site Operations", location: "El Reno" },
-            { name: "Larry Blevins", phone: "Ext. 2051", dept: "Site Operations", location: "El Reno" },
-            { name: "Lea Cole", phone: "Ext. 2030", dept: "Site Operations", location: "El Reno" },
-            { name: "Lonnie Gresham", phone: "---", dept: "Maintenance", location: "El Reno" },
-            { name: "Marie Stevens", phone: "Ext. 2057", dept: "Site Operations", location: "El Reno" },
-            { name: "Mark Newman", phone: "Ext. 2049", dept: "Site Operations", location: "El Reno" },
-            { name: "Marti Canida (Ext)", phone: "Ext. 2028", dept: "Executive Team", location: "El Reno" },
-            { name: "Martin Negrete", phone: "Ext. 5115", dept: "Production Facility", location: "Grand Prairie" },
-            { name: "Marvin John", phone: "Ext. 5123", dept: "Production Facility", location: "Grand Prairie" },
-            { name: "Matt Peterman", phone: "Ext. 2068", dept: "Site Operations", location: "El Reno" },
-            { name: "Maygan Mitchell", phone: "Ext. 2315", dept: "Site Operations", location: "El Reno" },
-            { name: "Michael Boblit", phone: "Ext. 2035", dept: "Site Operations", location: "El Reno" },
-            { name: "Mike Boyd", phone: "Ext. 5122", dept: "Production Facility", location: "Grand Prairie" },
-            { name: "Nick Alles", phone: "Ext. 5807", dept: "Site Operations", location: "Holbrook" },
-            { name: "Nick Minichello", phone: "Ext. 5805", dept: "Site Operations", location: "Holbrook" },
-            { name: "Q. A.", phone: "Ext. 2038", dept: "Site Operations", location: "El Reno" },
-            { name: "Receiving (El Reno)", phone: "Ext. 2006", dept: "Facility Infrastructure", location: "El Reno" },
-            { name: "Rees Nelson", phone: "Ext. 2042", dept: "Site Operations", location: "El Reno" },
-            { name: "Richard Gulickson", phone: "Ext. 2045", dept: "Site Operations", location: "El Reno" },
-            { name: "Rings All Phones", phone: "Ext. 5816", dept: "Facility Infrastructure", location: "Holbrook" },
-            { name: "Rodney Wickersham (Ext)", phone: "Ext. 2023", dept: "Executive Team", location: "El Reno" },
-            { name: "Scott McAvoy", phone: "Ext. 4021", dept: "Site Operations", location: "Harrisonburg" },
-            { name: "Scott Rott", phone: "Ext. 2066", dept: "Site Operations", location: "El Reno" },
-            { name: "Sergio Estela-Zevala", phone: "Ext. 4018", dept: "Site Operations", location: "Harrisonburg" },
-            { name: "Shane Darnell", phone: "Ext. 2022", dept: "Site Operations", location: "El Reno" },
-            { name: "Shawnee Jones", phone: "Ext. 2076", dept: "Site Operations", location: "El Reno" },
-            { name: "Shweta Sajish", phone: "Ext. 2318", dept: "Site Operations", location: "El Reno" },
-            { name: "Steven Garza", phone: "Ext. 8000", dept: "Remote Systems", location: "Sparks" },
-            { name: "Terra Awbrey", phone: "Ext. 2053", dept: "Site Operations", location: "El Reno" },
-            { name: "Tia Johnson", phone: "Ext. 5117", dept: "Site Operations", location: "El Reno" },
-            { name: "Tim Strohsnitter (Ext)", phone: "Ext. 5812", dept: "Site Operations", location: "Holbrook" },
-            { name: "Tyler Due", phone: "---", dept: "Gemini Outside Sales", location: "Regional" },
-            { name: "Tyler Headley", phone: "Ext. 2021", dept: "Site Operations", location: "El Reno" },
-            { name: "VA Customer Service", phone: "Ext. 4010", dept: "Customer Service", location: "Harrisonburg" },
-            { name: "Vanessa Blevins", phone: "Ext. 2071", dept: "Site Operations", location: "El Reno" },
-            { name: "Vickie Scharp", phone: "Ext. 2026", dept: "Site Operations", location: "El Reno" },
-            { name: "William Barnes", phone: "Ext. 3722", dept: "Site Operations", location: "El Reno" },
-            { name: "Zachary Kouba", phone: "Ext. 2045", dept: "Site Operations", location: "El Reno" },
-            { name: "Zakry Rios", phone: "Ext. 2320", dept: "Site Operations", location: "El Reno" }
-        ];
-
-        // --- Dynamic Card Search Renderer ---
-        function filterDirectory() {
-            const searchInput = document.getElementById('directory-search').value.toLowerCase().trim();
-            const resultsContainer = document.getElementById('directory-results');
+        // Apply progress states from backend
+        checkboxes.forEach(box => {
+            const stepId = box.getAttribute('data-id');
+            box.checked = userData.progress[stepId] || false;
             
-            resultsContainer.innerHTML = '';
-            
-            if (searchInput === '') {
-                resultsContainer.innerHTML = '<p class="text-sm text-center text-slate-500 col-span-full py-6">Type a name or department to begin searching.</p>';
-                return;
-            }
-            
-            const filtered = phoneDirectory.filter(contact => {
-                return contact.name.toLowerCase().includes(searchInput) || 
-                       contact.dept.toLowerCase().includes(searchInput) ||
-                       contact.location.toLowerCase().includes(searchInput);
-            });
-            
-            if (filtered.length > 0) {
-                filtered.forEach(contact => {
-                    const contactCard = `
-                        <div class="p-4 bg-white rounded-lg border border-slate-200 shadow-xs flex justify-between items-center transition-all hover:bg-slate-50">
-                            <div>
-                                <h4 class="text-sm font-semibold text-slate-900">${contact.name}</h4>
-                                <p class="text-xs text-slate-500">${contact.dept} • ${contact.location}</p>
-                            </div>
-                            <a href="tel:${contact.phone.replace(/[^0-9]/g, '')}" class="inline-flex items-center text-sm font-medium text-blue-600 hover:underline">
-                                ${contact.phone}
-                            </a>
-                        </div>
-                    `;
-                    resultsContainer.innerHTML += contactCard;
-                });
-            } else {
-                resultsContainer.innerHTML = `
-                    <div class="p-4 text-sm text-center text-slate-500 bg-slate-50 rounded-lg border border-dashed border-slate-300 col-span-full py-6">
-                        No contacts found matching "${searchInput}".
-                    </div>
-                `;
-            }
-        }
-    </script>
-</body>
-</html>
+            // Visual feedback
+            const title = box.nextElementSibling?.querySelector('.item-title') || box.nextElementSibling;
+            if (box.checked && title) title.classList.add('line-through', 'text-slate-400');
+        });
+
+        updateProgress();
+        document.getElementById('auth-overlay').classList.add('hidden');
+    }
+
+    // ... (Keep your existing updateProgress, filterDirectory, and copy functions here)
+</script>

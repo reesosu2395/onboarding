@@ -3,1100 +3,178 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Employee Onboarding Hub</title>
+    <title>Corporate Onboarding - Phone Directory</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body class="bg-slate-50 text-slate-800 font-sans antialiased">
+<body class="bg-gray-100 min-h-screen py-10 px-4">
 
-    <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-            <div class="flex items-center">
-                <img src="image_1d6c3a.png.png" alt="Gemini Industries, Inc. Logo" class="h-12 w-auto object-contain">
-            </div>
-            <div class="flex items-center space-x-4">
-                <span class="text-sm text-slate-500">Need help? <a href="mailto:helpdesk@gemini-coatings.com" class="text-blue-600 hover:underline">Contact IT Helpdesk</a></span>
-            </div>
+    <div class="max-w-2xl mx-auto">
+        <div class="text-center mb-8">
+            <h1 class="text-3xl font-bold text-gray-900 tracking-tight">Internal Phone Directory</h1>
+            <p class="mt-2 text-sm text-gray-600">Quickly find contact information across all corporate offices and regional teams.</p>
         </div>
-    </header>
 
-    <section class="bg-slate-900 text-white py-12 px-4 sm:px-6 lg:px-8">
-        <div class="max-w-4xl mx-auto text-center">
-            <h1 class="text-4xl font-extrabold sm:text-5xl tracking-tight">Welcome to the Team! 🎉</h1>
-            <p class="mt-4 text-xl text-slate-300 max-w-2xl mx-auto">
-                We're thrilled to have you here. This portal contains everything you need to get set up, secure, and ready for your first week.
-            </p>
-        </div>
-    </section>
-
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10">
-        <!-- Top Section Grid -->
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            
-            <div class="lg:col-span-2 space-y-6">
-                <div class="bg-white rounded-xl shadow-xs border border-slate-200 p-6 sm:p-8">
-                    <div class="flex items-center justify-between border-b border-slate-100 pb-4 mb-6">
-                        <h2 class="text-2xl font-bold text-slate-900">Your Onboarding Checklist</h2>
-                        <span id="progress-text" class="text-sm font-semibold bg-blue-50 text-blue-700 px-3 py-1 rounded-full">0% Completed</span>
-                    </div>
-
-                    <div class="w-full bg-slate-100 rounded-full h-2 mb-8">
-                        <div id="progress-bar" class="bg-blue-600 h-2 rounded-full transition-all duration-500" style="width: 0%"></div>
-                    </div>
-
-                    <div class="space-y-6">
-                        <div id="safety-step-container" class="flex items-start space-x-4 p-4 rounded-lg bg-slate-100/50 opacity-60 transition duration-300">
-                            <input type="checkbox" id="safety-checkbox" disabled class="todo-item mt-1.5 h-5 w-5 rounded-sm border-slate-300 text-blue-600 focus:ring-blue-500 cursor-not-allowed">
-                            <div>
-                                <h3 class="text-lg font-semibold text-slate-900 item-title flex items-center gap-2">
-                                    Review Safety Guidelines & EHS Protocols 
-                                    <span id="lock-badge" class="text-xs font-normal bg-slate-200 text-slate-600 px-2 py-0.5 rounded border border-slate-300">🔒 Locked (Take Test)</span>
-                                </h3>
-                                <p class="text-slate-500 text-sm mt-1">Review the facility safety manual, locate emergency exits, and complete your initial Environmental, Health, and Safety (EHS) orientation.</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start space-x-4 p-4 rounded-lg hover:bg-slate-50 transition">
-                            <input type="checkbox" class="todo-item mt-1.5 h-5 w-5 rounded-sm border-slate-300 text-blue-600 focus:ring-blue-500 cursor-pointer">
-                            <div>
-                                <h3 class="text-lg font-semibold text-slate-900 item-title">Configure Cell Phone Applications</h3>
-                                <p class="text-slate-500 text-sm mt-1">Install **Microsoft Outlook** and **Microsoft Authenticator** from your device's app store. Register your corporate profile to safely access email and approve security prompts on the go.</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start space-x-4 p-4 rounded-lg hover:bg-slate-50 transition">
-                            <input type="checkbox" class="todo-item mt-1.5 h-5 w-5 rounded-sm border-slate-300 text-blue-600 focus:ring-blue-500 cursor-pointer">
-                            <div>
-                                <h3 class="text-lg font-semibold text-slate-900 item-title">Set Up Multi-Factor Authentication (MFA)</h3>
-                                <p class="text-slate-500 text-sm mt-1">Secure your corporate account. Set up your baseline credentials and prepare for secondary verification challenges on your workstation.</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start space-x-4 p-4 rounded-lg hover:bg-slate-50 transition">
-                            <input type="checkbox" class="todo-item mt-1.5 h-5 w-5 rounded-sm border-slate-300 text-blue-600 focus:ring-blue-500 cursor-pointer">
-                            <div>
-                                <h3 class="text-lg font-semibold text-slate-900 item-title">Join Team Communication Channels</h3>
-                                <p class="text-slate-500 text-sm mt-1">Log into Microsoft Teams and ensure your mobile device is added to the relevant department text groups to stay connected with your unit.</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start space-x-4 p-4 rounded-lg hover:bg-slate-50 transition">
-                            <input type="checkbox" class="todo-item mt-1.5 h-5 w-5 rounded-sm border-slate-300 text-blue-600 focus:ring-blue-500 cursor-pointer">
-                            <div>
-                                <h3 class="text-lg font-semibold text-slate-900 item-title">Complete KnowBe4 Security Awareness Training</h3>
-                                <p class="text-slate-500 text-sm mt-1">Log into your corporate email, find the automated invitation link from KnowBe4, and complete your baseline cybersecurity training modules.</p>
-                            </div>
-                        </div>
-                    </div>
+        <div class="mb-6">
+            <label for="directory-search" class="sr-only">Search Directory</label>
+            <div class="relative shadow-sm rounded-lg">
+                <div class="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none">
+                    <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                    </svg>
                 </div>
-            </div>
-
-            <div class="space-y-6">
-                <div class="bg-amber-50 border border-amber-200 rounded-xl p-6">
-                    <h3 class="text-xl font-bold text-amber-900 mb-3 flex items-center gap-2">
-                        ⚠️ Safety & EHS Resources
-                    </h3>
-                    <p class="text-amber-800 text-sm mb-4">
-                        Safety is our top priority. Please ensure you familiarize yourself with our facility policies on your first day.
-                    </p>
-                    <ul class="space-y-2 text-sm font-medium text-amber-900">
-                        <li><a href="#" class="underline hover:text-amber-700">📄 Incident Report Portal</a></li>
-                        <li><a href="https://www.geminiindustriesinc.com/product-pds-sds-search/" target="_blank" rel="noopener noreferrer" class="underline hover:text-amber-700">🦺 Product PDS & SDS Search</a></li>
-                        <li><a href="#" class="underline hover:text-amber-700">🚨 Emergency Action Plan</a></li>
-                        <li><a href="#" target="_blank" rel="noopener noreferrer" class="underline hover:text-amber-700">🎥 Safety Orientation Video</a></li>
-                        <li><a href="#" onclick="simulatePassingTest(event)" class="underline text-blue-700 hover:text-blue-900 font-bold">📝 Required Safety Test</a></li>
-                    </ul>
-                </div>
-
-                <div class="bg-white rounded-xl shadow-xs border border-slate-200 p-6">
-                    <h3 class="text-xl font-bold text-slate-900 mb-4">Essential Links</h3>
-                    <ul class="space-y-3">
-                        <li>
-                            <a href="https://www.geminiindustriesinc.com/" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between p-3 rounded-lg bg-slate-50 hover:bg-blue-50 transition">
-                                <span class="font-medium text-slate-700 group-hover:text-blue-700">Company Public Website</span>
-                                <span class="text-slate-400 group-hover:text-blue-600">→</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.geminiindustriesinc.com/inside-gemini/" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between p-3 rounded-lg bg-slate-50 hover:bg-blue-50 transition">
-                                <span class="font-medium text-slate-700 group-hover:text-blue-700">Inside Gemini</span>
-                                <span class="text-slate-400 group-hover:text-blue-600">→</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.geminiindustriesinc.com/employee-resources/" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between p-3 rounded-lg bg-slate-50 hover:bg-blue-50 transition">
-                                <span class="font-medium text-slate-700 group-hover:text-blue-700">Employee Resources</span>
-                                <span class="text-slate-400 group-hover:text-blue-600">→</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://10.1.1.42/assistics/index.jsp?menuKey=0" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between p-3 rounded-lg bg-slate-50 hover:bg-blue-50 transition">
-                                <span class="font-medium text-slate-700 group-hover:text-blue-700">Assistics</span>
-                                <span class="text-slate-400 group-hover:text-blue-600">→</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://10.1.1.60:8124/auth/login/page" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between p-3 rounded-lg bg-slate-50 hover:bg-blue-50 transition">
-                                <span class="font-medium text-slate-700 group-hover:text-blue-700">Sage X3</span>
-                                <span class="text-slate-400 group-hover:text-blue-600">→</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://tools.gemini-coatings.com/new/login.php?_gl=1*1auo44t*_gcl_au*MTU3MDkwNzQ1Mi4xNzgzNDU0ODU4" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between p-3 rounded-lg bg-slate-50 hover:bg-blue-50 transition">
-                                <span class="font-medium text-slate-700 group-hover:text-blue-700">Gemini Tools</span>
-                                <span class="text-slate-400 group-hover:text-blue-600">→</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://reports.gemini-coatings.com/jeff-netreportrunnerwebportal/login.aspx" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between p-3 rounded-lg bg-slate-50 hover:bg-blue-50 transition">
-                                <span class="font-medium text-slate-700 group-hover:text-blue-700">Report Runner</span>
-                                <span class="text-slate-400 group-hover:text-blue-600">→</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.paycomonline.net/v4/ee/web.php/app/login" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between p-3 rounded-lg bg-slate-50 hover:bg-blue-50 transition">
-                                <span class="font-medium text-slate-700 group-hover:text-blue-700">Paycom</span>
-                                <span class="text-slate-400 group-hover:text-blue-600">→</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="mailto:helpdesk@gemini-coatings.com?subject=IT Helpdesk Ticket Submission" class="group flex items-center justify-between p-3 rounded-lg bg-slate-50 hover:bg-blue-50 transition">
-                                <span class="font-medium text-slate-700 group-hover:text-blue-700">IT Ticket Submission</span>
-                                <span class="text-slate-400 group-hover:text-blue-600">→</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.concursolutions.com/" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between p-3 rounded-lg bg-slate-50 hover:bg-blue-50 transition">
-                                <span class="font-medium text-slate-700 group-hover:text-blue-700">SAP Concur Expenses</span>
-                                <span class="text-slate-400 group-hover:text-blue-600">→</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="bg-slate-900 rounded-xl p-6 text-white border border-slate-800">
-                    <h3 class="text-sm font-bold mb-4 flex items-center gap-2 text-blue-400">
-                        📁 Bookmark Folder Location
-                    </h3>
-                    
-                    <button id="copy-btn" onclick="copyNetworkPath()" class="w-full cursor-pointer bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-3 rounded-lg text-xs text-center transition mb-4">
-                        📋 Copy Folder Path
-                    </button>
-
-                    <div class="text-slate-400 text-xs space-y-2 border-t border-slate-800 pt-3">
-                        <p><strong class="text-slate-200">1.</strong> Press <kbd class="bg-slate-800 px-1 rounded text-slate-300 font-mono">Win + E</kbd> to open File Explorer.</p>
-                        <p><strong class="text-slate-200">2.</strong> Paste the path into the address bar at the top and press Enter.</p>
-                        <p><strong class="text-slate-200">3.</strong> Right-click <strong class="text-slate-300">Quick Access</strong> (or <strong class="text-slate-300">Home/Favorites</strong>) in the left sidebar and choose <span class="text-blue-400">"Pin current folder to Quick Access"</span>.</p>
-                    </div>
-                </div>
+                <input 
+                    type="search" 
+                    id="directory-search" 
+                    class="block w-full p-4 pl-11 text-base text-gray-900 border border-gray-300 rounded-lg bg-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all" 
+                    placeholder="Search by name, department, location, or extension..." 
+                    onkeyup="filterDirectory()"
+                    autocomplete="off"
+                >
             </div>
         </div>
 
-        <!-- Master Global Search Phone Directory Section -->
-        <div class="bg-white rounded-xl shadow-xs border border-slate-200 p-6">
-            <div class="border-b border-slate-100 pb-4 mb-5">
-                <h2 class="text-xl font-bold text-slate-900">Corporate & Sales Phone Directory</h2>
-                <p class="text-slate-500 text-xs mt-1">Search instantly across all corporate locations, branches, executive lines, and field sales teams.</p>
-            </div>
-            
-            <div class="relative mb-6">
-                <input type="text" id="directory-search" onkeyup="filterDirectory()" placeholder="Type a name, region, title, phone number or extension to filter..." class="w-full pl-4 pr-10 py-3 border border-slate-300 rounded-lg focus:outline-hidden focus:ring-2 focus:ring-blue-500 text-sm bg-slate-50/50 shadow-xs font-medium">
-                <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none text-slate-400">
-                    🔍
-                </div>
-            </div>
-
-            <div class="overflow-x-auto border border-slate-100 rounded-lg">
-                <table class="min-w-full divide-y divide-slate-200 text-sm text-left">
-                    <thead class="bg-slate-50 text-slate-600 font-semibold uppercase text-xs tracking-wider">
-                        <tr>
-                            <th scope="col" class="px-6 py-3">Contact Name</th>
-                            <th scope="col" class="px-6 py-3">Group / Location Tag</th>
-                            <th scope="col" class="px-6 py-3">Number / Extension</th>
-                        </tr>
-                    </thead>
-                    <tbody id="directory-body" class="divide-y divide-slate-200 text-slate-700 bg-white">
-                        
-                        <!-- EXECUTIVE TEAM -->
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="executive">
-                            <td class="px-6 py-4 font-medium text-slate-900">Chris Hicks</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-900 text-slate-100">Executive Team</span></td>
-                            <td class="px-6 py-4 font-mono text-slate-600">(817) 247-9696</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="executive">
-                            <td class="px-6 py-4 font-medium text-slate-900">Rodney Wickersham</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-900 text-slate-100">Executive Team</span></td>
-                            <td class="px-6 py-4 font-mono text-slate-600">(405) 834-1210</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="executive">
-                            <td class="px-6 py-4 font-medium text-slate-900">Jason Melton</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-900 text-slate-100">Executive Team</span></td>
-                            <td class="px-6 py-4 font-mono text-slate-600">(405) 664-7901</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="executive">
-                            <td class="px-6 py-4 font-medium text-slate-900">Jenny Cripps</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-900 text-slate-100">Executive Team</span></td>
-                            <td class="px-6 py-4 font-mono text-slate-600">(405) 827-6209</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="executive">
-                            <td class="px-6 py-4 font-medium text-slate-900">Bob Bein</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-900 text-slate-100">Executive Team</span></td>
-                            <td class="px-6 py-4 font-mono text-slate-600">(516) 639-4331</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="executive">
-                            <td class="px-6 py-4 font-medium text-slate-900">David Potter</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-900 text-slate-100">Executive Team</span></td>
-                            <td class="px-6 py-4 font-mono text-slate-600">(630) 715-9425</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="executive">
-                            <td class="px-6 py-4 font-medium text-slate-900">Marti Canida</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-900 text-slate-100">Executive Team</span></td>
-                            <td class="px-6 py-4 font-mono text-slate-600">(405) 694-5945</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="executive">
-                            <td class="px-6 py-4 font-medium text-slate-900">Kevin Laughlin</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-900 text-slate-100">Executive Team</span></td>
-                            <td class="px-6 py-4 font-mono text-slate-600">(774) 764-7564</td>
-                        </tr>
-
-                        <!-- INSIDE SALES / CUSTOMER SERVICE -->
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="inside-sales">
-                            <td class="px-6 py-4 font-medium text-slate-900">Eric Palmer (OK)</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-sky-50 text-sky-800">Customer Service / Inside Sales</span></td>
-                            <td class="px-6 py-4 font-mono text-slate-600">(405) 345-2017</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="inside-sales">
-                            <td class="px-6 py-4 font-medium text-slate-900">Tim Strohsnitter (NY)</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-sky-50 text-sky-800">Customer Service / Inside Sales</span></td>
-                            <td class="px-6 py-4 font-mono text-slate-600">(516) 650-2213</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="inside-sales">
-                            <td class="px-6 py-4 font-medium text-slate-900">Danielle Waddle (OK)</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-sky-50 text-sky-800">Customer Service / Inside Sales</span></td>
-                            <td class="px-6 py-4 font-mono text-slate-600">(405) 345-2003</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="inside-sales">
-                            <td class="px-6 py-4 font-medium text-slate-900">Haylee Hunt (OK)</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-sky-50 text-sky-800">Customer Service / Inside Sales</span></td>
-                            <td class="px-6 py-4 font-mono text-slate-600">(405) 345-2013</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="inside-sales">
-                            <td class="px-6 py-4 font-medium text-slate-900">Jamie Gulickson (OK)</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-sky-50 text-sky-800">Customer Service / Inside Sales</span></td>
-                            <td class="px-6 py-4 font-mono text-slate-600">(405) 345-2005</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="inside-sales">
-                            <td class="px-6 py-4 font-medium text-slate-900">Carly McCaslin (OK)</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-sky-50 text-sky-800">Customer Service / Inside Sales</span></td>
-                            <td class="px-6 py-4 font-mono text-slate-600">(405) 345-2014</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="inside-sales">
-                            <td class="px-6 py-4 font-medium text-slate-900">Nao Vang (WA)</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-sky-50 text-sky-800">Customer Service / Inside Sales</span></td>
-                            <td class="px-6 py-4 font-mono text-slate-600">(405) 345-2313</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="inside-sales">
-                            <td class="px-6 py-4 font-medium text-slate-900">Tori Brite (OK)</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-sky-50 text-sky-800">Customer Service / Inside Sales</span></td>
-                            <td class="px-6 py-4 font-mono text-slate-600">(405) 345-2012</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="inside-sales">
-                            <td class="px-6 py-4 font-medium text-slate-900">Baylee Williams (OK)</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-sky-50 text-sky-800">Customer Service / Inside Sales</span></td>
-                            <td class="px-6 py-4 font-mono text-slate-600">(405) 345-2033</td>
-                        </tr>
-
-                        <!-- GEMINI SALESMEN -->
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="salesmen">
-                            <td class="px-6 py-4 font-medium text-slate-900">Albert Flores</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-blue-50 text-blue-700">Gemini Salesmen</span></td>
-                            <td class="px-6 py-4 font-mono text-slate-600">(626) 533-2178</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="salesmen">
-                            <td class="px-6 py-4 font-medium text-slate-900">Albert Rodriguez</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-blue-50 text-blue-700">Gemini Salesmen</span></td>
-                            <td class="px-6 py-4 font-mono text-slate-600">(469) 571-1065</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="salesmen">
-                            <td class="px-6 py-4 font-medium text-slate-900">Anah Goryl</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-blue-50 text-blue-700">Gemini Salesmen</span></td>
-                            <td class="px-6 py-4 font-mono text-slate-600">(920) 420-5405</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="salesmen">
-                            <td class="px-6 py-4 font-medium text-slate-900">Billy Huse</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-blue-50 text-blue-700">Gemini Salesmen</span></td>
-                            <td class="px-6 py-4 font-mono text-slate-600">(405) 702-2257</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="salesmen">
-                            <td class="px-6 py-4 font-medium text-slate-900">Brett Burrows</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-blue-50 text-blue-700">Gemini Salesmen</span></td>
-                            <td class="px-6 py-4 font-mono text-slate-600">(626) 826-2786</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="salesmen">
-                            <td class="px-6 py-4 font-medium text-slate-900">Brian Hansen</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-blue-50 text-blue-700">Gemini Salesmen</span></td>
-                            <td class="px-6 py-4 font-mono text-slate-600">(817) 715-6107</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="salesmen">
-                            <td class="px-6 py-4 font-medium text-slate-900">Brian Hilton</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-blue-50 text-blue-700">Gemini Salesmen</span></td>
-                            <td class="px-6 py-4 font-mono text-slate-600">(913) 201-2555</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="salesmen">
-                            <td class="px-6 py-4 font-medium text-slate-900">Carla Zenn</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-blue-50 text-blue-700">Gemini Salesmen</span></td>
-                            <td class="px-6 py-4 font-mono text-slate-600">(469) 815-3708</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="salesmen">
-                            <td class="px-6 py-4 font-medium text-slate-900">Chris Marban</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-blue-50 text-blue-700">Gemini Salesmen</span></td>
-                            <td class="px-6 py-4 font-mono text-slate-600">(480) 868-6517</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="salesmen">
-                            <td class="px-6 py-4 font-medium text-slate-900">Christy Norton</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-blue-50 text-blue-700">Gemini Salesmen</span></td>
-                            <td class="px-6 py-4 font-mono text-slate-600">(816) 682-7233</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="salesmen">
-                            <td class="px-6 py-4 font-medium text-slate-900">David Hopkins</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-blue-50 text-blue-700">Gemini Salesmen</span></td>
-                            <td class="px-6 py-4 font-mono text-slate-600">(469) 670-7254</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="salesmen">
-                            <td class="px-6 py-4 font-medium text-slate-900">Dean Orteig</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-blue-50 text-blue-700">Gemini Salesmen</span></td>
-                            <td class="px-6 py-4 font-mono text-slate-600">(206) 550-1821</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="salesmen">
-                            <td class="px-6 py-4 font-medium text-slate-900">Dustin McCartney</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-blue-50 text-blue-700">Gemini Salesmen</span></td>
-                            <td class="px-6 py-4 font-mono text-slate-600">(786) 914-2707</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="salesmen">
-                            <td class="px-6 py-4 font-medium text-slate-900">Germain Sanchez</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-blue-50 text-blue-700">Gemini Salesmen</span></td>
-                            <td class="px-6 py-4 font-mono text-slate-600">(559) 552-3343</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="salesmen">
-                            <td class="px-6 py-4 font-medium text-slate-900">Greg McCorkindale</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-blue-50 text-blue-700">Gemini Salesmen</span></td>
-                            <td class="px-6 py-4 font-mono text-slate-600">(252) 470-8718</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="salesmen">
-                            <td class="px-6 py-4 font-medium text-slate-900">Jarrad Biffinger</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-blue-50 text-blue-700">Gemini Salesmen</span></td>
-                            <td class="px-6 py-4 font-mono text-slate-600">(413) 531-6522</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="salesmen">
-                            <td class="px-6 py-4 font-medium text-slate-900">Jeremy Farmer</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-blue-50 text-blue-700">Gemini Salesmen</span></td>
-                            <td class="px-6 py-4 font-mono text-slate-600">(913) 249-5132</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="salesmen">
-                            <td class="px-6 py-4 font-medium text-slate-900">Joey Harrison</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-blue-50 text-blue-700">Gemini Salesmen</span></td>
-                            <td class="px-6 py-4 font-mono text-slate-600">(305) 968-9821</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="salesmen">
-                            <td class="px-6 py-4 font-medium text-slate-900">John Toole</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-blue-50 text-blue-700">Gemini Salesmen</span></td>
-                            <td class="px-6 py-4 font-mono text-slate-600">(404) 710-2758</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="salesmen">
-                            <td class="px-6 py-4 font-medium text-slate-900">Julie Russell</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-blue-50 text-blue-700">Gemini Salesmen</span></td>
-                            <td class="px-6 py-4 font-mono text-slate-600">(206) 445-2646</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="salesmen">
-                            <td class="px-6 py-4 font-medium text-slate-900">Kirby Smith</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-blue-50 text-blue-700">Gemini Salesmen</span></td>
-                            <td class="px-6 py-4 font-mono text-slate-600">(256) 440-9304</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="salesmen">
-                            <td class="px-6 py-4 font-medium text-slate-900">Larry Moore</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-blue-50 text-blue-700">Gemini Salesmen</span></td>
-                            <td class="px-6 py-4 font-mono text-slate-600">(303) 720-0434</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="salesmen">
-                            <td class="px-6 py-4 font-medium text-slate-900">Lon Vaughn</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-blue-50 text-blue-700">Gemini Salesmen</span></td>
-                            <td class="px-6 py-4 font-mono text-slate-600">(206) 979-0431</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="salesmen">
-                            <td class="px-6 py-4 font-medium text-slate-900">Madison Howard</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-blue-50 text-blue-700">Gemini Salesmen</span></td>
-                            <td class="px-6 py-4 font-mono text-slate-600">(205) 223-9994</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="salesmen">
-                            <td class="px-6 py-4 font-medium text-slate-900">Mark Baltzley</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-blue-50 text-blue-700">Gemini Salesmen</span></td>
-                            <td class="px-6 py-4 font-mono text-slate-600">(515) 620-9673</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="salesmen">
-                            <td class="px-6 py-4 font-medium text-slate-900">Michael McCully</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-blue-50 text-blue-700">Gemini Salesmen</span></td>
-                            <td class="px-6 py-4 font-mono text-slate-600">(219) 869-8312</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="salesmen">
-                            <td class="px-6 py-4 font-medium text-slate-900">Michael Griffin</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-blue-50 text-blue-700">Gemini Salesmen</span></td>
-                            <td class="px-6 py-4 font-mono text-slate-600">(620) 779-0669</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="salesmen">
-                            <td class="px-6 py-4 font-medium text-slate-900">Michael Mulvenna</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-blue-50 text-blue-700">Gemini Salesmen</span></td>
-                            <td class="px-6 py-4 font-mono text-slate-600">(317) 373-3666</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="salesmen">
-                            <td class="px-6 py-4 font-medium text-slate-900">Mike Arndt</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-blue-50 text-blue-700">Gemini Salesmen</span></td>
-                            <td class="px-6 py-4 font-mono text-slate-600">(612) 868-1904</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="salesmen">
-                            <td class="px-6 py-4 font-medium text-slate-900">Mike Green</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-blue-50 text-blue-700">Gemini Salesmen</span></td>
-                            <td class="px-6 py-4 font-mono text-slate-600">(405) 550-3076</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="salesmen">
-                            <td class="px-6 py-4 font-medium text-slate-900">Pat Abernethy</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-blue-50 text-blue-700">Gemini Salesmen</span></td>
-                            <td class="px-6 py-4 font-mono text-slate-600">(541) 816-8982</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="salesmen">
-                            <td class="px-6 py-4 font-medium text-slate-900">Paul Korytkowski</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-blue-50 text-blue-700">Gemini Salesmen</span></td>
-                            <td class="px-6 py-4 font-mono text-slate-600">(347) 967-6334</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="salesmen">
-                            <td class="px-6 py-4 font-medium text-slate-900">Randell Burd</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-blue-50 text-blue-700">Gemini Salesmen</span></td>
-                            <td class="px-6 py-4 font-mono text-slate-600">(412) 627-9260</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="salesmen">
-                            <td class="px-6 py-4 font-medium text-slate-900">Rich Ruiz</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-blue-50 text-blue-700">Gemini Salesmen</span></td>
-                            <td class="px-6 py-4 font-mono text-slate-600">(631) 459-6096</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="salesmen">
-                            <td class="px-6 py-4 font-medium text-slate-900">Rob Dolman</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-blue-50 text-blue-700">Gemini Salesmen</span></td>
-                            <td class="px-6 py-4 font-mono text-slate-600">(405) 641-7390</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="salesmen">
-                            <td class="px-6 py-4 font-medium text-slate-900">Syd Light</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-blue-50 text-blue-700">Gemini Salesmen</span></td>
-                            <td class="px-6 py-4 font-mono text-slate-600">(954) 729-1246</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="salesmen">
-                            <td class="px-6 py-4 font-medium text-slate-900">Tyler Due</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-blue-50 text-blue-700">Gemini Salesmen</span></td>
-                            <td class="px-6 py-4 font-mono text-slate-600">(707) 344-2837</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="salesmen">
-                            <td class="px-6 py-4 font-medium text-slate-900">Tyler Stutts</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-blue-50 text-blue-700">Gemini Salesmen</span></td>
-                            <td class="px-6 py-4 font-mono text-slate-600">(817) 876-5111</td>
-                        </tr>
-
-                        <!-- F-H & ASSOCIATES -->
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="fh-associates">
-                            <td class="px-6 py-4 font-medium text-slate-900">Jonathan Nunez</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-purple-50 text-purple-700">F-H & Associates (San Antonio/Houston)</span></td>
-                            <td class="px-6 py-4 font-mono text-slate-600">(210) 722-4093</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="fh-associates">
-                            <td class="px-6 py-4 font-medium text-slate-900">AR Brown</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-purple-50 text-purple-700">F-H & Associates (Austin)</span></td>
-                            <td class="px-6 py-4 font-mono text-slate-600">(512) 422-4802</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="fh-associates">
-                            <td class="px-6 py-4 font-medium text-slate-900">Betsy Valente</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-purple-50 text-purple-700">F-H & Associates (Coastal)</span></td>
-                            <td class="px-6 py-4 font-mono text-slate-600">(713) 876-3093</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="fh-associates">
-                            <td class="px-6 py-4 font-medium text-slate-900">Brent Shouse</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-purple-50 text-purple-700">F-H & Associates (OK/AR)</span></td>
-                            <td class="px-6 py-4 font-mono text-slate-600">(405) 423-1344</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="fh-associates">
-                            <td class="px-6 py-4 font-medium text-slate-900">Bruce Smoot</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-purple-50 text-purple-700">F-H & Associates (Houston-North)</span></td>
-                            <td class="px-6 py-4 font-mono text-slate-600">(832) 704-9091</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="fh-associates">
-                            <td class="px-6 py-4 font-medium text-slate-900">Carrie Hicks</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-purple-50 text-purple-700">F-H & Associates (Finance)</span></td>
-                            <td class="px-6 py-4 font-mono text-slate-600">(817) 946-4617</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="fh-associates">
-                            <td class="px-6 py-4 font-medium text-slate-900">Caleb Holt</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-purple-50 text-purple-700">F-H & Associates (Corp Office)</span></td>
-                            <td class="px-6 py-4 font-mono text-slate-600">(214) 597-9073</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="fh-associates">
-                            <td class="px-6 py-4 font-medium text-slate-900">Jamie Holt</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-purple-50 text-purple-700">F-H & Associates (Owner)</span></td>
-                            <td class="px-6 py-4 font-mono text-slate-600">(469) 867-0618</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="fh-associates">
-                            <td class="px-6 py-4 font-medium text-slate-900">JC Cornia</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-purple-50 text-purple-700">F-H & Associates (West TX/Mid-Tex)</span></td>
-                            <td class="px-6 py-4 font-mono text-slate-600">(817) 709-4126</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="fh-associates">
-                            <td class="px-6 py-4 font-medium text-slate-900">Ron Denne</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-purple-50 text-purple-700">F-H & Associates (North to OK Border)</span></td>
-                            <td class="px-6 py-4 font-mono text-slate-600">(972) 832-5050</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="fh-associates">
-                            <td class="px-6 py-4 font-medium text-slate-900">Roy Young</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-purple-50 text-purple-700">F-H & Associates (Houston/Louisiana)</span></td>
-                            <td class="px-6 py-4 font-mono text-slate-600">(713) 494-6028</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="fh-associates">
-                            <td class="px-6 py-4 font-medium text-slate-900">Shannon Holt</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-purple-50 text-purple-700">F-H & Associates (General Manager)</span></td>
-                            <td class="px-6 py-4 font-mono text-slate-600">(469) 569-7783</td>
-                        </tr>
-
-                        <!-- INDEPENDENT SALES REPRESENTATIVES -->
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="independent-sales">
-                            <td class="px-6 py-4 font-medium text-slate-900">Bill Bratton</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-amber-100 text-amber-900">Independent Sales Rep</span></td>
-                            <td class="px-6 py-4 font-mono text-slate-600">(417) 425-2559</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="independent-sales">
-                            <td class="px-6 py-4 font-medium text-slate-900">Rogelio Garza</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-amber-100 text-amber-900">Independent Sales Rep</span></td>
-                            <td class="px-6 py-4 font-mono text-slate-600">(477) 580-0597</td>
-                        </tr>
-
-                        <!-- EL RENO EXTENSIONS -->
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
-                            <td class="px-6 py-4 font-medium text-slate-900">Adam Stevenson</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2065</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
-                            <td class="px-6 py-4 font-medium text-slate-900">Amy McClain</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2061</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
-                            <td class="px-6 py-4 font-medium text-slate-900">Anthony Golriz</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2302</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
-                            <td class="px-6 py-4 font-medium text-slate-900">Austin Ferguson</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2075</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
-                            <td class="px-6 py-4 font-medium text-slate-900">Austin Area / Bryan / College Station</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Sales Region</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Fax: (972) 394-2811</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
-                            <td class="px-6 py-4 font-medium text-slate-900">Brandon Bosler</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2032</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
-                            <td class="px-6 py-4 font-medium text-slate-900">Brandon Murray</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2063</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
-                            <td class="px-6 py-4 font-medium text-slate-900">Brannon Townsend</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 3712</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
-                            <td class="px-6 py-4 font-medium text-slate-900">Brent Cooksey</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2024</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
-                            <td class="px-6 py-4 font-medium text-slate-900">Brett Hawkins</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2039</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
-                            <td class="px-6 py-4 font-medium text-slate-900">Catherine Wright</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2307</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
-                            <td class="px-6 py-4 font-medium text-slate-900">Chad Hubbard</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2064</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
-                            <td class="px-6 py-4 font-medium text-slate-900">Clayton Frizzell</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2308</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
-                            <td class="px-6 py-4 font-medium text-slate-900">Conference Room (El Reno)</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Facility</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2069</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
-                            <td class="px-6 py-4 font-medium text-slate-900">Curtis Roach</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2048</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
-                            <td class="px-6 py-4 font-medium text-slate-900">David Jackson</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2054</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
-                            <td class="px-6 py-4 font-medium text-slate-900">David Smith</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2317</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
-                            <td class="px-6 py-4 font-medium text-slate-900">Devan Moschella</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2312</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
-                            <td class="px-6 py-4 font-medium text-slate-900">Harmon Ray</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2016</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
-                            <td class="px-6 py-4 font-medium text-slate-900">I.T. Department</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Operations</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2300</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
-                            <td class="px-6 py-4 font-medium text-slate-900">Jacob Archer</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2306</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
-                            <td class="px-6 py-4 font-medium text-slate-900">Jeffrey Thomas</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2067</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
-                            <td class="px-6 py-4 font-medium text-slate-900">Jennifer Awbrey</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2040</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
-                            <td class="px-6 py-4 font-medium text-slate-900">Jennifer Sorrels</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2036</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
-                            <td class="px-6 py-4 font-medium text-slate-900">John Broyles</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2052</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
-                            <td class="px-6 py-4 font-medium text-slate-900">Katherine Newsome</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2015</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
-                            <td class="px-6 py-4 font-medium text-slate-900">Kelly Lawrence</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2305</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
-                            <td class="px-6 py-4 font-medium text-slate-900">Kevin Cloyd</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2043</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
-                            <td class="px-6 py-4 font-medium text-slate-900">Klay Turk</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2009</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
-                            <td class="px-6 py-4 font-medium text-slate-900">Larry Blevins</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2051</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
-                            <td class="px-6 py-4 font-medium text-slate-900">Lea Cole</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2030</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
-                            <td class="px-6 py-4 font-medium text-slate-900">Marie Stevens</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2057</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
-                            <td class="px-6 py-4 font-medium text-slate-900">Mark Newman</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2049</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
-                            <td class="px-6 py-4 font-medium text-slate-900">Matt Peterman</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2068</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
-                            <td class="px-6 py-4 font-medium text-slate-900">Maygan Mitchell</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2315</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
-                            <td class="px-6 py-4 font-medium text-slate-900">Michael Boblit</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2035</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
-                            <td class="px-6 py-4 font-medium text-slate-900">Natalie Evans</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2044</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
-                            <td class="px-6 py-4 font-medium text-slate-900">Natalie Palmer</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2073</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
-                            <td class="px-6 py-4 font-medium text-slate-900">Nathan Stutler</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 3720</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
-                            <td class="px-6 py-4 font-medium text-slate-900">Patrick Fees</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2303</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
-                            <td class="px-6 py-4 font-medium text-slate-900">Q. A.</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Operations</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2038</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
-                            <td class="px-6 py-4 font-medium text-slate-900">Receiving (El Reno)</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Logistic</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2006</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
-                            <td class="px-6 py-4 font-medium text-slate-900">Rees Nelson</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2042</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
-                            <td class="px-6 py-4 font-medium text-slate-900">Richard Gulickson</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2045</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
-                            <td class="px-6 py-4 font-medium text-slate-900">Scott Rott</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2066</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
-                            <td class="px-6 py-4 font-medium text-slate-900">Shane Darnell</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2022</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
-                            <td class="px-6 py-4 font-medium text-slate-900">Shawnee Jones</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2076</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
-                            <td class="px-6 py-4 font-medium text-slate-900">Shweta Sajish</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2318</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
-                            <td class="px-6 py-4 font-medium text-slate-900">Terra Awbrey</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2053</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
-                            <td class="px-6 py-4 font-medium text-slate-900">Vickie Scharp</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2026</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
-                            <td class="px-6 py-4 font-medium text-slate-900">William Barnes</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 3722</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
-                            <td class="px-6 py-4 font-medium text-slate-900">Vanessa Blevins</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2071</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
-                            <td class="px-6 py-4 font-medium text-slate-900">Zakry Rios</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2320</td>
-                        </tr>
-
-                        <!-- VIRGINIA (GREEN) -->
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="virginia">
-                            <td class="px-6 py-4 font-medium text-slate-900">Brandon McMillan</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-green-50 text-green-700">Virginia</span> Site</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2152</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="virginia">
-                            <td class="px-6 py-4 font-medium text-slate-900">Breakroom (Virginia)</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-green-50 text-green-700">Virginia</span> Breakroom</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 4023</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="virginia">
-                            <td class="px-6 py-4 font-medium text-slate-900">Sergio Estela-Zevala</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-green-50 text-green-700">Virginia</span> Site</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 4018</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="virginia">
-                            <td class="px-6 py-4 font-medium text-slate-900">Scott McAvoy</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-green-50 text-green-700">Virginia</span> Site</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 4021</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="virginia">
-                            <td class="px-6 py-4 font-medium text-slate-900">VA Customer Service</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-green-50 text-green-700">Virginia</span> Support</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 4010</td>
-                        </tr>
-
-                        <!-- GRAND PRAIRIE (PURPLE) -->
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="grand-prairie">
-                            <td class="px-6 py-4 font-medium text-slate-900">Andres Cruz</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-purple-50 text-purple-700">Grand Prairie</span> Site</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 5108</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="grand-prairie">
-                            <td class="px-6 py-4 font-medium text-slate-900">Cecilia Jaimes</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-purple-50 text-purple-700">Grand Prairie</span> Site</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 5130</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="grand-prairie">
-                            <td class="px-6 py-4 font-medium text-slate-900">GP Front Desk</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-purple-50 text-purple-700">Grand Prairie</span> Desk</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 5107</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="grand-prairie">
-                            <td class="px-6 py-4 font-medium text-slate-900">GP QC</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-purple-50 text-purple-700">Grand Prairie</span> Quality</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 5113</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="grand-prairie">
-                            <td class="px-6 py-4 font-medium text-slate-900">GP QC 2</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-purple-50 text-purple-700">Grand Prairie</span> Quality</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 5120</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="grand-prairie">
-                            <td class="px-6 py-4 font-medium text-slate-900">GP Conference</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-purple-50 text-purple-700">Grand Prairie</span> Conf</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 5112</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="grand-prairie">
-                            <td class="px-6 py-4 font-medium text-slate-900">John Casillas</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-purple-50 text-purple-700">Grand Prairie</span> Site</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 3715</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="grand-prairie">
-                            <td class="px-6 py-4 font-medium text-slate-900">Martin Negrete</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-purple-50 text-purple-700">Grand Prairie</span> Site</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 5115</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="grand-prairie">
-                            <td class="px-6 py-4 font-medium text-slate-900">Marvin John</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-purple-50 text-purple-700">Grand Prairie</span> Site</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 5123</td>
-                        </tr>
-
-                        <!-- SPARKS (RED) -->
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="sparks">
-                            <td class="px-6 py-4 font-medium text-slate-900">Keith Jones</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-red-50 text-red-700">Sparks</span> Site</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 7000</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="sparks">
-                            <td class="px-6 py-4 font-medium text-slate-900">Steven Garza</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-red-50 text-red-700">Sparks</span> Site</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 8000</td>
-                        </tr>
-
-                        <!-- HOLBROOK (BLUE) -->
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="holbrook">
-                            <td class="px-6 py-4 font-medium text-slate-900">Holbrook Main</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-blue-50 text-blue-700">Holbrook</span> Main</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 5803</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="holbrook">
-                            <td class="px-6 py-4 font-medium text-slate-900">Holbrook Shipping</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-blue-50 text-blue-700">Holbrook</span> Shipping</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 5805</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="holbrook">
-                            <td class="px-6 py-4 font-medium text-slate-900">Jason Williams</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-blue-50 text-blue-700">Holbrook</span> Staff</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 5806</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="holbrook">
-                            <td class="px-6 py-4 font-medium text-slate-900">Nick Alles</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-blue-50 text-blue-700">Holbrook</span> Staff</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 5807</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="holbrook">
-                            <td class="px-6 py-4 font-medium text-slate-900">Nick Minichello</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-blue-50 text-blue-700">Holbrook</span> Staff</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 5805</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="holbrook">
-                            <td class="px-6 py-4 font-medium text-slate-900">Tia Johnson</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-blue-50 text-blue-700">Holbrook</span> Staff</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 5117</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="holbrook">
-                            <td class="px-6 py-4 font-medium text-slate-900">Rings All Phones</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-blue-50 text-blue-700">Holbrook</span> Alert</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 5816</td>
-                        </tr>
-
-                        <!-- MAINTENANCE -->
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="maintenance">
-                            <td class="px-6 py-4 font-medium text-slate-900">Lonnie Gresham</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-amber-50 text-amber-800">Maintenance</span> Team</td>
-                            <td class="px-6 py-4 text-slate-400 font-mono">Mobile Listing Only</td>
-                        </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="maintenance">
-                            <td class="px-6 py-4 font-medium text-slate-900">Juan Garcia</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-amber-50 text-amber-800">Maintenance</span> Team</td>
-                            <td class="px-6 py-4 text-slate-400 font-mono">Mobile Listing Only</td>
-                        </tr>
-
-                        <!-- REMOTE -->
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="remote">
-                            <td class="px-6 py-4 font-medium text-slate-900">Bryce Sanders</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-teal-50 text-teal-700">Remote</span> User</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2498</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            
-            <div id="no-results" class="hidden text-center py-8 text-slate-400 text-sm font-medium">
-                No matching directory entries found. Try checking spelling or using a broader term.
+        <div id="directory-results" class="space-y-3">
+            <div class="p-6 text-center bg-white rounded-lg border border-gray-200 shadow-sm text-gray-500">
+                <svg class="w-12 h-12 mx-auto text-gray-300 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                </svg>
+                <p class="text-base font-medium text-gray-700">Ready to search</p>
+                <p class="text-sm text-gray-400 mt-1">Type a team member's name, city, or extension above.</p>
             </div>
         </div>
-    </main>
-
-    <footer class="bg-white border-t border-slate-200 mt-20 py-6 text-center text-sm text-slate-400">
-        &copy; 2026 Corporate Internal Portal. All rights reserved.
-    </footer>
+    </div>
 
     <script>
-        // --- Progress Tracker Logic ---
-        const checkboxes = document.querySelectorAll('.todo-item');
-        const progressBar = document.getElementById('progress-bar');
-        const progressText = document.getElementById('progress-text');
+        // Master contact data compiled from company records
+        const phoneDirectory = [
+            // Core Corporate / Support Units
+            { name: "I.T. Department", phone: "2300", type: "Extension", location: "El Reno - Corporate" },
+            { name: "Human Resources (Marti Canida)", phone: "2028", type: "Extension", location: "El Reno - Corporate" },
+            { name: "Executive (Chris Hicks)", phone: "(817) 247-9696", type: "Mobile", location: "Executive Team" },
+            { name: "Executive (Rodney Wickersham)", phone: "(405) 834-1210", type: "Mobile", location: "Executive Team" },
+            { name: "Executive (Jason Melton)", phone: "(405) 664-7901", type: "Mobile", location: "Executive Team" },
+            { name: "Executive (Jenny Cripps)", phone: "(405) 827-6209", type: "Mobile", location: "Executive Team" },
+            
+            // Oklahoma Personnel / Operations (El Reno)
+            { name: "Adam Stevenson", phone: "2065", type: "Extension", location: "El Reno" },
+            { name: "Amy McClain", phone: "2061", type: "Extension", location: "El Reno" },
+            { name: "Austin Ferguson", phone: "2075", type: "Extension", location: "El Reno" },
+            { name: "Baylee Williams", phone: "2033", type: "Extension", location: "El Reno" },
+            { name: "Bradey Burge", phone: "2007", type: "Extension", location: "El Reno" },
+            { name: "Brandon Bosler", phone: "2032", type: "Extension", location: "El Reno" },
+            { name: "Brandon McMillan", phone: "2152", type: "Extension", location: "El Reno" },
+            { name: "Brandon Murray", phone: "2063", type: "Extension", location: "El Reno" },
+            { name: "Carly McCaslin", phone: "2014", type: "Extension", location: "El Reno" },
+            { name: "Chad Hubbard", phone: "2064", type: "Extension", location: "El Reno" },
+            { name: "Conference Room (El Reno)", phone: "2069", type: "Extension", location: "El Reno" },
+            { name: "Danielle Waddle", phone: "2003", type: "Extension", location: "El Reno" },
+            { name: "David Jackson", phone: "2054", type: "Extension", location: "El Reno" },
+            { name: "Haylee Hunt", phone: "2013", type: "Extension", location: "El Reno" },
+            { name: "Jacob Archer", phone: "2306", type: "Extension", location: "El Reno" },
+            { name: "Jamie Gulickson", phone: "2005", type: "Extension", location: "El Reno" },
+            { name: "Jeff Williams", phone: "2072", type: "Extension", location: "El Reno" },
+            { name: "Jeffrey Thomas", phone: "2067", type: "Extension", location: "El Reno" },
+            { name: "Jennifer Awbrey", phone: "2040", type: "Extension", location: "El Reno" },
+            { name: "Jennifer Sorrels", phone: "2036", type: "Extension", location: "El Reno" },
+            { name: "John Broyles", phone: "2052", type: "Extension", location: "El Reno" },
+            { name: "Katherine Newsome", phone: "2015", type: "Extension", location: "El Reno" },
+            { name: "Klay Turk", phone: "2009", type: "Extension", location: "El Reno" },
+            { name: "Marie Stevens", phone: "2057", type: "Extension", location: "El Reno" },
+            { name: "Mark Newman", phone: "2049", type: "Extension", location: "El Reno" },
+            { name: "Matt Peterman", phone: "2068", type: "Extension", location: "El Reno" },
+            { name: "Maygan Mitchell", phone: "2315", type: "Extension", location: "El Reno" },
+            { name: "Michael Boblit", phone: "2035", type: "Extension", location: "El Reno" },
+            { name: "Nao Vang", phone: "2313", type: "Extension", location: "El Reno" },
+            { name: "Natalie Evans", phone: "2044", type: "Extension", location: "El Reno" },
+            { name: "Receiving (El Reno)", phone: "2006", type: "Extension", location: "El Reno" },
+            { name: "Scott Rott", phone: "2066", type: "Extension", location: "El Reno" },
+            { name: "Terra Awbrey", phone: "2053", type: "Extension", location: "El Reno" },
+            { name: "Tori Brite", phone: "2012", type: "Extension", location: "El Reno" },
+            { name: "Vanessa Blevins", phone: "2071", type: "Extension", location: "El Reno" },
+            { name: "Vickie Scharp", phone: "2026", type: "Extension", location: "El Reno" },
+            { name: "Zakry Rios", phone: "2320", type: "Extension", location: "El Reno" },
 
-        function updateProgress() {
-            const total = checkboxes.length;
-            const checked = document.querySelectorAll('.todo-item:checked').length;
-            const percentage = Math.round((checked / total) * 100);
+            // Grand Prairie Location (GP)
+            { name: "Andres Cruz", phone: "5108", type: "Extension", location: "Grand Prairie" },
+            { name: "Anthony Golriz", phone: "2302", type: "Extension", location: "Grand Prairie" },
+            { name: "Brian Hansen", phone: "5110", type: "Extension", location: "Grand Prairie" },
+            { name: "GP Front Desk", phone: "5107", type: "Extension", location: "Grand Prairie" },
+            { name: "GP Conference Room", phone: "5112", type: "Extension", location: "Grand Prairie" },
+            { name: "GP QC Lab", phone: "5113", type: "Extension", location: "Grand Prairie" },
+            { name: "GP QC Office 2", phone: "5120", type: "Extension", location: "Grand Prairie" },
+            { name: "John Casillas", phone: "3715", type: "Extension", location: "Grand Prairie" },
+            { name: "Martin Negrete", phone: "5115", type: "Extension", location: "Grand Prairie" },
+            { name: "Mike Boyd", phone: "5122", type: "Extension", location: "Grand Prairie" },
 
-            progressBar.style.width = `${percentage}%`;
-            progressText.innerText = `${percentage}% Completed`;
+            // Holbrook Location
+            { name: "Holbrook Main Desk", phone: "5800", type: "Extension", location: "Holbrook" },
+            { name: "Holbrook Shipping", phone: "5806", type: "Extension", location: "Holbrook" },
+            { name: "Larry Blevins", phone: "4010", type: "Extension", location: "Holbrook" },
 
-            if (percentage === 100) {
-                progressText.classList.remove('bg-blue-50', 'text-blue-700');
-                progressText.classList.add('bg-green-50', 'text-green-700');
-            } else {
-                progressText.classList.remove('bg-green-50', 'text-green-700');
-                progressText.classList.add('bg-blue-50', 'text-blue-700');
-            }
-        }
+            // Other Sites / Remote
+            { name: "Brannon Townsend", phone: "3712", type: "Extension", location: "Remote" },
+            { name: "Bryce Sanders", phone: "2498", type: "Extension", location: "Remote" },
+            { name: "Keith Jones", phone: "7000", type: "Extension", location: "Remote" }
+        ];
 
-        checkboxes.forEach(checkbox => {
-            checkbox.addEventListener('change', (e) => {
-                const title = e.target.nextElementSibling.querySelector('.item-title');
-                if (e.target.checked) {
-                    title.classList.add('line-through', 'text-slate-400');
-                } else {
-                    title.classList.remove('line-through', 'text-slate-400');
-                }
-                updateProgress();
-            });
-        });
-
-        // --- Unlock Logic for Safety Checklist ---
-        function simulatePassingTest(event) {
-            event.preventDefault();
-
-            const container = document.getElementById('safety-step-container');
-            const checkbox = document.getElementById('safety-checkbox');
-            const badge = document.getElementById('lock-badge');
-
-            container.classList.remove('bg-slate-100/50', 'opacity-60');
-            container.classList.add('hover:bg-slate-50');
-
-            checkbox.removeAttribute('disabled');
-            checkbox.classList.remove('cursor-not-allowed');
-            checkbox.classList.add('cursor-pointer');
-
-            badge.innerText = "✅ Test Passed";
-            badge.classList.remove('bg-slate-200', 'text-slate-600', 'border-slate-300');
-            badge.classList.add('bg-green-50', 'text-green-700', 'border-green-200');
-
-            alert("Congratulations! You passed the safety test. The first item on your checklist is now unlocked.");
-        }
-
-        // --- Safe Clipboard Handler ---
-        function copyNetworkPath() {
-            const path = "\\\\gemfs\\Fileshare";
-            navigator.clipboard.writeText(path).then(() => {
-                const btn = document.getElementById('copy-btn');
-                btn.innerText = "✓ Path Copied!";
-                btn.classList.remove('bg-blue-600', 'hover:bg-blue-700');
-                btn.classList.add('bg-green-600');
-                
-                setTimeout(() => {
-                    btn.innerText = "📋 Copy Folder Path";
-                    btn.classList.remove('bg-green-600');
-                    btn.classList.add('bg-blue-600', 'hover:bg-blue-700');
-                }, 2500);
-            }).catch(err => {
-                console.error('Failed to copy text: ', err);
-            });
-        }
-
-        // --- Pure Inline Search Bar Logic (No Row Limitation or Scrollers) ---
         function filterDirectory() {
-            const query = document.getElementById('directory-search').value.toLowerCase().trim();
-            const rows = document.querySelectorAll('.directory-row');
-            let matchedAny = false;
-
-            rows.forEach(row => {
-                // If query is empty, hide everything to keep the UI clean, or show all if you prefer baseline visibility.
-                // Here we show everything when empty, and filter down as they type.
-                if (query === "") {
-                    row.classList.remove('hidden');
-                    matchedAny = true;
-                } else {
-                    const contentText = row.innerText.toLowerCase();
-                    if (contentText.includes(query)) {
-                        row.classList.remove('hidden');
-                        matchedAny = true;
-                    } else {
-                        row.classList.add('hidden');
-                    }
-                }
+            const searchInput = document.getElementById('directory-search').value.toLowerCase().trim();
+            const resultsContainer = document.getElementById('directory-results');
+            
+            // Reset to clean placeholder if entry is empty
+            if (searchInput === '') {
+                resultsContainer.innerHTML = `
+                    <div class="p-6 text-center bg-white rounded-lg border border-gray-200 shadow-sm text-gray-500">
+                        <svg class="w-12 h-12 mx-auto text-gray-300 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                        <p class="text-base font-medium text-gray-700">Ready to search</p>
+                        <p class="text-sm text-gray-400 mt-1">Type a team member's name, city, or extension above.</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            // Execute cross-field string matching
+            const filtered = phoneDirectory.filter(contact => {
+                return contact.name.toLowerCase().includes(searchInput) || 
+                       contact.phone.toLowerCase().includes(searchInput) ||
+                       contact.location.toLowerCase().includes(searchInput);
             });
+            
+            // Render outputs
+            resultsContainer.innerHTML = '';
+            if (filtered.length > 0) {
+                filtered.forEach(contact => {
+                    const isExt = contact.type === "Extension";
+                    const cleanPhone = contact.phone.replace(/[^\d+]/g, '');
+                    const callHref = isExt ? `tel:${contact.phone}` : `tel:${cleanPhone}`;
 
-            const noResultsEl = document.getElementById('no-results');
-            if (matchedAny) {
-                noResultsEl.classList.add('hidden');
+                    const contactCard = `
+                        <div class="p-4 bg-white rounded-lg border border-gray-200 shadow-sm flex justify-between items-center hover:bg-gray-50 transition-colors">
+                            <div>
+                                <h4 class="text-base font-semibold text-gray-900">${contact.name}</h4>
+                                <p class="text-xs text-gray-500 font-medium uppercase tracking-wider mt-0.5">${contact.location}</p>
+                            </div>
+                            <div class="text-right">
+                                <a href="${callHref}" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-semibold text-blue-700 bg-blue-50 rounded-md hover:bg-blue-100 transition-colors">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                                    </svg>
+                                    ${isExt ? 'Ext. ' + contact.phone : contact.phone}
+                                </a>
+                            </div>
+                        </div>
+                    `;
+                    resultsContainer.innerHTML += contactCard;
+                });
             } else {
-                noResultsEl.classList.remove('hidden');
+                resultsContainer.innerHTML = `
+                    <div class="p-8 text-center bg-gray-50 rounded-lg border border-dashed border-gray-300 text-gray-500">
+                        <p class="text-base font-medium">No matches found</p>
+                        <p class="text-sm text-gray-400 mt-1">We couldn't find anyone matching "${searchInput}". Check your spelling or try searching by city.</p>
+                    </div>
+                `;
             }
         }
     </script>

@@ -29,7 +29,6 @@
     </section>
 
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10">
-        <!-- Top Section Grid -->
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
             
             <div class="lg:col-span-2 space-y-6">
@@ -86,6 +85,19 @@
                                 <p class="text-slate-500 text-sm mt-1">Log into your corporate email, find the automated invitation link from KnowBe4, and complete your baseline cybersecurity training modules.</p>
                             </div>
                         </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-xs border border-slate-200 p-6">
+                    <h2 class="text-xl font-bold text-slate-900 mb-2">Company Phone Directory</h2>
+                    <p class="text-xs text-slate-500 mb-4">Search contacts across all physical facilities, corporate departments, and regional structures.</p>
+                    
+                    <div class="mb-4">
+                        <input type="text" id="directory-search" onkeyup="filterDirectory()" placeholder="Type a name, department, or region to search..." class="w-full pl-4 pr-4 py-2 border border-slate-300 rounded-lg focus:outline-hidden focus:ring-2 focus:ring-blue-500 text-sm bg-slate-50/50">
+                    </div>
+
+                    <div id="directory-results" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <p class="text-sm text-center text-slate-500 col-span-full py-6">Type a name or department to begin searching.</p>
                     </div>
                 </div>
             </div>
@@ -188,21 +200,6 @@
                         <p><strong class="text-slate-200">3.</strong> Right-click <strong class="text-slate-300">Quick Access</strong> (or <strong class="text-slate-300">Home/Favorites</strong>) in the left sidebar and choose <span class="text-blue-400">"Pin current folder to Quick Access"</span>.</p>
                     </div>
                 </div>
-            </div>
-        </div>
-
-        <!-- Dynamic Card Phone Directory Section -->
-        <div class="bg-white rounded-xl shadow-xs border border-slate-200 p-6">
-            <h2 class="text-xl font-bold text-slate-900 mb-2">Company Phone Directory</h2>
-            <p class="text-xs text-slate-500 mb-4">Search contacts across all physical facilities, corporate departments, and regional structures.</p>
-            
-            <div class="mb-4">
-                <input type="text" id="directory-search" onkeyup="filterDirectory()" placeholder="Type a name, department, or region to search..." class="w-full pl-4 pr-4 py-2 border border-slate-300 rounded-lg focus:outline-hidden focus:ring-2 focus:ring-blue-500 text-sm bg-slate-50/50">
-            </div>
-
-            <!-- Dynamic Card Container -->
-            <div id="directory-results" class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <p class="text-sm text-center text-slate-500 col-span-full py-6">Type a name or department to begin searching.</p>
             </div>
         </div>
     </main>
@@ -456,6 +453,7 @@
             { name: "Terra Awbrey", phone: "Ext. 2053", dept: "Site Operations", location: "El Reno" },
             { name: "Tia Johnson", phone: "Ext. 5117", dept: "Site Operations", location: "El Reno" },
             { name: "Tim Strohsnitter (Ext)", phone: "Ext. 5812", dept: "Site Operations", location: "Holbrook" },
+            { name: "Tyler Due", phone: "---", dept: "Gemini Outside Sales", location: "Regional" },
             { name: "Tyler Headley", phone: "Ext. 2021", dept: "Site Operations", location: "El Reno" },
             { name: "VA Customer Service", phone: "Ext. 4010", dept: "Customer Service", location: "Harrisonburg" },
             { name: "Vanessa Blevins", phone: "Ext. 2071", dept: "Site Operations", location: "El Reno" },

@@ -193,63 +193,539 @@
 
         <!-- Streamlined Searchable Phone Directory Section -->
         <div class="bg-white rounded-xl shadow-xs border border-slate-200 p-6">
+            <h2 class="text-xl font-bold text-slate-900 mb-4">Corporate Extension Directory</h2>
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
                 <div class="sm:col-span-2 relative">
-                    <input type="text" id="directory-search" onkeyup="filterDirectory()" placeholder="Search by name, title, or extension..." class="w-full pl-4 pr-10 py-2 border border-slate-300 rounded-lg focus:outline-hidden focus:ring-2 focus:ring-blue-500 text-sm bg-slate-50/50">
+                    <input type="text" id="directory-search" onkeyup="filterDirectory()" placeholder="Search by name, site, or extension..." class="w-full pl-4 pr-10 py-2 border border-slate-300 rounded-lg focus:outline-hidden focus:ring-2 focus:ring-blue-500 text-sm bg-slate-50/50">
                 </div>
                 <div>
                     <select id="directory-dept" onchange="filterDirectory()" class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-hidden focus:ring-2 focus:ring-blue-500 text-sm bg-slate-50/50">
-                        <option value="">All Departments</option>
-                        <option value="IT">IT Support</option>
-                        <option value="HR">Human Resources</option>
-                        <option value="EHS">Safety / EHS</option>
-                        <option value="Operations">Operations</option>
-                        <option value="Finance">Finance</option>
+                        <option value="">All Locations / Groups</option>
+                        <option value="el-reno">El Reno (Black)</option>
+                        <option value="virginia">Virginia (Green)</option>
+                        <option value="grand-prairie">Grand Prairie (Purple)</option>
+                        <option value="sparks">Sparks (Red)</option>
+                        <option value="holbrook">Holbrook (Blue)</option>
+                        <option value="maintenance">Maintenance</option>
+                        <option value="remote">Remote Contacts</option>
                     </select>
                 </div>
             </div>
 
-            <div class="overflow-x-auto border border-slate-100 rounded-lg">
+            <div class="overflow-x-auto border border-slate-100 rounded-lg max-h-96 overflow-y-auto">
                 <table class="min-w-full divide-y divide-slate-200 text-sm text-left">
-                    <thead class="bg-slate-50 text-slate-600 font-semibold uppercase text-xs tracking-wider">
+                    <thead class="bg-slate-50 text-slate-600 font-semibold uppercase text-xs tracking-wider sticky top-0 z-10">
                         <tr>
                             <th scope="col" class="px-6 py-3">Name</th>
-                            <th scope="col" class="px-6 py-3">Title / Department</th>
+                            <th scope="col" class="px-6 py-3">Location / Tag</th>
                             <th scope="col" class="px-6 py-3">Extension</th>
-                            <th scope="col" class="px-6 py-3">Email Address</th>
                         </tr>
                     </thead>
                     <tbody id="directory-body" class="divide-y divide-slate-200 text-slate-700 bg-white">
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="IT">
-                            <td class="px-6 py-4 font-medium text-slate-900">IT Helpdesk Desk</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-blue-50 text-blue-700 mr-2">IT</span> Technical Operations</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 4357</td>
-                            <td class="px-6 py-4"><a href="mailto:helpdesk@gemini-coatings.com" class="text-blue-600 hover:underline">helpdesk@gemini-coatings.com</a></td>
+                        <!-- EL RENO (BLACK / DEFAULT STAFF) -->
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
+                            <td class="px-6 py-4 font-medium text-slate-900">Adam Stevenson</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2065</td>
                         </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="HR">
-                            <td class="px-6 py-4 font-medium text-slate-900">Human Resources Team</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-purple-50 text-purple-700 mr-2">HR</span> Personnel Admin</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 1120</td>
-                            <td class="px-6 py-4"><a href="mailto:hr@gemini-coatings.com" class="text-blue-600 hover:underline">hr@gemini-coatings.com</a></td>
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
+                            <td class="px-6 py-4 font-medium text-slate-900">Amy McClain</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2061</td>
                         </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="EHS">
-                            <td class="px-6 py-4 font-medium text-slate-900">EHS Office</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-amber-50 text-amber-700 mr-2">EHS</span> Safety Coordination</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2240</td>
-                            <td class="px-6 py-4"><a href="mailto:safety@gemini-coatings.com" class="text-blue-600 hover:underline">safety@gemini-coatings.com</a></td>
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
+                            <td class="px-6 py-4 font-medium text-slate-900">Anthony Golriz</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2302</td>
                         </tr>
-                        <tr class="directory-row hover:bg-slate-50/70" data-dept="Finance">
-                            <td class="px-6 py-4 font-medium text-slate-900">Payroll Dept</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-emerald-50 text-emerald-700 mr-2">Finance</span> Accounting</td>
-                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 1050</td>
-                            <td class="px-6 py-4"><a href="mailto:payroll@gemini-coatings.com" class="text-blue-600 hover:underline">payroll@gemini-coatings.com</a></td>
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
+                            <td class="px-6 py-4 font-medium text-slate-900">Austin Ferguson</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2075</td>
+                        </tr>
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
+                            <td class="px-6 py-4 font-medium text-slate-900">Baylee Williams</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2033</td>
+                        </tr>
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
+                            <td class="px-6 py-4 font-medium text-slate-900">Bradey Burge</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2007</td>
+                        </tr>
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
+                            <td class="px-6 py-4 font-medium text-slate-900">Brandon Bosler</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2032</td>
+                        </tr>
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
+                            <td class="px-6 py-4 font-medium text-slate-900">Brandon Murray</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2063</td>
+                        </tr>
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
+                            <td class="px-6 py-4 font-medium text-slate-900">Brannon Townsend</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 3712</td>
+                        </tr>
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
+                            <td class="px-6 py-4 font-medium text-slate-900">Brent Cooksey</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2024</td>
+                        </tr>
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
+                            <td class="px-6 py-4 font-medium text-slate-900">Brett Hawkins</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2039</td>
+                        </tr>
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
+                            <td class="px-6 py-4 font-medium text-slate-900">Carly McCaslin</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2014</td>
+                        </tr>
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
+                            <td class="px-6 py-4 font-medium text-slate-900">Catherine Wright</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2307</td>
+                        </tr>
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
+                            <td class="px-6 py-4 font-medium text-slate-900">Chad Hubbard</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2064</td>
+                        </tr>
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
+                            <td class="px-6 py-4 font-medium text-slate-900">Clayton Frizzell</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2308</td>
+                        </tr>
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
+                            <td class="px-6 py-4 font-medium text-slate-900">Conference Room (El Reno)</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Facility</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2069</td>
+                        </tr>
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
+                            <td class="px-6 py-4 font-medium text-slate-900">Curtis Roach</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2048</td>
+                        </tr>
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
+                            <td class="px-6 py-4 font-medium text-slate-900">Danielle Waddle</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2003</td>
+                        </tr>
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
+                            <td class="px-6 py-4 font-medium text-slate-900">David Jackson</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2054</td>
+                        </tr>
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
+                            <td class="px-6 py-4 font-medium text-slate-900">David Smith</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2317</td>
+                        </tr>
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
+                            <td class="px-6 py-4 font-medium text-slate-900">Devan Moschella</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2312</td>
+                        </tr>
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
+                            <td class="px-6 py-4 font-medium text-slate-900">Eric Palmer</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2017</td>
+                        </tr>
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
+                            <td class="px-6 py-4 font-medium text-slate-900">Harmon Ray</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2016</td>
+                        </tr>
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
+                            <td class="px-6 py-4 font-medium text-slate-900">Haylee Hunt</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2013</td>
+                        </tr>
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
+                            <td class="px-6 py-4 font-medium text-slate-900">I.T. Department</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Operations</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2300</td>
+                        </tr>
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
+                            <td class="px-6 py-4 font-medium text-slate-900">Jacob Archer</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2306</td>
+                        </tr>
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
+                            <td class="px-6 py-4 font-medium text-slate-900">Jamie Gulickson</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2005</td>
+                        </tr>
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
+                            <td class="px-6 py-4 font-medium text-slate-900">Jason Melton</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2037</td>
+                        </tr>
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
+                            <td class="px-6 py-4 font-medium text-slate-900">Jeff Williams</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2072</td>
+                        </tr>
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
+                            <td class="px-6 py-4 font-medium text-slate-900">Jeffrey Thomas</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2067</td>
+                        </tr>
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
+                            <td class="px-6 py-4 font-medium text-slate-900">Jennifer Awbrey</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2040</td>
+                        </tr>
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
+                            <td class="px-6 py-4 font-medium text-slate-900">Jennifer Sorrels</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2036</td>
+                        </tr>
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
+                            <td class="px-6 py-4 font-medium text-slate-900">Jenny Cripps</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2056</td>
+                        </tr>
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
+                            <td class="px-6 py-4 font-medium text-slate-900">John Broyles</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2052</td>
+                        </tr>
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
+                            <td class="px-6 py-4 font-medium text-slate-900">Katherine Newsome</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2015</td>
+                        </tr>
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
+                            <td class="px-6 py-4 font-medium text-slate-900">Kelly Lawrence</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2305</td>
+                        </tr>
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
+                            <td class="px-6 py-4 font-medium text-slate-900">Kevin Cloyd</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2043</td>
+                        </tr>
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
+                            <td class="px-6 py-4 font-medium text-slate-900">Klay Turk</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2009</td>
+                        </tr>
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
+                            <td class="px-6 py-4 font-medium text-slate-900">Larry Blevins</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2051</td>
+                        </tr>
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
+                            <td class="px-6 py-4 font-medium text-slate-900">Lea Cole</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2030</td>
+                        </tr>
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
+                            <td class="px-6 py-4 font-medium text-slate-900">Marie Stevens</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2057</td>
+                        </tr>
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
+                            <td class="px-6 py-4 font-medium text-slate-900">Mark Newman</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2049</td>
+                        </tr>
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
+                            <td class="px-6 py-4 font-medium text-slate-900">Marti Canida</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2028</td>
+                        </tr>
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
+                            <td class="px-6 py-4 font-medium text-slate-900">Matt Peterman</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2068</td>
+                        </tr>
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
+                            <td class="px-6 py-4 font-medium text-slate-900">Maygan Mitchell</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2315</td>
+                        </tr>
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
+                            <td class="px-6 py-4 font-medium text-slate-900">Michael Boblit</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2035</td>
+                        </tr>
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
+                            <td class="px-6 py-4 font-medium text-slate-900">Nao Vang</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2313</td>
+                        </tr>
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
+                            <td class="px-6 py-4 font-medium text-slate-900">Natalie Evans</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2044</td>
+                        </tr>
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
+                            <td class="px-6 py-4 font-medium text-slate-900">Natalie Palmer</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2073</td>
+                        </tr>
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
+                            <td class="px-6 py-4 font-medium text-slate-900">Nathan Stutler</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 3720</td>
+                        </tr>
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
+                            <td class="px-6 py-4 font-medium text-slate-900">Patrick Fees</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2303</td>
+                        </tr>
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
+                            <td class="px-6 py-4 font-medium text-slate-900">Q. A.</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Operations</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2038</td>
+                        </tr>
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
+                            <td class="px-6 py-4 font-medium text-slate-900">Receiving (El Reno)</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Logistic</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2006</td>
+                        </tr>
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
+                            <td class="px-6 py-4 font-medium text-slate-900">Rees Nelson</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2042</td>
+                        </tr>
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
+                            <td class="px-6 py-4 font-medium text-slate-900">Richard Gulickson</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2045</td>
+                        </tr>
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
+                            <td class="px-6 py-4 font-medium text-slate-900">Rodney Wickersham</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2023</td>
+                        </tr>
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
+                            <td class="px-6 py-4 font-medium text-slate-900">Scott Rott</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2066</td>
+                        </tr>
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
+                            <td class="px-6 py-4 font-medium text-slate-900">Shane Darnell</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2022</td>
+                        </tr>
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
+                            <td class="px-6 py-4 font-medium text-slate-900">Shawnee Jones</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2076</td>
+                        </tr>
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
+                            <td class="px-6 py-4 font-medium text-slate-900">Shweta Sajish</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2318</td>
+                        </tr>
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
+                            <td class="px-6 py-4 font-medium text-slate-900">Terra Awbrey</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2053</td>
+                        </tr>
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
+                            <td class="px-6 py-4 font-medium text-slate-900">Tori Brite</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2012</td>
+                        </tr>
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
+                            <td class="px-6 py-4 font-medium text-slate-900">Tyler Headley</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2021</td>
+                        </tr>
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
+                            <td class="px-6 py-4 font-medium text-slate-900">Vickie Scharp</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2026</td>
+                        </tr>
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
+                            <td class="px-6 py-4 font-medium text-slate-900">William Barnes</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 3722</td>
+                        </tr>
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
+                            <td class="px-6 py-4 font-medium text-slate-900">Vanessa Blevins</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2071</td>
+                        </tr>
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="el-reno">
+                            <td class="px-6 py-4 font-medium text-slate-900">Zakry Rios</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800">El Reno</span> Staff</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2320</td>
+                        </tr>
+
+                        <!-- VIRGINIA (GREEN) -->
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="virginia">
+                            <td class="px-6 py-4 font-medium text-slate-900">Brandon McMillan</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-green-50 text-green-700">Virginia</span> Site</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2152</td>
+                        </tr>
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="virginia">
+                            <td class="px-6 py-4 font-medium text-slate-900">Breakroom (Virginia)</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-green-50 text-green-700">Virginia</span> Breakroom</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 4023</td>
+                        </tr>
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="virginia">
+                            <td class="px-6 py-4 font-medium text-slate-900">Sergio Estela-Zevala</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-green-50 text-green-700">Virginia</span> Site</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 4018</td>
+                        </tr>
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="virginia">
+                            <td class="px-6 py-4 font-medium text-slate-900">Scott McAvoy</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-green-50 text-green-700">Virginia</span> Site</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 4021</td>
+                        </tr>
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="virginia">
+                            <td class="px-6 py-4 font-medium text-slate-900">VA Customer Service</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-green-50 text-green-700">Virginia</span> Support</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 4010</td>
+                        </tr>
+
+                        <!-- GRAND PRAIRIE (PURPLE) -->
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="grand-prairie">
+                            <td class="px-6 py-4 font-medium text-slate-900">Andres Cruz</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-purple-50 text-purple-700">Grand Prairie</span> Site</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 5108</td>
+                        </tr>
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="grand-prairie">
+                            <td class="px-6 py-4 font-medium text-slate-900">Brian Hansen</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-purple-50 text-purple-700">Grand Prairie</span> Site</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 5110</td>
+                        </tr>
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="grand-prairie">
+                            <td class="px-6 py-4 font-medium text-slate-900">Cecilia Jaimes</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-purple-50 text-purple-700">Grand Prairie</span> Site</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 5130</td>
+                        </tr>
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="grand-prairie">
+                            <td class="px-6 py-4 font-medium text-slate-900">Chris Hicks</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-purple-50 text-purple-700">Grand Prairie</span> Site</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2050</td>
+                        </tr>
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="grand-prairie">
+                            <td class="px-6 py-4 font-medium text-slate-900">GP Front Desk</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-purple-50 text-purple-700">Grand Prairie</span> Desk</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 5107</td>
+                        </tr>
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="grand-prairie">
+                            <td class="px-6 py-4 font-medium text-slate-900">GP QC</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-purple-50 text-purple-700">Grand Prairie</span> Quality</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 5113</td>
+                        </tr>
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="grand-prairie">
+                            <td class="px-6 py-4 font-medium text-slate-900">GP QC 2</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-purple-50 text-purple-700">Grand Prairie</span> Quality</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 5120</td>
+                        </tr>
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="grand-prairie">
+                            <td class="px-6 py-4 font-medium text-slate-900">GP Conference</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-purple-50 text-purple-700">Grand Prairie</span> Conf</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 5112</td>
+                        </tr>
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="grand-prairie">
+                            <td class="px-6 py-4 font-medium text-slate-900">John Casillas</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-purple-50 text-purple-700">Grand Prairie</span> Site</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 3715</td>
+                        </tr>
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="grand-prairie">
+                            <td class="px-6 py-4 font-medium text-slate-900">Martin Negrete</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-purple-50 text-purple-700">Grand Prairie</span> Site</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 5115</td>
+                        </tr>
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="grand-prairie">
+                            <td class="px-6 py-4 font-medium text-slate-900">Marvin John</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-purple-50 text-purple-700">Grand Prairie</span> Site</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 5123</td>
+                        </tr>
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="grand-prairie">
+                            <td class="px-6 py-4 font-medium text-slate-900">Mike Boyd</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-purple-50 text-purple-700">Grand Prairie</span> Site</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 5122</td>
+                        </tr>
+
+                        <!-- SPARKS (RED) -->
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="sparks">
+                            <td class="px-6 py-4 font-medium text-slate-900">Keith Jones</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-red-50 text-red-700">Sparks</span> Site</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 7000</td>
+                        </tr>
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="sparks">
+                            <td class="px-6 py-4 font-medium text-slate-900">Steven Garza</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-red-50 text-red-700">Sparks</span> Site</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 8000</td>
+                        </tr>
+
+                        <!-- HOLBROOK (BLUE) -->
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="holbrook">
+                            <td class="px-6 py-4 font-medium text-slate-900">Holbrook Main</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-blue-50 text-blue-700">Holbrook</span> Main</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 5803</td>
+                        </tr>
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="holbrook">
+                            <td class="px-6 py-4 font-medium text-slate-900">Holbrook Shipping</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-blue-50 text-blue-700">Holbrook</span> Shipping</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 5805</td>
+                        </tr>
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="holbrook">
+                            <td class="px-6 py-4 font-medium text-slate-900">Jason Williams</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-blue-50 text-blue-700">Holbrook</span> Staff</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 5806</td>
+                        </tr>
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="holbrook">
+                            <td class="px-6 py-4 font-medium text-slate-900">Nick Alles</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-blue-50 text-blue-700">Holbrook</span> Staff</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 5807</td>
+                        </tr>
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="holbrook">
+                            <td class="px-6 py-4 font-medium text-slate-900">Nick Minichello</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-blue-50 text-blue-700">Holbrook</span> Staff</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 5805</td>
+                        </tr>
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="holbrook">
+                            <td class="px-6 py-4 font-medium text-slate-900">Tim Strohsnitter</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-blue-50 text-blue-700">Holbrook</span> Staff</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 5812</td>
+                        </tr>
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="holbrook">
+                            <td class="px-6 py-4 font-medium text-slate-900">Tia Johnson</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-blue-50 text-blue-700">Holbrook</span> Staff</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 5117</td>
+                        </tr>
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="holbrook">
+                            <td class="px-6 py-4 font-medium text-slate-900">Rings All Phones</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-blue-50 text-blue-700">Holbrook</span> Alert</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 5816</td>
+                        </tr>
+
+                        <!-- MAINTENANCE -->
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="maintenance">
+                            <td class="px-6 py-4 font-medium text-slate-900">Lonnie Gresham</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-amber-50 text-amber-800">Maintenance</span> Team</td>
+                            <td class="px-6 py-4 text-slate-400 font-mono">--</td>
+                        </tr>
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="maintenance">
+                            <td class="px-6 py-4 font-medium text-slate-900">Juan Garcia</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-amber-50 text-amber-800">Maintenance</span> Team</td>
+                            <td class="px-6 py-4 text-slate-400 font-mono">--</td>
+                        </tr>
+
+                        <!-- REMOTE -->
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="remote">
+                            <td class="px-6 py-4 font-medium text-slate-900">Bryce Sanders</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-teal-50 text-teal-700">Remote</span> User</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2498</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
             
             <div id="no-results" class="hidden text-center py-6 text-slate-400 text-sm">
-                No internal extensions found matching that criteria.
+                No extensions found matching that criteria.
             </div>
         </div>
     </main>

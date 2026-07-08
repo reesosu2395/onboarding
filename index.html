@@ -14,7 +14,7 @@
                 <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center font-bold text-xl tracking-wider">G</div>
                 <div>
                     <h1 class="text-xl font-bold tracking-tight">Gemini Coatings</h1>
-                    <p class="text-xs text-slate-400">Centralized Employee Resource Hub</p>
+                    <p class="text-xs text-slate-400">Employee Workspace & Portal</p>
                 </div>
             </div>
             <div class="text-sm bg-slate-800 px-4 py-2 rounded-full text-slate-300 border border-slate-700">
@@ -25,17 +25,110 @@
 
     <main class="flex-grow max-w-7xl w-full mx-auto px-4 py-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
         
+        <div class="lg:col-span-2 space-y-6">
+            
+            <div id="checklist" class="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
+                <div class="flex justify-between items-start mb-4">
+                    <div>
+                        <h2 class="text-xl font-bold text-gray-900">New Hire Onboarding Checklist</h2>
+                        <p class="text-sm text-gray-500">Track and complete your baseline operational tasks.</p>
+                    </div>
+                    <div class="bg-blue-50 text-blue-700 text-xs px-3 py-1 rounded-full font-bold uppercase tracking-wider">
+                        Progress: <span id="progressCount">0/6</span>
+                    </div>
+                </div>
+
+                <div class="space-y-3 mt-4">
+                    <label class="flex items-start p-3 hover:bg-slate-50 rounded-lg border border-gray-100 transition cursor-pointer">
+                        <input type="checkbox" class="checklist-item mt-1 w-4 h-4 text-blue-600 rounded border-gray-300 focus:ring-blue-500">
+                        <span class="ml-3 text-sm text-gray-700 font-medium">Configure payroll parameters, tax preferences, and direct deposit links within Paycom.</span>
+                    </label>
+                    <label class="flex items-start p-3 hover:bg-slate-50 rounded-lg border border-gray-100 transition cursor-pointer">
+                        <input type="checkbox" class="checklist-item mt-1 w-4 h-4 text-blue-600 rounded border-gray-300 focus:ring-blue-500">
+                        <span class="ml-3 text-sm text-gray-700 font-medium">Review the corporate policy handbook and submit formal digital signature pages.</span>
+                    </label>
+                    <label class="flex items-start p-3 hover:bg-slate-50 rounded-lg border border-gray-100 transition cursor-pointer">
+                        <input type="checkbox" class="checklist-item mt-1 w-4 h-4 text-blue-600 rounded border-gray-300 focus:ring-blue-500">
+                        <span class="ml-3 text-sm text-gray-700 font-medium">Review operational hazard sheets and complete required physical safety training profiles.</span>
+                    </label>
+                    <label class="flex items-start p-3 hover:bg-slate-50 rounded-lg border border-gray-100 transition cursor-pointer">
+                        <input type="checkbox" class="checklist-item mt-1 w-4 h-4 text-blue-600 rounded border-gray-300 focus:ring-blue-500">
+                        <span class="ml-3 text-sm text-gray-700 font-medium">Verify structural file share accessibility paths directly inside Windows File Explorer (\＼gemfs\Fileshare).</span>
+                    </label>
+                    <label class="flex items-start p-3 hover:bg-slate-50 rounded-lg border border-gray-100 transition cursor-pointer">
+                        <input type="checkbox" class="checklist-item mt-1 w-4 h-4 text-blue-600 rounded border-gray-300 focus:ring-blue-500">
+                        <span class="ml-3 text-sm text-gray-700 font-medium">Complete initial introductory department alignment brief with designated site supervisor.</span>
+                    </label>
+                    <label class="flex items-start p-3 hover:bg-slate-50 rounded-lg border border-gray-100 transition cursor-pointer">
+                        <input type="checkbox" class="checklist-item mt-1 w-4 h-4 text-blue-600 rounded border-gray-300 focus:ring-blue-500">
+                        <span class="ml-3 text-sm text-gray-700 font-medium">Confirm functional deployment of multi-factor authentication protocols for network applications access.</span>
+                    </label>
+                </div>
+            </div>
+
+            <div id="safety" class="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
+                <h2 class="text-xl font-bold text-gray-900 mb-2">EHS Safety Resources & Reporting</h2>
+                <p class="text-sm text-gray-500 mb-4">Crucial standard operating parameters for facilities floor access.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="p-4 border border-orange-100 bg-orange-50/50 rounded-lg">
+                        <h3 class="font-bold text-orange-900 text-sm mb-1">Incident Report Procedures</h3>
+                        <p class="text-xs text-orange-800 leading-relaxed">Report structural workplace anomalies, safety threats, or hazards to safety coordinators. Signal escalation boards using team corporate text groups immediately.</p>
+                    </div>
+                    <div class="p-4 border border-emerald-100 bg-emerald-50/50 rounded-lg">
+                        <h3 class="font-bold text-emerald-900 text-sm mb-1">Safety Training Verification</h3>
+                        <p class="text-xs text-emerald-800 leading-relaxed">Confirm verification criteria for handling specific materials data sets before utilizing processing assets or entering manufacturing zones.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="lg:col-span-1 space-y-6">
             
+            <div class="bg-white rounded-xl p-5 shadow-sm border border-gray-200">
+                <h2 class="text-lg font-bold text-gray-900 mb-1">Essential Systems</h2>
+                <p class="text-xs text-gray-500 mb-4">Direct access links to external tools and internal workflows.</p>
+                
+                <div class="space-y-3">
+                    <a href="https://www.paycom.com" target="_blank" class="flex items-center justify-between p-3 bg-slate-50 hover:bg-blue-50 rounded-lg border border-gray-100 transition group">
+                        <div>
+                            <div class="font-semibold text-sm text-gray-800 group-hover:text-blue-600">Paycom Portal</div>
+                            <div class="text-xs text-gray-500">Payroll parameters, punch clocks, & benefits</div>
+                        </div>
+                        <span class="text-gray-400 group-hover:text-blue-500 font-bold">&rarr;</span>
+                    </a>
+                    <a href="https://www.concursolutions.com" target="_blank" class="flex items-center justify-between p-3 bg-slate-50 hover:bg-blue-50 rounded-lg border border-gray-100 transition group">
+                        <div>
+                            <div class="font-semibold text-sm text-gray-800 group-hover:text-blue-600">SAP Concur</div>
+                            <div class="text-xs text-gray-500">Travel logs & operational business expenses</div>
+                        </div>
+                        <span class="text-gray-400 group-hover:text-blue-500 font-bold">&rarr;</span>
+                    </a>
+                    <a href="#report-runner" class="flex items-center justify-between p-3 bg-slate-50 hover:bg-blue-50 rounded-lg border border-gray-100 transition group">
+                        <div>
+                            <div class="font-semibold text-sm text-gray-800 group-hover:text-blue-600">Report Runner</div>
+                            <div class="text-xs text-gray-500">Corporate metrics and system data dashboards</div>
+                        </div>
+                        <span class="text-gray-400 group-hover:text-blue-500 font-bold">&rarr;</span>
+                    </a>
+                    <a href="#it-setup" class="flex items-center justify-between p-3 bg-slate-50 hover:bg-blue-50 rounded-lg border border-gray-100 transition group">
+                        <div>
+                            <div class="font-semibold text-sm text-gray-800 group-hover:text-blue-600">IT Setup Guides</div>
+                            <div class="text-xs text-gray-500">Deploy shared drives & configure hardware assets</div>
+                        </div>
+                        <span class="text-gray-400 group-hover:text-blue-500 font-bold">&rarr;</span>
+                    </a>
+                </div>
+            </div>
+
             <div class="bg-white rounded-xl p-5 shadow-sm border border-gray-200 relative">
-                <h2 class="text-lg font-bold text-gray-900 mb-1">Corporate Directory</h2>
-                <p class="text-xs text-gray-500 mb-4">Instant lookups for extensions, mobiles, and sales territories.</p>
+                <h2 class="text-lg font-bold text-gray-900 mb-1">Corporate Directory Lookup</h2>
+                <p class="text-xs text-gray-500 mb-4">Live lookups for local system extensions and regional sales staff contacts.</p>
                 
                 <div class="relative">
                     <input 
                         type="text" 
                         id="portalSearchInput" 
-                        placeholder="Type name, extension, or dept..." 
+                        placeholder="Type names, extension pins, or territories..." 
                         class="w-full px-3 py-2.5 pl-10 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-inner text-sm transition-all"
                     >
                     <div class="absolute left-3 top-3.5 text-gray-400">
@@ -49,108 +142,17 @@
                 >
                     </div>
             </div>
-
-            <div class="bg-white rounded-xl p-5 shadow-sm border border-gray-200">
-                <h2 class="text-lg font-bold text-gray-900 mb-4">Essential Systems</h2>
-                <div class="space-y-3">
-                    <a href="https://www.paycom.com" target="_blank" class="flex items-center justify-between p-3 bg-slate-50 hover:bg-blue-50 rounded-lg border border-gray-100 transition group">
-                        <div>
-                            <div class="font-semibold text-sm text-gray-800 group-hover:text-blue-600">Paycom Portal</div>
-                            <div class="text-xs text-gray-500">Payroll, timeclock, and benefits</div>
-                        </div>
-                        <span class="text-gray-400 group-hover:text-blue-500">&rarr;</span>
-                    </a>
-                    <a href="https://www.concursolutions.com" target="_blank" class="flex items-center justify-between p-3 bg-slate-50 hover:bg-blue-50 rounded-lg border border-gray-100 transition group">
-                        <div>
-                            <div class="font-semibold text-sm text-gray-800 group-hover:text-blue-600">SAP Concur</div>
-                            <div class="text-xs text-gray-500">Travel expense reporting</div>
-                        </div>
-                        <span class="text-gray-400 group-hover:text-blue-500">&rarr;</span>
-                    </a>
-                    <a href="#report-runner" class="flex items-center justify-between p-3 bg-slate-50 hover:bg-blue-50 rounded-lg border border-gray-100 transition group">
-                        <div>
-                            <div class="font-semibold text-sm text-gray-800 group-hover:text-blue-600">Report Runner</div>
-                            <div class="text-xs text-gray-500">Business analytics dashboards</div>
-                        </div>
-                        <span class="text-gray-400 group-hover:text-blue-500">&rarr;</span>
-                    </a>
-                    <a href="#it-setup" class="flex items-center justify-between p-3 bg-slate-50 hover:bg-blue-50 rounded-lg border border-gray-100 transition group">
-                        <div>
-                            <div class="font-semibold text-sm text-gray-800 group-hover:text-blue-600">IT Setup Guides</div>
-                            <div class="text-xs text-gray-500">File share shortcuts and printing</div>
-                        </div>
-                        <span class="text-gray-400 group-hover:text-blue-500">&rarr;</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <div class="lg:col-span-2 space-y-6">
-            
-            <div id="checklist" class="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
-                <div class="flex justify-between items-start mb-4">
-                    <div>
-                        <h2 class="text-xl font-bold text-gray-900">New Hire Onboarding Checklist</h2>
-                        <p class="text-sm text-gray-500">Track milestones through your first weeks.</p>
-                    </div>
-                    <div class="bg-blue-50 text-blue-700 text-xs px-3 py-1 rounded-full font-bold uppercase tracking-wider">
-                        Progress: <span id="progressCount">0/6</span>
-                    </div>
-                </div>
-
-                <div class="space-y-3 mt-4">
-                    <label class="flex items-start p-3 hover:bg-slate-50 rounded-lg border border-gray-100 transition cursor-pointer">
-                        <input type="checkbox" class="checklist-item mt-1 w-4 h-4 text-blue-600 rounded border-gray-300 focus:ring-blue-500">
-                        <span class="ml-3 text-sm text-gray-700 font-medium">Complete payroll configuration and direct deposit setup within Paycom.</span>
-                    </label>
-                    <label class="flex items-start p-3 hover:bg-slate-50 rounded-lg border border-gray-100 transition cursor-pointer">
-                        <input type="checkbox" class="checklist-item mt-1 w-4 h-4 text-blue-600 rounded border-gray-300 focus:ring-blue-500">
-                        <span class="ml-3 text-sm text-gray-700 font-medium">Review the corporate handbook and execute employee sign-off acknowledgements.</span>
-                    </label>
-                    <label class="flex items-start p-3 hover:bg-slate-50 rounded-lg border border-gray-100 transition cursor-pointer">
-                        <input type="checkbox" class="checklist-item mt-1 w-4 h-4 text-blue-600 rounded border-gray-300 focus:ring-blue-500">
-                        <span class="ml-3 text-sm text-gray-700 font-medium">Complete required environmental health and corporate safety compliance modules.</span>
-                    </label>
-                    <label class="flex items-start p-3 hover:bg-slate-50 rounded-lg border border-gray-100 transition cursor-pointer">
-                        <input type="checkbox" class="checklist-item mt-1 w-4 h-4 text-blue-600 rounded border-gray-300 focus:ring-blue-500">
-                        <span class="ml-3 text-sm text-gray-700 font-medium">Verify deployment of corporate network fileshare mapping links (\＼gemfs\Fileshare).</span>
-                    </label>
-                    <label class="flex items-start p-3 hover:bg-slate-50 rounded-lg border border-gray-100 transition cursor-pointer">
-                        <input type="checkbox" class="checklist-item mt-1 w-4 h-4 text-blue-600 rounded border-gray-300 focus:ring-blue-500">
-                        <span class="ml-3 text-sm text-gray-700 font-medium">Schedule initial introductory brief with direct department manager.</span>
-                    </label>
-                    <label class="flex items-start p-3 hover:bg-slate-50 rounded-lg border border-gray-100 transition cursor-pointer">
-                        <input type="checkbox" class="checklist-item mt-1 w-4 h-4 text-blue-600 rounded border-gray-300 focus:ring-blue-500">
-                        <span class="ml-3 text-sm text-gray-700 font-medium">Set up custom multi-factor authentication triggers for external cloud systems access.</span>
-                    </label>
-                </div>
-            </div>
-
-            <div id="safety" class="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
-                <h2 class="text-xl font-bold text-gray-900 mb-2">EHS Safety Resources & Reporting</h2>
-                <p class="text-sm text-gray-500 mb-4">Safety standard procedures and mandatory compliance points.</p>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div class="p-4 border border-orange-100 bg-orange-50/50 rounded-lg">
-                        <h3 class="font-bold text-orange-900 text-sm mb-1">Incident Report Procedures</h3>
-                        <p class="text-xs text-orange-800 leading-relaxed">Report workspace anomalies or injuries instantly to safety coordinators. Contact text groups or compliance boards immediately.</p>
-                    </div>
-                    <div class="p-4 border border-emerald-100 bg-emerald-50/50 rounded-lg">
-                        <h3 class="font-bold text-emerald-900 text-sm mb-1">Safety Training Verification</h3>
-                        <p class="text-xs text-emerald-800 leading-relaxed">Ensure physical safety equipment, protocols, and handling data sheets match standard operations parameters before floor entry.</p>
-                    </div>
-                </div>
-            </div>
         </div>
     </main>
 
     <footer class="bg-white border-t border-gray-200 mt-12 py-6 text-center text-xs text-gray-500">
-        <p>&copy; 2026 Gemini Coatings. Internal Deployment Network System. All rights reserved.</p>
+        <p>&copy; 2026 Gemini Coatings. Corporate Internal Resource Deployment Hub. All rights reserved.</p>
     </footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             
-            // 1. Full 163-Entry Corporate Directory Dataset
+            // Full Compiled Phone List Array
             const phoneDirectory = [
                 {"name": "Adam Stevenson", "number": "Ext. 2065", "dept": "Internal Staff", "loc": "Corporate"},
                 {"name": "Amy McClain", "number": "Ext. 2061", "dept": "Internal Staff", "loc": "Corporate"},
@@ -319,7 +321,7 @@
             const searchInput = document.getElementById('portalSearchInput');
             const resultsContainer = document.getElementById('searchResults');
 
-            // 2. Real-time Search Input Listener
+            // Live Text Input Search Filters
             searchInput.addEventListener('input', (e) => {
                 const query = e.target.value.toLowerCase().trim();
                 
@@ -339,27 +341,25 @@
                 renderSearchResults(matches);
             });
 
-            // 3. Render Search Result Cards dynamically
             function renderSearchResults(matches) {
                 if (matches.length === 0) {
-                    resultsContainer.innerHTML = `<div class="p-4 text-gray-500 text-xs text-center">No matching records found.</div>`;
+                    resultsContainer.innerHTML = `<div class="p-4 text-gray-500 text-xs text-center">No matches found inside database.</div>`;
                     resultsContainer.classList.remove('hidden');
                     return;
                 }
 
                 const html = matches.map(person => {
-                    // Normalize number strings for standard clickable tel links
                     const cleanPhone = person.number.startsWith('Ext.') ? person.number.replace('Ext. ', '') : person.number.replace(/\D/g,'');
                     const telPrefix = person.number.startsWith('Ext.') ? 'tel:' : 'tel:';
 
                     return `
                         <div class="p-3 hover:bg-slate-50 flex justify-between items-center transition-colors">
-                            <div class="min-w-0 flex-1 pr-3">
+                            <div class="min-w-0 flex-1 pr-2">
                                 <div class="font-semibold text-gray-900 text-sm truncate">${person.name}</div>
-                                <div class="text-xs text-gray-500 truncate">${person.dept} &bull; <span class="italic text-gray-400">${person.loc}</span></div>
+                                <div class="text-xs text-gray-500 truncate">${person.dept} &bull; <span class="italic text-gray-400 text-[11px]">${person.loc}</span></div>
                             </div>
                             <div>
-                                <a href="${telPrefix}${cleanPhone}" class="inline-block text-xs font-bold text-blue-600 hover:text-blue-800 bg-blue-50 hover:bg-blue-100 px-2.5 py-1.5 rounded transition">
+                                <a href="${telPrefix}${cleanPhone}" class="inline-block text-xs font-bold text-blue-600 hover:text-blue-800 bg-blue-50 hover:bg-blue-100 px-2 py-1 rounded select-all transition">
                                     ${person.number}
                                 </a>
                             </div>
@@ -371,14 +371,14 @@
                 resultsContainer.classList.remove('hidden');
             }
 
-            // Click interceptor to dismiss dropdown overlay
+            // Click Interceptor overlay closer
             document.addEventListener('click', (e) => {
                 if (!searchInput.contains(e.target) && !resultsContainer.contains(e.target)) {
                     resultsContainer.classList.add('hidden');
                 }
             });
 
-            // 4. Checklist Progress Mechanics
+            // Reactive Checkbox Counter Calculations
             const checkboxes = document.querySelectorAll('.checklist-item');
             const progressCount = document.getElementById('progressCount');
 

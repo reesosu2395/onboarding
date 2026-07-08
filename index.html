@@ -3,51 +3,169 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Corporate Onboarding - Phone Directory</title>
+    <title>Gemini Coatings - Employee Onboarding Portal</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body class="bg-gray-100 min-h-screen py-10 px-4">
+<body class="bg-gray-100 min-h-screen font-sans antialiased text-gray-900">
 
-    <div class="max-w-2xl mx-auto">
-        <div class="text-center mb-8">
-            <h1 class="text-3xl font-bold text-gray-900 tracking-tight">Internal Phone Directory</h1>
-            <p class="mt-2 text-sm text-gray-600">Quickly find contact information across all corporate offices and regional teams.</p>
-        </div>
-
-        <div class="mb-6">
-            <label for="directory-search" class="sr-only">Search Directory</label>
-            <div class="relative shadow-sm rounded-lg">
-                <div class="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none">
-                    <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                    </svg>
+    <nav class="bg-slate-900 text-white shadow-md">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-3">
+                <div class="bg-blue-600 p-2 rounded-lg font-bold tracking-wider text-xl">G</div>
+                <div>
+                    <h1 class="text-lg font-bold leading-tight">Gemini Coatings</h1>
+                    <p class="text-xs text-slate-400">Employee Onboarding & Resources</p>
                 </div>
-                <input 
-                    type="search" 
-                    id="directory-search" 
-                    class="block w-full p-4 pl-11 text-base text-gray-900 border border-gray-300 rounded-lg bg-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all" 
-                    placeholder="Search by name, department, location, or extension..." 
-                    onkeyup="filterDirectory()"
-                    autocomplete="off"
-                >
+            </div>
+            <div class="flex gap-4 text-sm font-medium text-slate-300">
+                <a href="#training" class="hover:text-white transition-colors">Training Checklist</a>
+                <a href="#links" class="hover:text-white transition-colors">Portals & Tools</a>
+                <a href="#directory" class="hover:text-white transition-colors">Phone Directory</a>
             </div>
         </div>
+    </nav>
 
-        <div id="directory-results" class="space-y-3">
-            <div class="p-6 text-center bg-white rounded-lg border border-gray-200 shadow-sm text-gray-500">
-                <svg class="w-12 h-12 mx-auto text-gray-300 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                </svg>
-                <p class="text-base font-medium text-gray-700">Ready to search</p>
-                <p class="text-sm text-gray-400 mt-1">Type a team member's name, city, or extension above.</p>
+    <main class="max-w-6xl mx-auto px-4 py-8 space-y-12">
+
+        <section id="training" class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6 border-b border-gray-100 pb-4">
+                <div>
+                    <h2 class="text-xl font-bold text-gray-900">Your Onboarding Checklist</h2>
+                    <p class="text-sm text-gray-500">Complete these critical operational setups and compliance modules.</p>
+                </div>
+                <div class="w-full md:w-64 bg-gray-100 rounded-full h-4 relative overflow-hidden shadow-inner">
+                    <div id="progress-bar" class="bg-blue-600 h-full w-0 transition-all duration-500 rounded-full"></div>
+                    <span id="progress-text" class="absolute inset-0 flex items-center justify-center text-xs font-bold text-slate-700 mix-blend-multiply">0% Complete</span>
+                </div>
             </div>
-        </div>
-    </div>
+
+            <div class="space-y-3">
+                <label class="flex items-start p-4 bg-gray-50 rounded-lg border border-gray-200 cursor-pointer hover:bg-slate-50 transition-colors">
+                    <input type="checkbox" class="task-checkbox mt-1 w-5 h-5 text-blue-600 border-gray-300 rounded focus:ring-blue-500" onchange="updateProgress()">
+                    <div class="ml-4">
+                        <span class="font-semibold block text-sm text-gray-900">EHS Safety Training Modules</span>
+                        <span class="text-xs text-gray-500 block mt-0.5">Review initial material safety handling and factory hazard guidelines.</span>
+                    </div>
+                </label>
+
+                <label class="flex items-start p-4 bg-gray-50 rounded-lg border border-gray-200 cursor-pointer hover:bg-slate-50 transition-colors">
+                    <input type="checkbox" class="task-checkbox mt-1 w-5 h-5 text-blue-600 border-gray-300 rounded focus:ring-blue-500" onchange="updateProgress()">
+                    <div class="ml-4">
+                        <span class="font-semibold block text-sm text-gray-900">Multi-Factor Authentication Setup (MFA)</span>
+                        <span class="text-xs text-gray-500 block mt-0.5">Configure authenticator apps for email, VPN, and network admin credentials.</span>
+                    </div>
+                </label>
+
+                <label class="flex items-start p-4 bg-gray-50 rounded-lg border border-gray-200 cursor-pointer hover:bg-slate-50 transition-colors">
+                    <input type="checkbox" class="task-checkbox mt-1 w-5 h-5 text-blue-600 border-gray-300 rounded focus:ring-blue-500" onchange="updateProgress()">
+                    <div class="ml-4">
+                        <span class="font-semibold block text-sm text-gray-900">Corporate Mobile App Configurations</span>
+                        <span class="text-xs text-gray-500 block mt-0.5">Provision mobile tools for shared operations and field reporting infrastructure.</span>
+                    </div>
+                </label>
+
+                <label class="flex items-start p-4 bg-gray-50 rounded-lg border border-gray-200 cursor-pointer hover:bg-slate-50 transition-colors">
+                    <input type="checkbox" class="task-checkbox mt-1 w-5 h-5 text-blue-600 border-gray-300 rounded focus:ring-blue-500" onchange="updateProgress()">
+                    <div class="ml-4">
+                        <span class="font-semibold block text-sm text-gray-900">Security Awareness Training Completion</span>
+                        <span class="text-xs text-gray-500 block mt-0.5">Complete foundational data-handling and phishing defense evaluations.</span>
+                    </div>
+                </label>
+            </div>
+        </section>
+
+
+        <section id="links" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            
+            <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6 flex flex-col justify-between">
+                <div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Essential Work Portals</h3>
+                    <p class="text-sm text-gray-500 mb-4">Direct access points to administrative, time-tracking, and functional operations engines.</p>
+                    <div class="grid grid-cols-2 gap-3">
+                        <a href="https://www.gemini-coatings.com" target="_blank" class="p-3 bg-slate-50 rounded-lg border border-gray-200 text-center text-sm font-semibold text-slate-700 hover:bg-slate-100 hover:text-blue-700 transition-all">Company Website</a>
+                        <a href="#" class="p-3 bg-slate-50 rounded-lg border border-gray-200 text-center text-sm font-semibold text-slate-700 hover:bg-slate-100 hover:text-blue-700 transition-all">Knowledge Base</a>
+                        <a href="#" class="p-3 bg-slate-50 rounded-lg border border-gray-200 text-center text-sm font-semibold text-slate-700 hover:bg-slate-100 hover:text-blue-700 transition-all">SAP Concur</a>
+                        <a href="#" class="p-3 bg-slate-50 rounded-lg border border-gray-200 text-center text-sm font-semibold text-slate-700 hover:bg-slate-100 hover:text-blue-700 transition-all">Sage X3 ERP</a>
+                        <a href="#" class="p-3 bg-slate-50 rounded-lg border border-gray-200 text-center text-sm font-semibold text-slate-700 hover:bg-slate-100 hover:text-blue-700 transition-all col-span-2">Assistics Tool Portal</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6 flex flex-col justify-between">
+                <div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Desktop Environment Shortcuts</h3>
+                    <p class="text-sm text-gray-500 mb-4">Run the following operations utility package to instantly drop network navigation shortcuts directly onto your local Windows workspace.</p>
+                    <div class="p-4 bg-slate-900 rounded-lg border border-slate-800 text-slate-200 font-mono text-xs mb-4 select-all">
+                        Invoke-WebRequest -Uri "https://gemini-coatings.github.io/onboarding/assets/Create-Shortcuts.ps1" -OutFile "$env:TEMP\Create-Shortcuts.ps1"; & "$env:TEMP\Create-Shortcuts.ps1"
+                    </div>
+                </div>
+                <div class="text-sm text-slate-500 italic flex items-center gap-2">
+                    <svg class="w-4 h-4 text-blue-500 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
+                    Copy code block, open Windows PowerShell, and press Enter to deploy.
+                </div>
+            </div>
+        </section>
+
+
+        <section id="directory" class="bg-white rounded-xl shadow-sm border border-gray-200 p-6 max-w-3xl mx-auto">
+            <div class="text-center mb-6">
+                <h2 class="text-xl font-bold text-gray-900">Internal Phone Directory</h2>
+                <p class="text-sm text-gray-500 mt-1">Real-time keyword lookup for extensions, mobile listings, and facility units.</p>
+            </div>
+
+            <div class="mb-6">
+                <label for="directory-search" class="sr-only">Search Contacts</label>
+                <div class="relative">
+                    <div class="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none">
+                        <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                    </div>
+                    <input 
+                        type="search" 
+                        id="directory-search" 
+                        class="block w-full p-4 pl-11 text-base text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all" 
+                        placeholder="Search by name, department, location, or extension..." 
+                        onkeyup="filterDirectory()"
+                        autocomplete="off"
+                    >
+                </div>
+            </div>
+
+            <div id="directory-results" class="space-y-3">
+                <div class="p-6 text-center bg-white rounded-lg border border-gray-200 shadow-sm text-gray-400">
+                    <svg class="w-10 h-10 mx-auto text-gray-300 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                    </svg>
+                    <p class="text-sm font-medium text-gray-600">Ready to search</p>
+                    <p class="text-xs text-gray-400 mt-0.5">Type a team member's name, city, or extension above.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
 
     <script>
-        // Master contact data compiled from company records
+        // 1. Checklist Progress Bar Engine
+        function updateProgress() {
+            const checkboxes = document.querySelectorAll('.task-checkbox');
+            const totalTasks = checkboxes.length;
+            let checkedTasks = 0;
+
+            checkboxes.forEach(checkbox => {
+                if (checkbox.checked) checkedTasks++;
+            });
+
+            const percentage = totalTasks > 0 ? Math.round((checkedTasks / totalTasks) * 100) : 0;
+            
+            // Apply visual updates to DOM components
+            document.getElementById('progress-bar').style.width = percentage + '%';
+            document.getElementById('progress-text').innerText = percentage + '% Complete';
+        }
+
+        // 2. Real-time Phone Directory Filter Data Structure
         const phoneDirectory = [
-            // Core Corporate / Support Units
+            // Core Support Units & Executive Records
             { name: "I.T. Department", phone: "2300", type: "Extension", location: "El Reno - Corporate" },
             { name: "Human Resources (Marti Canida)", phone: "2028", type: "Extension", location: "El Reno - Corporate" },
             { name: "Executive (Chris Hicks)", phone: "(817) 247-9696", type: "Mobile", location: "Executive Team" },
@@ -55,7 +173,7 @@
             { name: "Executive (Jason Melton)", phone: "(405) 664-7901", type: "Mobile", location: "Executive Team" },
             { name: "Executive (Jenny Cripps)", phone: "(405) 827-6209", type: "Mobile", location: "Executive Team" },
             
-            // Oklahoma Personnel / Operations (El Reno)
+            // El Reno Corporate Operations
             { name: "Adam Stevenson", phone: "2065", type: "Extension", location: "El Reno" },
             { name: "Amy McClain", phone: "2061", type: "Extension", location: "El Reno" },
             { name: "Austin Ferguson", phone: "2075", type: "Extension", location: "El Reno" },
@@ -94,7 +212,7 @@
             { name: "Vickie Scharp", phone: "2026", type: "Extension", location: "El Reno" },
             { name: "Zakry Rios", phone: "2320", type: "Extension", location: "El Reno" },
 
-            // Grand Prairie Location (GP)
+            // Grand Prairie Team Listings
             { name: "Andres Cruz", phone: "5108", type: "Extension", location: "Grand Prairie" },
             { name: "Anthony Golriz", phone: "2302", type: "Extension", location: "Grand Prairie" },
             { name: "Brian Hansen", phone: "5110", type: "Extension", location: "Grand Prairie" },
@@ -106,12 +224,12 @@
             { name: "Martin Negrete", phone: "5115", type: "Extension", location: "Grand Prairie" },
             { name: "Mike Boyd", phone: "5122", type: "Extension", location: "Grand Prairie" },
 
-            // Holbrook Location
+            // Holbrook Facilities
             { name: "Holbrook Main Desk", phone: "5800", type: "Extension", location: "Holbrook" },
             { name: "Holbrook Shipping", phone: "5806", type: "Extension", location: "Holbrook" },
             { name: "Larry Blevins", phone: "4010", type: "Extension", location: "Holbrook" },
 
-            // Other Sites / Remote
+            // Remote Accounts
             { name: "Brannon Townsend", phone: "3712", type: "Extension", location: "Remote" },
             { name: "Bryce Sanders", phone: "2498", type: "Extension", location: "Remote" },
             { name: "Keith Jones", phone: "7000", type: "Extension", location: "Remote" }
@@ -121,28 +239,28 @@
             const searchInput = document.getElementById('directory-search').value.toLowerCase().trim();
             const resultsContainer = document.getElementById('directory-results');
             
-            // Reset to clean placeholder if entry is empty
+            // Clear filtering and return to base asset card if string query is blank
             if (searchInput === '') {
                 resultsContainer.innerHTML = `
-                    <div class="p-6 text-center bg-white rounded-lg border border-gray-200 shadow-sm text-gray-500">
-                        <svg class="w-12 h-12 mx-auto text-gray-300 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <div class="p-6 text-center bg-white rounded-lg border border-gray-200 shadow-sm text-gray-400">
+                        <svg class="w-10 h-10 mx-auto text-gray-300 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                         </svg>
-                        <p class="text-base font-medium text-gray-700">Ready to search</p>
-                        <p class="text-sm text-gray-400 mt-1">Type a team member's name, city, or extension above.</p>
+                        <p class="text-sm font-medium text-gray-600">Ready to search</p>
+                        <p class="text-xs text-gray-400 mt-0.5">Type a team member's name, city, or extension above.</p>
                     </div>
                 `;
                 return;
             }
             
-            // Execute cross-field string matching
+            // Cross-field lookup engine execution
             const filtered = phoneDirectory.filter(contact => {
                 return contact.name.toLowerCase().includes(searchInput) || 
                        contact.phone.toLowerCase().includes(searchInput) ||
                        contact.location.toLowerCase().includes(searchInput);
             });
             
-            // Render outputs
+            // Output injection pipeline
             resultsContainer.innerHTML = '';
             if (filtered.length > 0) {
                 filtered.forEach(contact => {

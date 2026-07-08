@@ -3,405 +3,437 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Employee Onboarding Portal | Gemini Coatings</title>
-    <!-- Tailwind CSS CDN -->
+    <title>Employee Onboarding Hub</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body class="bg-gray-100 font-sans antialiased text-gray-800 min-h-screen flex flex-col">
+<body class="bg-slate-50 text-slate-800 font-sans antialiased">
 
-    <!-- Header Banner -->
-    <header class="bg-slate-900 text-white shadow-md">
-        <div class="max-w-7xl mx-auto px-4 py-5 flex flex-col sm:flex-row justify-between items-center gap-4">
-            <div class="flex items-center space-x-3">
-                <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center font-bold text-xl tracking-wider">G</div>
-                <div>
-                    <h1 class="text-xl font-bold tracking-tight">Gemini Coatings</h1>
-                    <p class="text-xs text-slate-400">Employee Workspace & Onboarding Portal</p>
-                </div>
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center">
+                <img src="image_1d6c3a.png.png" alt="Gemini Industries, Inc. Logo" class="h-12 w-auto object-contain">
             </div>
-            <div class="text-sm bg-slate-800 px-4 py-2 rounded-full text-slate-300 border border-slate-700">
-                Welcome to the Team!
+            <div class="flex items-center space-x-4">
+                <span class="text-sm text-slate-500">Need help? <a href="mailto:helpdesk@gemini-coatings.com" class="text-blue-600 hover:underline">Contact IT Helpdesk</a></span>
             </div>
         </div>
     </header>
 
-    <!-- Main Grid Workspace Layout -->
-    <main class="flex-grow max-w-7xl w-full mx-auto px-4 py-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
-        
-        <!-- Left 2 Columns: Primary Task Modules & Documentation (2/3 Width) -->
-        <div class="lg:col-span-2 space-y-6">
-            
-            <!-- NEW HIRE INTERACTIVE PROGRESS CHECKLIST -->
-            <div id="checklist" class="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
-                <div class="flex justify-between items-start mb-4">
-                    <div>
-                        <h2 class="text-xl font-bold text-gray-900">New Hire Onboarding Checklist</h2>
-                        <p class="text-sm text-gray-500">Track and complete your baseline operational tasks.</p>
-                    </div>
-                    <div class="bg-blue-50 text-blue-700 text-xs px-3 py-1 rounded-full font-bold uppercase tracking-wider">
-                        Progress: <span id="progressCount">0/6</span>
-                    </div>
-                </div>
-
-                <div class="space-y-3 mt-4">
-                    <label class="flex items-start p-3 hover:bg-slate-50 rounded-lg border border-gray-100 transition cursor-pointer">
-                        <input type="checkbox" class="checklist-item mt-1 w-4 h-4 text-blue-600 rounded border-gray-300 focus:ring-blue-500">
-                        <span class="ml-3 text-sm text-gray-700 font-medium">Configure payroll parameters, tax preferences, and direct deposit links within Paycom.</span>
-                    </label>
-                    <label class="flex items-start p-3 hover:bg-slate-50 rounded-lg border border-gray-100 transition cursor-pointer">
-                        <input type="checkbox" class="checklist-item mt-1 w-4 h-4 text-blue-600 rounded border-gray-300 focus:ring-blue-500">
-                        <span class="ml-3 text-sm text-gray-700 font-medium">Review the corporate policy handbook and submit formal digital signature pages.</span>
-                    </label>
-                    <label class="flex items-start p-3 hover:bg-slate-50 rounded-lg border border-gray-100 transition cursor-pointer">
-                        <input type="checkbox" class="checklist-item mt-1 w-4 h-4 text-blue-600 rounded border-gray-300 focus:ring-blue-500">
-                        <span class="ml-3 text-sm text-gray-700 font-medium">Review operational hazard sheets and complete required physical safety training profiles.</span>
-                    </label>
-                    <label class="flex items-start p-3 hover:bg-slate-50 rounded-lg border border-gray-100 transition cursor-pointer">
-                        <input type="checkbox" class="checklist-item mt-1 w-4 h-4 text-blue-600 rounded border-gray-300 focus:ring-blue-500">
-                        <span class="ml-3 text-sm text-gray-700 font-medium">Verify structural file share accessibility paths directly inside Windows File Explorer (＼＼gemfs＼Fileshare).</span>
-                    </label>
-                    <label class="flex items-start p-3 hover:bg-slate-50 rounded-lg border border-gray-100 transition cursor-pointer">
-                        <input type="checkbox" class="checklist-item mt-1 w-4 h-4 text-blue-600 rounded border-gray-300 focus:ring-blue-500">
-                        <span class="ml-3 text-sm text-gray-700 font-medium">Complete initial introductory department alignment brief with designated site supervisor.</span>
-                    </label>
-                    <label class="flex items-start p-3 hover:bg-slate-50 rounded-lg border border-gray-100 transition cursor-pointer">
-                        <input type="checkbox" class="checklist-item mt-1 w-4 h-4 text-blue-600 rounded border-gray-300 focus:ring-blue-500">
-                        <span class="ml-3 text-sm text-gray-700 font-medium">Confirm functional deployment of multi-factor authentication protocols for network applications access.</span>
-                    </label>
-                </div>
-            </div>
-
-            <!-- ENVIRONMENTAL HEALTH & SAFETY COMPLIANCE -->
-            <div id="safety" class="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
-                <h2 class="text-xl font-bold text-gray-900 mb-2">EHS Safety Resources & Reporting</h2>
-                <p class="text-sm text-gray-500 mb-4">Crucial standard operating parameters for facilities floor access.</p>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div class="p-4 border border-orange-100 bg-orange-50/50 rounded-lg">
-                        <h3 class="font-bold text-orange-900 text-sm mb-1">Incident Report Procedures</h3>
-                        <p class="text-xs text-orange-800 leading-relaxed">Report structural workplace anomalies, safety threats, or hazards to safety coordinators. Signal escalation boards using team corporate text groups immediately.</p>
-                    </div>
-                    <div class="p-4 border border-emerald-100 bg-emerald-50/50 rounded-lg">
-                        <h3 class="font-bold text-emerald-900 text-sm mb-1">Safety Training Verification</h3>
-                        <p class="text-xs text-emerald-800 leading-relaxed">Confirm verification criteria for handling specific materials data sets before utilizing processing assets or entering manufacturing zones.</p>
-                    </div>
-                </div>
-            </div>
+    <section class="bg-slate-900 text-white py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto text-center">
+            <h1 class="text-4xl font-extrabold sm:text-5xl tracking-tight">Welcome to the Team! 🎉</h1>
+            <p class="mt-4 text-xl text-slate-300 max-w-2xl mx-auto">
+                We're thrilled to have you here. This portal contains everything you need to get set up, secure, and ready for your first week.
+            </p>
         </div>
+    </section>
 
-        <!-- Right 1 Column: Essential System Links & Live Directory Lookups (1/3 Width) -->
-        <div class="lg:col-span-1 space-y-6">
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
             
-            <!-- ESSENTIAL CORPORATE LINKS HUB -->
-            <div class="bg-white rounded-xl p-5 shadow-sm border border-gray-200">
-                <h2 class="text-lg font-bold text-gray-900 mb-1">Essential Systems</h2>
-                <p class="text-xs text-gray-500 mb-4">Direct access links to external tools and internal workflows.</p>
+            <div class="lg:col-span-2 space-y-8">
                 
-                <div class="space-y-3">
-                    <a href="https://www.paycom.com" target="_blank" class="flex items-center justify-between p-3 bg-slate-50 hover:bg-blue-50 rounded-lg border border-gray-100 transition group">
-                        <div>
-                            <div class="font-semibold text-sm text-gray-800 group-hover:text-blue-600">Paycom Portal</div>
-                            <div class="text-xs text-gray-500">Payroll parameters, punch clocks, & benefits</div>
-                        </div>
-                        <span class="text-gray-400 group-hover:text-blue-500 font-bold">&rarr;</span>
-                    </a>
-                    <a href="https://www.concursolutions.com" target="_blank" class="flex items-center justify-between p-3 bg-slate-50 hover:bg-blue-50 rounded-lg border border-gray-100 transition group">
-                        <div>
-                            <div class="font-semibold text-sm text-gray-800 group-hover:text-blue-600">SAP Concur</div>
-                            <div class="text-xs text-gray-500">Travel logs & operational business expenses</div>
-                        </div>
-                        <span class="text-gray-400 group-hover:text-blue-500 font-bold">&rarr;</span>
-                    </a>
-                    <a href="#report-runner" class="flex items-center justify-between p-3 bg-slate-50 hover:bg-blue-50 rounded-lg border border-gray-100 transition group">
-                        <div>
-                            <div class="font-semibold text-sm text-gray-800 group-hover:text-blue-600">Report Runner</div>
-                            <div class="text-xs text-gray-500">Corporate metrics and system data dashboards</div>
-                        </div>
-                        <span class="text-gray-400 group-hover:text-blue-500 font-bold">&rarr;</span>
-                    </a>
-                    <a href="#it-setup" class="flex items-center justify-between p-3 bg-slate-50 hover:bg-blue-50 rounded-lg border border-gray-100 transition group">
-                        <div>
-                            <div class="font-semibold text-sm text-gray-800 group-hover:text-blue-600">IT Setup Guides</div>
-                            <div class="text-xs text-gray-500">Deploy shared drives & configure hardware assets</div>
-                        </div>
-                        <span class="text-gray-400 group-hover:text-blue-500 font-bold">&rarr;</span>
-                    </a>
-                </div>
-            </div>
+                <div class="bg-white rounded-xl shadow-xs border border-slate-200 p-6 sm:p-8">
+                    <div class="flex items-center justify-between border-b border-slate-100 pb-4 mb-6">
+                        <h2 class="text-2xl font-bold text-slate-900">Your Onboarding Checklist</h2>
+                        <span id="progress-text" class="text-sm font-semibold bg-blue-50 text-blue-700 px-3 py-1 rounded-full">0% Completed</span>
+                    </div>
 
-            <!-- CORPORATE COMMUNICATIONS DIRECTORY ENGINE -->
-            <div class="bg-white rounded-xl p-5 shadow-sm border border-gray-200 relative">
-                <h2 class="text-lg font-bold text-gray-900 mb-1">Corporate Directory Lookup</h2>
-                <p class="text-xs text-gray-500 mb-4">Live lookups for local system extensions and regional sales staff contacts.</p>
-                
-                <div class="relative">
-                    <input 
-                        type="text" 
-                        id="portalSearchInput" 
-                        placeholder="Type names, extension pins, or territories..." 
-                        class="w-full px-3 py-2.5 pl-10 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-inner text-sm transition-all"
-                    >
-                    <div class="absolute left-3 top-3.5 text-gray-400">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                    <div class="w-full bg-slate-100 rounded-full h-2 mb-8">
+                        <div id="progress-bar" class="bg-blue-600 h-2 rounded-full transition-all duration-500" style="width: 0%"></div>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div id="safety-step-container" class="flex items-start space-x-4 p-4 rounded-lg bg-slate-100/50 opacity-60 transition duration-300">
+                            <input type="checkbox" id="safety-checkbox" disabled class="todo-item mt-1.5 h-5 w-5 rounded-sm border-slate-300 text-blue-600 focus:ring-blue-500 cursor-not-allowed">
+                            <div>
+                                <h3 class="text-lg font-semibold text-slate-900 item-title flex items-center gap-2">
+                                    Review Safety Guidelines & EHS Protocols 
+                                    <span id="lock-badge" class="text-xs font-normal bg-slate-200 text-slate-600 px-2 py-0.5 rounded border border-slate-300">🔒 Locked (Take Test)</span>
+                                </h3>
+                                <p class="text-slate-500 text-sm mt-1">Review the facility safety manual, locate emergency exits, and complete your initial Environmental, Health, and Safety (EHS) orientation.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4 p-4 rounded-lg hover:bg-slate-50 transition">
+                            <input type="checkbox" class="todo-item mt-1.5 h-5 w-5 rounded-sm border-slate-300 text-blue-600 focus:ring-blue-500 cursor-pointer">
+                            <div>
+                                <h3 class="text-lg font-semibold text-slate-900 item-title">Configure Cell Phone Applications</h3>
+                                <p class="text-slate-500 text-sm mt-1">Install **Microsoft Outlook** and **Microsoft Authenticator** from your device's app store. Register your corporate profile to safely access email and approve security prompts on the go.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4 p-4 rounded-lg hover:bg-slate-50 transition">
+                            <input type="checkbox" class="todo-item mt-1.5 h-5 w-5 rounded-sm border-slate-300 text-blue-600 focus:ring-blue-500 cursor-pointer">
+                            <div>
+                                <h3 class="text-lg font-semibold text-slate-900 item-title">Set Up Multi-Factor Authentication (MFA)</h3>
+                                <p class="text-slate-500 text-sm mt-1">Secure your corporate account. Set up your baseline credentials and prepare for secondary verification challenges on your workstation.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4 p-4 rounded-lg hover:bg-slate-50 transition">
+                            <input type="checkbox" class="todo-item mt-1.5 h-5 w-5 rounded-sm border-slate-300 text-blue-600 focus:ring-blue-500 cursor-pointer">
+                            <div>
+                                <h3 class="text-lg font-semibold text-slate-900 item-title">Join Team Communication Channels</h3>
+                                <p class="text-slate-500 text-sm mt-1">Log into Microsoft Teams and ensure your mobile device is added to the relevant department text groups to stay connected with your unit.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4 p-4 rounded-lg hover:bg-slate-50 transition">
+                            <input type="checkbox" class="todo-item mt-1.5 h-5 w-5 rounded-sm border-slate-300 text-blue-600 focus:ring-blue-500 cursor-pointer">
+                            <div>
+                                <h3 class="text-lg font-semibold text-slate-900 item-title">Complete KnowBe4 Security Awareness Training</h3>
+                                <p class="text-slate-500 text-sm mt-1">Log into your corporate email, find the automated invitation link from KnowBe4, and complete your baseline cybersecurity training modules.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                
-                <!-- Floating Results Overlay Node -->
-                <div 
-                    id="searchResults" 
-                    class="hidden absolute z-50 left-5 right-5 mt-2 bg-white rounded-lg shadow-2xl border border-gray-200 max-h-80 overflow-y-auto divide-y divide-gray-100"
-                >
-                    <!-- Populated dynamically via JS lookup index -->
+
+                <div id="directory-section" class="bg-white rounded-xl shadow-xs border border-slate-200 p-6 sm:p-8">
+                    <div class="sm:flex sm:items-center sm:justify-between border-b border-slate-100 pb-5 mb-6">
+                        <div>
+                            <h2 class="text-2xl font-bold text-slate-900">Corporate Phone Directory</h2>
+                            <p class="text-slate-500 text-sm mt-1">Search internal staff extensions, corporate teams, and external sales representatives.</p>
+                        </div>
+                        <div class="mt-4 sm:mt-0 flex bg-slate-100 p-1 rounded-lg text-sm">
+                            <button onclick="switchTab('all')" id="tab-all" class="px-4 py-1.5 rounded-md font-medium transition cursor-pointer bg-white text-slate-900 shadow-xs">All</button>
+                            <button onclick="switchTab('employee')" id="tab-employee" class="px-4 py-1.5 rounded-md font-medium text-slate-600 hover:text-slate-900 transition cursor-pointer">Internal Staff</button>
+                            <button onclick="switchTab('sales')" id="tab-sales" class="px-4 py-1.5 rounded-md font-medium text-slate-600 hover:text-slate-900 transition cursor-pointer">Sales Reps</button>
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <div class="relative rounded-md shadow-xs">
+                            <input type="text" id="directory-search" onkeyup="filterDirectory()" placeholder="Search by name, department, location, or number..." class="w-full pl-4 pr-10 py-2.5 bg-slate-50 border border-slate-200 rounded-lg text-sm focus:outline-hidden focus:ring-2 focus:ring-blue-500 focus:bg-white transition">
+                            <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none text-slate-400">
+                                🔍
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="directory-grid" class="grid grid-cols-1 md:grid-cols-2 gap-4 max-h-[500px] overflow-y-auto pr-2">
+                        </div>
+                    
+                    <div id="no-results" class="hidden text-center py-12 text-slate-400 text-sm">
+                        No directory entries match your search criteria.
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="space-y-6">
+                <div class="bg-amber-50 border border-amber-200 rounded-xl p-6">
+                    <h3 class="text-xl font-bold text-amber-900 mb-3 flex items-center gap-2">
+                        ⚠️ Safety & EHS Resources
+                    </h3>
+                    <p class="text-amber-800 text-sm mb-4">
+                        Safety is our top priority. Please ensure you familiarize yourself with our facility policies on your first day.
+                    </p>
+                    <ul class="space-y-2 text-sm font-medium text-amber-900">
+                        <li><a href="#" class="underline hover:text-amber-700">📄 Incident Report Portal</a></li>
+                        <li><a href="https://www.geminiindustriesinc.com/product-pds-sds-search/" target="_blank" rel="noopener noreferrer" class="underline hover:text-amber-700">🦺 Product PDS & SDS Search</a></li>
+                        <li><a href="#" class="underline hover:text-amber-700">🚨 Emergency Action Plan</a></li>
+                        <li><a href="#" target="_blank" rel="noopener noreferrer" class="underline hover:text-amber-700">🎥 Safety Orientation Video</a></li>
+                        <li><a href="#" onclick="simulatePassingTest(event)" class="underline text-blue-700 hover:text-blue-900 font-bold">📝 Required Safety Test</a></li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-xs border border-slate-200 p-6">
+                    <h3 class="text-xl font-bold text-slate-900 mb-4">Essential Links</h3>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="https://www.geminiindustriesinc.com/" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between p-3 rounded-lg bg-slate-50 hover:bg-blue-50 transition">
+                                <span class="font-medium text-slate-700 group-hover:text-blue-700">Company Public Website</span>
+                                <span class="text-slate-400 group-hover:text-blue-600">→</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.geminiindustriesinc.com/inside-gemini/" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between p-3 rounded-lg bg-slate-50 hover:bg-blue-50 transition">
+                                <span class="font-medium text-slate-700 group-hover:text-blue-700">Inside Gemini</span>
+                                <span class="text-slate-400 group-hover:text-blue-600">→</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.geminiindustriesinc.com/employee-resources/" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between p-3 rounded-lg bg-slate-50 hover:bg-blue-50 transition">
+                                <span class="font-medium text-slate-700 group-hover:text-blue-700">Employee Resources</span>
+                                <span class="text-slate-400 group-hover:text-blue-600">→</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://10.1.1.42/assistics/index.jsp?menuKey=0" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between p-3 rounded-lg bg-slate-50 hover:bg-blue-50 transition">
+                                <span class="font-medium text-slate-700 group-hover:text-blue-700">Assistics</span>
+                                <span class="text-slate-400 group-hover:text-blue-600">→</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://10.1.1.60:8124/auth/login/page" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between p-3 rounded-lg bg-slate-50 hover:bg-blue-50 transition">
+                                <span class="font-medium text-slate-700 group-hover:text-blue-700">Sage X3</span>
+                                <span class="text-slate-400 group-hover:text-blue-600">→</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://tools.gemini-coatings.com/new/login.php?_gl=1*1auo44t*_gcl_au*MTU3MDkwNzQ1Mi4xNzgzNDU0ODU4" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between p-3 rounded-lg bg-slate-50 hover:bg-blue-50 transition">
+                                <span class="font-medium text-slate-700 group-hover:text-blue-700">Gemini Tools</span>
+                                <span class="text-slate-400 group-hover:text-blue-600">→</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://reports.gemini-coatings.com/jeff-netreportrunnerwebportal/login.aspx" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between p-3 rounded-lg bg-slate-50 hover:bg-blue-50 transition">
+                                <span class="font-medium text-slate-700 group-hover:text-blue-700">Report Runner</span>
+                                <span class="text-slate-400 group-hover:text-blue-600">→</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.paycomonline.net/v4/ee/web.php/app/login" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between p-3 rounded-lg bg-slate-50 hover:bg-blue-50 transition">
+                                <span class="font-medium text-slate-700 group-hover:text-blue-700">Paycom</span>
+                                <span class="text-slate-400 group-hover:text-blue-600">→</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:helpdesk@gemini-coatings.com?subject=IT Helpdesk Ticket Submission" class="group flex items-center justify-between p-3 rounded-lg bg-slate-50 hover:bg-blue-50 transition">
+                                <span class="font-medium text-slate-700 group-hover:text-blue-700">IT Ticket Submission</span>
+                                <span class="text-slate-400 group-hover:text-blue-600">→</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#directory-section" class="group flex items-center justify-between p-3 rounded-lg bg-blue-50 border border-blue-200 transition">
+                                <span class="font-semibold text-blue-800">📖 Corporate Phone Directory</span>
+                                <span class="text-blue-600">↓</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.concursolutions.com/" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between p-3 rounded-lg bg-slate-50 hover:bg-blue-50 transition">
+                                <span class="font-medium text-slate-700 group-hover:text-blue-700">SAP Concur Expenses</span>
+                                <span class="text-slate-400 group-hover:text-blue-600">→</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-slate-900 rounded-xl p-6 text-white border border-slate-800">
+                    <h3 class="text-sm font-bold mb-4 flex items-center gap-2 text-blue-400">
+                        📁 Bookmark Folder Location
+                    </h3>
+                    
+                    <button id="copy-btn" onclick="copyNetworkPath()" class="w-full cursor-pointer bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-3 rounded-lg text-xs text-center transition mb-4">
+                        📋 Copy Folder Path
+                    </button>
+
+                    <div class="text-slate-400 text-xs space-y-2 border-t border-slate-800 pt-3">
+                        <p><strong class="text-slate-200">1.</strong> Press <kbd class="bg-slate-800 px-1 rounded text-slate-300 font-mono">Win + E</kbd> to open File Explorer.</p>
+                        <p><strong class="text-slate-200">2.</strong> Paste the path into the address bar at the top and press Enter.</p>
+                        <p><strong class="text-slate-200">3.</strong> Right-click <strong class="text-slate-300">Quick Access</strong> (or <strong class="text-slate-300">Home/Favorites</strong>) in the left sidebar and choose <span class="text-blue-400">"Pin current folder to Quick Access"</span>.</p>
+                    </div>
                 </div>
             </div>
+
         </div>
     </main>
 
-    <!-- Footer Network Status Block -->
-    <footer class="bg-white border-t border-gray-200 mt-12 py-6 text-center text-xs text-gray-500">
-        <p>&copy; 2026 Gemini Coatings. Corporate Internal Resource Deployment Hub. All rights reserved.</p>
+    <footer class="bg-white border-t border-slate-200 mt-20 py-6 text-center text-sm text-slate-400">
+        &copy; 2026 Corporate Internal Portal. All rights reserved.
     </footer>
 
-    <!-- RUNTIME LOGIC ENGINE -->
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
+        // --- Directory Data Array ---
+        // Populated with core sample records directly matching your corporate sheets
+        const directoryData = [
+            // Internal Staff Entries
+            { name: "IT Department / Helpdesk", number: "Ext. 2300", type: "employee", dept: "Information Technology", loc: "Corporate" },
+            { name: "Executive Team / Corporate", number: "Ext. 2056 / 2057", type: "employee", dept: "Management", loc: "Corporate" },
+            { name: "Adam Stevenson", number: "Ext. 2065", type: "employee", dept: "Staff", loc: "Oklahoma" },
+            { name: "Amy McClain", number: "Ext. 2061", type: "employee", dept: "Staff", loc: "Oklahoma" },
+            { name: "Anthony Golriz", number: "Ext. 2302", type: "employee", dept: "Information Technology", loc: "Oklahoma" },
+            { name: "Brandon Murray", number: "Ext. 2063", type: "employee", dept: "Staff", loc: "Oklahoma" },
+            { name: "Chad Hubbard", number: "Ext. 2064", type: "employee", dept: "Staff", loc: "Oklahoma" },
+            { name: "Chris Hicks", number: "(817) 247-9696 / Ext. 2050", type: "employee", dept: "Executive Team", loc: "Grand Prairie" },
+            { name: "Danielle Waddle", number: "Ext. 2003", type: "employee", dept: "Customer Service", loc: "Oklahoma" },
+            { name: "Eric Palmer", number: "Ext. 2017", type: "employee", dept: "Inside Sales", loc: "Oklahoma" },
+            { name: "Haylee Hunt", number: "Ext. 2013", type: "employee", dept: "Customer Service", loc: "Oklahoma" },
+            { name: "Jacob Archer", number: "Ext. 2306", type: "employee", dept: "Staff", loc: "Oklahoma" },
+            { name: "Jason Melton", number: "(405) 664-7901 / Ext. 2037", type: "employee", dept: "Executive Team", loc: "Oklahoma" },
+            { name: "Jeff Williams", number: "Ext. 2072", type: "employee", dept: "Staff", loc: "Oklahoma" },
+            { name: "Jeffrey Thomas", number: "Ext. 2067", type: "employee", dept: "Staff", loc: "Oklahoma" },
+            { name: "Jenny Cripps", number: "(405) 827-6209 / Ext. 2056", type: "employee", dept: "Executive Team", loc: "Oklahoma" },
+            { name: "John Casillas", number: "Ext. 3715", type: "employee", dept: "Staff", loc: "Grand Prairie" },
+            { name: "Marie Stevens", number: "Ext. 2057", type: "employee", dept: "Staff", loc: "Oklahoma" },
+            { name: "Marti Canida", number: "(405) 694-5945 / Ext. 2028", type: "employee", dept: "Executive Team", loc: "Oklahoma" },
+            { name: "Matt Peterman", number: "Ext. 2068", type: "employee", dept: "Staff", loc: "Oklahoma" },
+            { name: "Rodney Wickersham", number: "(405) 834-1210", type: "employee", dept: "Executive Team", loc: "Oklahoma" },
+            { name: "Scott Rott", number: "Ext. 2066", type: "employee", dept: "Staff", loc: "Oklahoma" },
+            { name: "Vickie Scharp", number: "Ext. 2026", type: "employee", dept: "Staff", loc: "Oklahoma" },
             
-            // Full Compiled Phone List Array
-            const phoneDirectory = [
-                {"name": "Adam Stevenson", "number": "Ext. 2065", "dept": "Internal Staff", "loc": "Corporate"},
-                {"name": "Amy McClain", "number": "Ext. 2061", "dept": "Internal Staff", "loc": "Corporate"},
-                {"name": "Andres Cruz", "number": "Ext. 5108", "dept": "Internal Staff", "loc": "Corporate"},
-                {"name": "Anthony Golriz", "number": "Ext. 2302", "dept": "Internal Staff", "loc": "Corporate"},
-                {"name": "Austin Ferguson", "number": "Ext. 2075", "dept": "Internal Staff", "loc": "Corporate"},
-                {"name": "Baylee Williams", "number": "Ext. 2033", "dept": "Internal Staff", "loc": "Corporate"},
-                {"name": "Bradey Burge", "number": "Ext. 2007", "dept": "Internal Staff", "loc": "Corporate"},
-                {"name": "Brandon Bosler", "number": "Ext. 2032", "dept": "Internal Staff", "loc": "Corporate"},
-                {"name": "Brandon McMillan", "number": "Ext. 2152", "dept": "Internal Staff", "loc": "Corporate"},
-                {"name": "Brandon Murray", "number": "Ext. 2063", "dept": "Internal Staff", "loc": "Corporate"},
-                {"name": "Brannon Townsend", "number": "Ext. 3712", "dept": "Internal Staff", "loc": "Corporate"},
-                {"name": "Breakroom (Virginia)", "number": "Ext. 4023", "dept": "Internal Staff", "loc": "Corporate"},
-                {"name": "Brent Cooksey", "number": "Ext. 2024", "dept": "Internal Staff", "loc": "Corporate"},
-                {"name": "Brett Hawkins", "number": "Ext. 2039", "dept": "Internal Staff", "loc": "Corporate"},
-                {"name": "Brian Hansen", "number": "Ext. 5110", "dept": "Internal Staff", "loc": "Corporate"},
-                {"name": "Bryce Sanders", "number": "Ext. 2498", "dept": "Internal Staff", "loc": "Corporate"},
-                {"name": "Carly McCaslin", "number": "Ext. 2014", "dept": "Internal Staff", "loc": "Corporate"},
-                {"name": "Catherine Wright", "number": "Ext. 2307", "dept": "Internal Staff", "loc": "Corporate"},
-                {"name": "Cecilia Jaimes", "number": "Ext. 5130", "dept": "Internal Staff", "loc": "Corporate"},
-                {"name": "Chad Hubbard", "number": "Ext. 2064", "dept": "Internal Staff", "loc": "Corporate"},
-                {"name": "Chris Hicks", "number": "Ext. 2050", "dept": "Internal Staff", "loc": "Corporate"},
-                {"name": "Clayton Frizzell", "number": "Ext. 2308", "dept": "Internal Staff", "loc": "Corporate"},
-                {"name": "Conference Room (El Reno)", "number": "Ext. 2069", "dept": "Internal Staff", "loc": "Corporate"},
-                {"name": "Curtis Roach", "number": "Ext. 2048", "dept": "Internal Staff", "loc": "Corporate"},
-                {"name": "Danielle Waddle", "number": "Ext. 2003", "dept": "Internal Staff", "loc": "Corporate"},
-                {"name": "David Jackson", "number": "Ext. 2054", "dept": "Internal Staff", "loc": "Corporate"},
-                {"name": "David Smith", "number": "Ext. 2317", "dept": "Internal Staff", "loc": "Corporate"},
-                {"name": "Devan Moschella", "number": "Ext. 2312", "dept": "Internal Staff", "loc": "Corporate"},
-                {"name": "Eric Palmer", "number": "Ext. 2017", "dept": "Internal Staff", "loc": "Corporate"},
-                {"name": "GP Front Desk", "number": "Ext. 5107", "dept": "Internal Staff", "loc": "Corporate"},
-                {"name": "GP QC", "number": "Ext. 5113", "dept": "Internal Staff", "loc": "Corporate"},
-                {"name": "GP QC 2", "number": "Ext. 5120", "dept": "Internal Staff", "loc": "Corporate"},
-                {"name": "GP Conference", "number": "Ext. 5112", "dept": "Internal Staff", "loc": "Corporate"},
-                {"name": "Harmon Ray", "number": "Ext. 2016", "dept": "Internal Staff", "loc": "Corporate"},
-                {"name": "Haylee Hunt", "number": "Ext. 2013", "dept": "Internal Staff", "loc": "Corporate"},
-                {"name": "Holbrook Main", "number": "Ext. 5800", "dept": "Internal Staff", "loc": "Corporate"},
-                {"name": "Holbrook Shipping", "number": "Ext. 5806", "dept": "Internal Staff", "loc": "Corporate"},
-                {"name": "I.T. Department", "number": "Ext. 2300", "dept": "Internal Staff", "loc": "Corporate"},
-                {"name": "Jacob Archer", "number": "Ext. 2306", "dept": "Internal Staff", "loc": "Corporate"},
-                {"name": "Jamie Gulickson", "number": "Ext. 2005", "dept": "Internal Staff", "loc": "Corporate"},
-                {"name": "Jason Melton", "number": "Ext. 2037", "dept": "Internal Staff", "loc": "Corporate"},
-                {"name": "Jeff Williams", "number": "Ext. 2072", "dept": "Internal Staff", "loc": "Corporate"},
-                {"name": "Jeffrey Thomas", "number": "Ext. 2067", "dept": "Internal Staff", "loc": "Corporate"},
-                {"name": "Jennifer Awbrey", "number": "Ext. 2040", "dept": "Internal Staff", "loc": "Corporate"},
-                {"name": "Jennifer Sorrels", "number": "Ext. 2036", "dept": "Internal Staff", "loc": "Corporate"},
-                {"name": "Jenny Cripps", "number": "Ext. 2056", "dept": "Internal Staff", "loc": "Corporate"},
-                {"name": "John Broyles", "number": "Ext. 2052", "dept": "Internal Staff", "loc": "Corporate"},
-                {"name": "John Casillas", "number": "Ext. 3715", "dept": "Internal Staff", "loc": "Corporate"},
-                {"name": "Katherine Newsome", "number": "Ext. 2015", "dept": "Internal Staff", "loc": "Corporate"},
-                {"name": "Keith Jones", "number": "Ext. 7000", "dept": "Internal Staff", "loc": "Corporate"},
-                {"name": "Kelly Lawrence", "number": "Ext. 2305", "dept": "Internal Staff", "loc": "Corporate"},
-                {"name": "Kevin Cloyd", "number": "Ext. 2043", "dept": "Internal Staff", "loc": "Corporate"},
-                {"name": "Klay Turk", "number": "Ext. 2009", "dept": "Internal Staff", "loc": "Corporate"},
-                {"name": "Larry Blevins", "number": "Ext. 2051", "dept": "Internal Staff", "loc": "Corporate"},
-                {"name": "Lea Cole", "number": "Ext. 2030", "dept": "Internal Staff", "loc": "Corporate"},
-                {"name": "Marie Stevens", "number": "Ext. 2057", "dept": "Internal Staff", "loc": "Corporate"},
-                {"name": "Mark Newman", "number": "Ext. 2049", "dept": "Internal Staff", "loc": "Corporate"},
-                {"name": "Marti Canida", "number": "Ext. 2028", "dept": "Internal Staff", "loc": "Corporate"},
-                {"name": "Martin Negrete", "number": "Ext. 5115", "dept": "Internal Staff", "loc": "Corporate"},
-                {"name": "Matt Peterman", "number": "Ext. 2068", "dept": "Internal Staff", "loc": "Corporate"},
-                {"name": "Maygan Mitchell", "number": "Ext. 2315", "dept": "Internal Staff", "loc": "Corporate"},
-                {"name": "Michael Boblit", "number": "Ext. 2035", "dept": "Internal Staff", "loc": "Corporate"},
-                {"name": "Mike Boyd", "number": "Ext. 5122", "dept": "Internal Staff", "loc": "Corporate"},
-                {"name": "Nao Vang", "number": "Ext. 2313", "dept": "Internal Staff", "loc": "Corporate"},
-                {"name": "Natalie Evans", "number": "Ext. 2044", "dept": "Internal Staff", "loc": "Corporate"},
-                {"name": "Natalie Palmer", "number": "Ext. 2073", "dept": "Internal Staff", "loc": "Corporate"},
-                {"name": "Nathan Stutler", "number": "Ext. 3720", "dept": "Internal Staff", "loc": "Corporate"},
-                {"name": "Nick Alles", "number": "Ext. 5807", "dept": "Internal Staff", "loc": "Corporate"},
-                {"name": "Nick Minichello", "number": "Ext. 5805", "dept": "Internal Staff", "loc": "Corporate"},
-                {"name": "Patrick Fees", "number": "Ext. 2303", "dept": "Internal Staff", "loc": "Corporate"},
-                {"name": "Q. A.", "number": "Ext. 2038", "dept": "Internal Staff", "loc": "Corporate"},
-                {"name": "Receiving (El Reno)", "number": "Ext. 2006", "dept": "Internal Staff", "loc": "Corporate"},
-                {"name": "Rees Nelson", "number": "Ext. 2042", "dept": "Internal Staff", "loc": "Corporate"},
-                {"name": "Richard Gulickson", "number": "Ext. 2045", "dept": "Internal Staff", "loc": "Corporate"},
-                {"name": "Rodney Wickersham", "number": "Ext. 2023", "dept": "Internal Staff", "loc": "Corporate"},
-                {"name": "Scott McAvoy", "number": "Ext. 4021", "dept": "Internal Staff", "loc": "Corporate"},
-                {"name": "Scott Rott", "number": "Ext. 2066", "dept": "Internal Staff", "loc": "Corporate"},
-                {"name": "Sergio Estela-Zevala", "number": "Ext. 4018", "dept": "Internal Staff", "loc": "Corporate"},
-                {"name": "Shane Darnell", "number": "Ext. 2022", "dept": "Internal Staff", "loc": "Corporate"},
-                {"name": "Shawnee Jones", "number": "Ext. 2076", "dept": "Internal Staff", "loc": "Corporate"},
-                {"name": "Shweta Sajish", "number": "Ext. 2318", "dept": "Internal Staff", "loc": "Corporate"},
-                {"name": "Steven Garza", "number": "Ext. 8000", "dept": "Internal Staff", "loc": "Corporate"},
-                {"name": "Terra Awbrey", "number": "Ext. 2053", "dept": "Internal Staff", "loc": "Corporate"},
-                {"name": "Tia Johnson", "number": "Ext. 5117", "dept": "Internal Staff", "loc": "Corporate"},
-                {"name": "Tim Strohsnitter", "number": "Ext. 5815", "dept": "Internal Staff", "loc": "Corporate"},
-                {"name": "Tori Brite", "number": "Ext. 2012", "dept": "Internal Staff", "loc": "Corporate"},
-                {"name": "Tyler Headley", "number": "Ext. 2021", "dept": "Internal Staff", "loc": "Corporate"},
-                {"name": "William Barnes", "number": "Ext. 3722", "dept": "Internal Staff", "loc": "Corporate"},
-                {"name": "Vanessa Blevins", "number": "Ext. 2071", "dept": "Internal Staff", "loc": "Corporate"},
-                {"name": "VA Customer Service", "number": "Ext. 4010", "dept": "Internal Staff", "loc": "Corporate"},
-                {"name": "Vickie Scharp", "number": "Ext. 2026", "dept": "Internal Staff", "loc": "Corporate"},
-                {"name": "Zakry Rios", "number": "Ext. 2320", "dept": "Internal Staff", "loc": "Corporate"},
-                {"name": "Albert Flores", "number": "(626) 533-2718", "dept": "Outside Sales", "loc": "Gemini Sales Rep"},
-                {"name": "Albert Rodriguez", "number": "(469) 571-1065", "dept": "Outside Sales", "loc": "Gemini Sales Rep"},
-                {"name": "Anah Goryl", "number": "(920) 420-5405", "dept": "Outside Sales", "loc": "Gemini Sales Rep"},
-                {"name": "Bob Bein", "number": "(516) 639-4331", "dept": "Outside Sales", "loc": "Gemini Sales Rep"},
-                {"name": "Billy Huse", "number": "(405) 702-2257", "dept": "Outside Sales", "loc": "Gemini Sales Rep"},
-                {"name": "Brett Burrows", "number": "(626) 826-2786", "dept": "Outside Sales", "loc": "Gemini Sales Rep"},
-                {"name": "Brian Hansen", "number": "(817) 715-6107", "dept": "Outside Sales", "loc": "Gemini Sales Rep"},
-                {"name": "Brian Hilton", "number": "(913) 201-2555", "dept": "Outside Sales", "loc": "Gemini Sales Rep"},
-                {"name": "Carla Zenn", "number": "(469) 815-3708", "dept": "Outside Sales", "loc": "Gemini Sales Rep"},
-                {"name": "Chris Marban", "number": "4808686517", "dept": "Outside Sales", "loc": "Gemini Sales Rep"},
-                {"name": "Christy Norton", "number": "(816) 682-7233", "dept": "Outside Sales", "loc": "Gemini Sales Rep"},
-                {"name": "David Hopkins", "number": "(469) 670-7254", "dept": "Outside Sales", "loc": "Gemini Sales Rep"},
-                {"name": "David Potter", "number": "6307159425", "dept": "Outside Sales", "loc": "Gemini Sales Rep"},
-                {"name": "Dean Orteig", "number": "(206) 550-1821", "dept": "Outside Sales", "loc": "Gemini Sales Rep"},
-                {"name": "Dustin McCartney", "number": "(786) 914-2707", "dept": "Outside Sales", "loc": "Gemini Sales Rep"},
-                {"name": "Germain Sanchez", "number": "(559) 552-3343", "dept": "Outside Sales", "loc": "Gemini Sales Rep"},
-                {"name": "Greg McCorkindale", "number": "(252) 470-8718", "dept": "Outside Sales", "loc": "Gemini Sales Rep"},
-                {"name": "Jarrad Biffinger", "number": "(413) 531-6522", "dept": "Outside Sales", "loc": "Gemini Sales Rep"},
-                {"name": "Jeremy Farmer", "number": "(913) 249-5132", "dept": "Outside Sales", "loc": "Gemini Sales Rep"},
-                {"name": "Joey Harrison", "number": "(305) 968-9821", "dept": "Outside Sales", "loc": "Gemini Sales Rep"},
-                {"name": "John Toole", "number": "(404) 710-2758", "dept": "Outside Sales", "loc": "Gemini Sales Rep"},
-                {"name": "Julie Russell", "number": "(206) 445-2646", "dept": "Outside Sales", "loc": "Gemini Sales Rep"},
-                {"name": "Kirby Smith", "number": "2564409304", "dept": "Outside Sales", "loc": "Gemini Sales Rep"},
-                {"name": "Larry Moore", "number": "3037200434", "dept": "Outside Sales", "loc": "Gemini Sales Rep"},
-                {"name": "Lon Vaughn", "number": "(206) 979-0431", "dept": "Outside Sales", "loc": "Gemini Sales Rep"},
-                {"name": "Madison Howard", "number": "(205) 223-9994", "dept": "Outside Sales", "loc": "Gemini Sales Rep"},
-                {"name": "Mark Baltzley", "number": "(515) 620-9673", "dept": "Outside Sales", "loc": "Gemini Sales Rep"},
-                {"name": "Michael McCully", "number": "(219) 869-8312", "dept": "Outside Sales", "loc": "Gemini Sales Rep"},
-                {"name": "Michael Griffin", "number": "(620) 779-0669", "dept": "Outside Sales", "loc": "Gemini Sales Rep"},
-                {"name": "Michael Mulvenna", "number": "(317) 373-3666", "dept": "Outside Sales", "loc": "Gemini Sales Rep"},
-                {"name": "Mike Arndt", "number": "6128681904", "dept": "Outside Sales", "loc": "Gemini Sales Rep"},
-                {"name": "Mike Green", "number": "(405) 550-3076", "dept": "Outside Sales", "loc": "Gemini Sales Rep"},
-                {"name": "Pat Abernethy", "number": "(541) 816-8982", "dept": "Outside Sales", "loc": "Gemini Sales Rep"},
-                {"name": "Paul Korytkowski", "number": "(347) 967-6334", "dept": "Outside Sales", "loc": "Gemini Sales Rep"},
-                {"name": "Randell Burd", "number": "(412) 627-9260", "dept": "Outside Sales", "loc": "Gemini Sales Rep"},
-                {"name": "Rich Ruiz", "number": "(631) 459-6096", "dept": "Outside Sales", "loc": "Gemini Sales Rep"},
-                {"name": "Rob Dolman", "number": "4056417390", "dept": "Outside Sales", "loc": "Gemini Sales Rep"},
-                {"name": "Syd Light", "number": "(954) 729-1246", "dept": "Outside Sales", "loc": "Gemini Sales Rep"},
-                {"name": "Tim Strohsnitter", "number": "(516) 650-2213", "dept": "Outside Sales", "loc": "Gemini Sales Rep"},
-                {"name": "Tyler Due", "number": "(707) 344-2837", "dept": "Outside Sales", "loc": "Gemini Sales Rep"},
-                {"name": "Tyler Stutts", "number": "(817) 876-5111", "dept": "Outside Sales", "loc": "Gemini Sales Rep"},
-                {"name": "Chris Hicks", "number": "8172479696", "dept": "Executive Team", "loc": "Corporate"},
-                {"name": "Rodney Wickersham", "number": "(405) 834-1210", "dept": "Executive Team", "loc": "Corporate"},
-                {"name": "Jason Melton", "number": "(405) 664-7901", "dept": "Executive Team", "loc": "Corporate"},
-                {"name": "Jenny Cripps", "number": "(405) 827-6209", "dept": "Executive Team", "loc": "Corporate"},
-                {"name": "Bob Bein", "number": "(516) 639-4331", "dept": "Executive Team", "loc": "Corporate"},
-                {"name": "David Potter", "number": "(630) 715-9425", "dept": "Executive Team", "loc": "Corporate"},
-                {"name": "Marti Canida", "number": "(405) 694-5945", "dept": "Executive Team", "loc": "Corporate"},
-                {"name": "Kevin Laughlin", "number": "(774) 764-7564", "dept": "Executive Team", "loc": "Corporate"},
-                {"name": "Eric Palmer (OK)", "number": "4053452017", "dept": "Customer Service / Inside Sales", "loc": "Corporate"},
-                {"name": "Tim Strohsnitter (NY)", "number": "4053455815", "dept": "Customer Service / Inside Sales", "loc": "Corporate"},
-                {"name": "Danielle Waddle (OK)", "number": "4053452003", "dept": "Customer Service / Inside Sales", "loc": "Corporate"},
-                {"name": "Haylee Hunt (OK)", "number": "4053452013", "dept": "Customer Service / Inside Sales", "loc": "Corporate"},
-                {"name": "Jamie Gulickson (OK)", "number": "4053452005", "dept": "Customer Service / Inside Sales", "loc": "Corporate"},
-                {"name": "Carly McCaslin (OK)", "number": "4053452014", "dept": "Customer Service / Inside Sales", "loc": "Corporate"},
-                {"name": "Nao Vang (WA)", "number": "(405) 345-2313", "dept": "Customer Service / Inside Sales", "loc": "Corporate"},
-                {"name": "Tori Brite (OK)", "number": "(405) 345-2012", "dept": "Customer Service / Inside Sales", "loc": "Corporate"},
-                {"name": "Baylee Williams (OK)", "number": "(405)345-2033", "dept": "Customer Service / Inside Sales", "loc": "Corporate"},
-                {"name": "Jonathan Nunez", "number": "(210)722-4093", "dept": "F-H & Associates", "loc": "San Antonio/Valley/Houston"},
-                {"name": "AR Brown", "number": "(512) 422-4802", "dept": "F-H & Associates", "loc": "Austin Area/Bryan/College Station"},
-                {"name": "Betsy Valente", "number": "(713) 876-3093", "dept": "F-H & Associates", "loc": "Houston/Coastal"},
-                {"name": "Brent Shouse", "number": "4054231344", "dept": "F-H & Associates", "loc": "Oklahoma/Arkansas"},
-                {"name": "Bruce Smoot", "number": "(832) 704-9091", "dept": "F-H & Associates", "loc": "Houston-North"},
-                {"name": "Carrie Hicks", "number": "8179464617", "dept": "F-H & Associates", "loc": "Finance"},
-                {"name": "Caleb Holt", "number": "(214)597-9073", "dept": "F-H & Associates", "loc": "Office Administrator/Corporate Office"},
-                {"name": "Jamie Holt", "number": "4698670618", "dept": "F-H & Associates", "loc": "All (Owner)"},
-                {"name": "JC Cornia", "number": "(817)709-4126", "dept": "F-H & Associates", "loc": "Dallas/Fort Worth/West Texas/Mid-Tex"},
-                {"name": "Ron Denne", "number": "9728325050", "dept": "F-H & Associates", "loc": "Dallas/E.TX/North toOK Border/NE Louisiana"},
-                {"name": "Roy Young", "number": "(713) 494-6028", "dept": "F-H & Associates", "loc": "Houston/Louisiana"},
-                {"name": "Shannon Holt", "number": "(469) 569-7783", "dept": "F-H & Associates", "loc": "General Manager"}
-            ];
+            // Outside Sales Representatives
+            { name: "Mark Baltzley", number: "(515) 620-9673", type: "sales", dept: "Outside Sales", loc: "Midwest Region" },
+            { name: "Michael McCully", number: "(219) 869-8312", type: "sales", dept: "Outside Sales", loc: "Great Lakes Region" },
+            { name: "Michael Griffin", number: "(620) 779-0669", type: "sales", dept: "Outside Sales", loc: "Central Region" },
+            { name: "Michael Mulvenna", number: "(317) 373-3666", type: "sales", dept: "Outside Sales", loc: "East Region" },
+            { name: "Mike Arndt", number: "(612) 868-1904", type: "sales", dept: "Outside Sales", loc: "North Region" },
+            { name: "Mike Green", number: "(405) 550-3076", type: "sales", dept: "Outside Sales", loc: "South Region" },
+            { name: "Pat Abernethy", number: "(541) 816-8982", type: "sales", dept: "Outside Sales", loc: "West Region" },
+            { name: "Paul Korytkowski", number: "(347) 967-6334", type: "sales", dept: "Outside Sales", loc: "Northeast Region" },
+            { name: "Randell Burd", number: "(412) 627-9260", type: "sales", dept: "Outside Sales", loc: "Appalachian Region" },
+            { name: "Rich Ruiz", number: "(631) 459-6096", type: "sales", dept: "Outside Sales", loc: "East Coast" },
+            { name: "Rob Dolman", number: "(405) 641-7390", type: "sales", dept: "Outside Sales", loc: "Southwest Region" },
+            { name: "Syd Light", number: "(954) 729-1246", type: "sales", dept: "Outside Sales", loc: "Southeast Region" },
+            { name: "Tim Strohsnitter", number: "(516) 650-2213 / Ext. 5815", type: "sales", dept: "Inside/Outside Sales", loc: "New York" },
+            { name: "Tyler Due", number: "(707) 344-2837", type: "sales", dept: "Outside Sales", loc: "West Coast" },
+            { name: "Tyler Stutts", number: "(817) 876-5111", type: "sales", dept: "Outside Sales", loc: "Texas Region" }
+        ];
 
-            const searchInput = document.getElementById('portalSearchInput');
-            const resultsContainer = document.getElementById('searchResults');
+        let currentFilterTab = 'all';
 
-            // Live Text Input Search Filters
-            searchInput.addEventListener('input', (e) => {
-                const query = e.target.value.toLowerCase().trim();
+        // Initialize and draw directory
+        function renderDirectory() {
+            const grid = document.getElementById('directory-grid');
+            const noResults = document.getElementById('no-results');
+            const searchVal = document.getElementById('directory-search').value.toLowerCase();
+            
+            grid.innerHTML = '';
+            let visibleCount = 0;
+
+            directoryData.forEach(item => {
+                // Apply Tab Filtering
+                if (currentFilterTab !== 'all' && item.type !== currentFilterTab) return;
+
+                // Apply Search Text Filtering
+                const matchesSearch = item.name.toLowerCase().includes(searchVal) || 
+                                      item.number.toLowerCase().includes(searchVal) || 
+                                      item.dept.toLowerCase().includes(searchVal) || 
+                                      item.loc.toLowerCase().includes(searchVal);
+
+                if (!matchesSearch) return;
+
+                visibleCount++;
+
+                // Build modern directory card structure
+                const card = document.createElement('div');
+                card.className = "p-4 border border-slate-100 rounded-xl bg-slate-50/70 hover:bg-white hover:border-blue-100 hover:shadow-xs transition duration-200 flex flex-col justify-between";
                 
-                if (query.length < 2) {
-                    resultsContainer.innerHTML = '';
-                    resultsContainer.classList.add('hidden');
-                    return;
-                }
+                const typeLabelColor = item.type === 'employee' ? 'bg-indigo-50 text-indigo-700 border-indigo-100' : 'bg-teal-50 text-teal-700 border-teal-100';
+                const typeLabelText = item.type === 'employee' ? 'Internal' : 'Sales Rep';
 
-                const matches = phoneDirectory.filter(person => {
-                    return person.name.toLowerCase().includes(query) || 
-                           person.number.toLowerCase().includes(query) || 
-                           person.dept.toLowerCase().includes(query) || 
-                           person.loc.toLowerCase().includes(query);
-                });
-
-                renderSearchResults(matches);
-            });
-
-            function renderSearchResults(matches) {
-                if (matches.length === 0) {
-                    resultsContainer.innerHTML = `<div class="p-4 text-gray-500 text-xs text-center">No matches found inside database.</div>`;
-                    resultsContainer.classList.remove('hidden');
-                    return;
-                }
-
-                const html = matches.map(person => {
-                    const cleanPhone = person.number.startsWith('Ext.') ? person.number.replace('Ext. ', '') : person.number.replace(/\D/g,'');
-                    const telPrefix = person.number.startsWith('Ext.') ? 'tel:' : 'tel:';
-
-                    return `
-                        <div class="p-3 hover:bg-slate-50 flex justify-between items-center transition-colors">
-                            <div class="min-w-0 flex-1 pr-2">
-                                <div class="font-semibold text-gray-900 text-sm truncate">${person.name}</div>
-                                <div class="text-xs text-gray-500 truncate">${person.dept} &bull; <span class="italic text-gray-400 text-[11px]">${person.loc}</span></div>
-                            </div>
-                            <div>
-                                <a href="${telPrefix}${cleanPhone}" class="inline-block text-xs font-bold text-blue-600 hover:text-blue-800 bg-blue-50 hover:bg-blue-100 px-2 py-1 rounded select-all transition">
-                                    ${person.number}
-                                </a>
-                            </div>
+                card.innerHTML = `
+                    <div>
+                        <div class="flex items-start justify-between gap-2 mb-1.5">
+                            <h4 class="font-bold text-slate-900 tracking-tight">${item.name}</h4>
+                            <span class="text-[10px] uppercase tracking-wider font-semibold px-2 py-0.5 rounded-sm border ${typeLabelColor}">${typeLabelText}</span>
                         </div>
-                    `;
-                }).join('');
-
-                resultsContainer.innerHTML = html;
-                resultsContainer.classList.remove('hidden');
-            }
-
-            // Click Interceptor overlay closer
-            document.addEventListener('click', (e) => {
-                if (!searchInput.contains(e.target) && !resultsContainer.contains(e.target)) {
-                    resultsContainer.classList.add('hidden');
-                }
+                        <p class="text-xs text-slate-500 font-medium">${item.dept} &bull; <span class="text-slate-400">${item.loc}</span></p>
+                    </div>
+                    <div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center gap-2 text-sm text-blue-700 font-mono font-semibold">
+                        <span>📞</span> ${item.number}
+                    </div>
+                `;
+                grid.appendChild(card);
             });
 
-            // Reactive Checkbox Counter Calculations
-            const checkboxes = document.querySelectorAll('.checklist-item');
-            const progressCount = document.getElementById('progressCount');
-
-            function updateProgress() {
-                const checkedCount = Array.from(checkboxes).filter(cb => cb.checked).length;
-                progressCount.textContent = `${checkedCount}/${checkboxes.length}`;
+            if (visibleCount === 0) {
+                noResults.classList.remove('hidden');
+            } else {
+                noResults.classList.add('hidden');
             }
+        }
 
-            checkboxes.forEach(cb => cb.addEventListener('change', updateProgress));
+        function switchTab(tabName) {
+            currentFilterTab = tabName;
+            
+            // Reset active styles on tabs
+            ['all', 'employee', 'sales'].forEach(t => {
+                const btn = document.getElementById(`tab-${t}`);
+                btn.className = "px-4 py-1.5 rounded-md font-medium transition cursor-pointer text-slate-600 hover:text-slate-900";
+            });
+
+            // Set active styles on current tab
+            const activeBtn = document.getElementById(`tab-${tabName}`);
+            activeBtn.className = "px-4 py-1.5 rounded-md font-medium transition cursor-pointer bg-white text-slate-900 shadow-xs";
+
+            renderDirectory();
+        }
+
+        function filterDirectory() {
+            renderDirectory();
+        }
+
+        // Initial launch rendering run
+        window.addEventListener('DOMContentLoaded', () => {
+            renderDirectory();
         });
+
+        // --- Progress Tracker Logic ---
+        const checkboxes = document.querySelectorAll('.todo-item');
+        const progressBar = document.getElementById('progress-bar');
+        const progressText = document.getElementById('progress-text');
+
+        function updateProgress() {
+            const total = checkboxes.length;
+            const checked = document.querySelectorAll('.todo-item:checked').length;
+            const percentage = Math.round((checked / total) * 100);
+
+            progressBar.style.width = `${percentage}%`;
+            progressText.innerText = `${percentage}% Completed`;
+
+            if (percentage === 100) {
+                progressText.classList.remove('bg-blue-50', 'text-blue-700');
+                progressText.classList.add('bg-green-50', 'text-green-700');
+            } else {
+                progressText.classList.remove('bg-green-50', 'text-green-700');
+                progressText.classList.add('bg-blue-50', 'text-blue-700');
+            }
+        }
+
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', (e) => {
+                const title = e.target.nextElementSibling.querySelector('.item-title');
+                if (e.target.checked) {
+                    title.classList.add('line-through', 'text-slate-400');
+                } else {
+                    title.classList.remove('line-through', 'text-slate-400');
+                }
+                updateProgress();
+            });
+        });
+
+        // --- Unlock Logic for Safety Checklist ---
+        function simulatePassingTest(event) {
+            event.preventDefault();
+
+            const container = document.getElementById('safety-step-container');
+            const checkbox = document.getElementById('safety-checkbox');
+            const badge = document.getElementById('lock-badge');
+
+            container.classList.remove('bg-slate-100/50', 'opacity-60');
+            container.classList.add('hover:bg-slate-50');
+
+            checkbox.removeAttribute('disabled');
+            checkbox.classList.remove('cursor-not-allowed');
+            checkbox.classList.add('cursor-pointer');
+
+            badge.innerText = "✅ Test Passed";
+            badge.classList.remove('bg-slate-200', 'text-slate-600', 'border-slate-300');
+            badge.classList.add('bg-green-50', 'text-green-700', 'border-green-200');
+
+            alert("Congratulations! You passed the safety test. The first item on your checklist is now unlocked.");
+        }
+
+        // --- Safe Clipboard Handler ---
+        function copyNetworkPath() {
+            const path = "\\\\gemfs\\Fileshare";
+            navigator.clipboard.writeText(path).then(() => {
+                const btn = document.getElementById('copy-btn');
+                btn.innerText = "✓ Path Copied!";
+                btn.classList.remove('bg-blue-600', 'hover:bg-blue-700');
+                btn.classList.add('bg-green-600');
+                
+                setTimeout(() => {
+                    btn.innerText = "📋 Copy Folder Path";
+                    btn.classList.remove('bg-green-600');
+                    btn.classList.add('bg-blue-600', 'hover:bg-blue-700');
+                }, 2500);
+            }).catch(err => {
+                console.error('Failed to copy text: ', err);
+            });
+        }
     </script>
 </body>
 </html>

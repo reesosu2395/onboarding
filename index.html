@@ -191,17 +191,9 @@
             </div>
         </div>
 
-        <!-- Phone Directory Section -->
-        <div class="bg-white rounded-xl shadow-xs border border-slate-200 p-6 sm:p-8">
-            <div class="sm:flex sm:items-center sm:justify-between border-b border-slate-100 pb-5 mb-6">
-                <div>
-                    <h2 class="text-2xl font-bold text-slate-900">Corporate Phone Directory</h2>
-                    <p class="mt-1 text-sm text-slate-500">Quickly find internal contacts, extensions, and unit groups.</p>
-                </div>
-            </div>
-
-            <!-- Directory Search Controls -->
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+        <!-- Streamlined Searchable Phone Directory Section -->
+        <div class="bg-white rounded-xl shadow-xs border border-slate-200 p-6">
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
                 <div class="sm:col-span-2 relative">
                     <input type="text" id="directory-search" onkeyup="filterDirectory()" placeholder="Search by name, title, or extension..." class="w-full pl-4 pr-10 py-2 border border-slate-300 rounded-lg focus:outline-hidden focus:ring-2 focus:ring-blue-500 text-sm bg-slate-50/50">
                 </div>
@@ -217,7 +209,6 @@
                 </div>
             </div>
 
-            <!-- Responsive Table Container -->
             <div class="overflow-x-auto border border-slate-100 rounded-lg">
                 <table class="min-w-full divide-y divide-slate-200 text-sm text-left">
                     <thead class="bg-slate-50 text-slate-600 font-semibold uppercase text-xs tracking-wider">
@@ -229,40 +220,35 @@
                         </tr>
                     </thead>
                     <tbody id="directory-body" class="divide-y divide-slate-200 text-slate-700 bg-white">
-                        <!-- Sample Row 1 -->
                         <tr class="directory-row hover:bg-slate-50/70" data-dept="IT">
                             <td class="px-6 py-4 font-medium text-slate-900">IT Helpdesk Desk</td>
                             <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-blue-50 text-blue-700 mr-2">IT</span> Technical Operations</td>
                             <td class="px-6 py-4 font-mono text-slate-600">Ext. 4357</td>
                             <td class="px-6 py-4"><a href="mailto:helpdesk@gemini-coatings.com" class="text-blue-600 hover:underline">helpdesk@gemini-coatings.com</a></td>
                         </tr>
-                        <!-- Sample Row 2 -->
                         <tr class="directory-row hover:bg-slate-50/70" data-dept="HR">
                             <td class="px-6 py-4 font-medium text-slate-900">Human Resources Team</td>
                             <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-purple-50 text-purple-700 mr-2">HR</span> Personnel Admin</td>
                             <td class="px-6 py-4 font-mono text-slate-600">Ext. 1120</td>
                             <td class="px-6 py-4"><a href="mailto:hr@gemini-coatings.com" class="text-blue-600 hover:underline">hr@gemini-coatings.com</a></td>
                         </tr>
-                        <!-- Sample Row 3 -->
                         <tr class="directory-row hover:bg-slate-50/70" data-dept="EHS">
                             <td class="px-6 py-4 font-medium text-slate-900">EHS Office</td>
                             <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-amber-50 text-amber-700 mr-2">EHS</span> Safety Coordination</td>
                             <td class="px-6 py-4 font-mono text-slate-600">Ext. 2240</td>
                             <td class="px-6 py-4"><a href="mailto:safety@gemini-coatings.com" class="text-blue-600 hover:underline">safety@gemini-coatings.com</a></td>
                         </tr>
-                        <!-- Sample Row 4 -->
                         <tr class="directory-row hover:bg-slate-50/70" data-dept="Finance">
                             <td class="px-6 py-4 font-medium text-slate-900">Payroll Dept</td>
                             <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-emerald-50 text-emerald-700 mr-2">Finance</span> Accounting</td>
                             <td class="px-6 py-4 font-mono text-slate-600">Ext. 1050</td>
-                            <td class="px-6 py-4"><a href="#" class="text-blue-600 hover:underline">payroll@gemini-coatings.com</a></td>
+                            <td class="px-6 py-4"><a href="mailto:payroll@gemini-coatings.com" class="text-blue-600 hover:underline">payroll@gemini-coatings.com</a></td>
                         </tr>
                     </tbody>
                 </table>
             </div>
             
-            <!-- Empty State -->
-            <div id="no-results" class="hidden text-center py-8 text-slate-400 text-sm">
+            <div id="no-results" class="hidden text-center py-6 text-slate-400 text-sm">
                 No internal extensions found matching that criteria.
             </div>
         </div>

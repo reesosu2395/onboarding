@@ -31,7 +31,8 @@
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
             
-            <div class="lg:col-span-2 space-y-6">
+            <div class="lg:col-span-2 space-y-8">
+                
                 <div class="bg-white rounded-xl shadow-xs border border-slate-200 p-6 sm:p-8">
                     <div class="flex items-center justify-between border-b border-slate-100 pb-4 mb-6">
                         <h2 class="text-2xl font-bold text-slate-900">Your Onboarding Checklist</h2>
@@ -87,6 +88,37 @@
                         </div>
                     </div>
                 </div>
+
+                <div id="directory-section" class="bg-white rounded-xl shadow-xs border border-slate-200 p-6 sm:p-8">
+                    <div class="sm:flex sm:items-center sm:justify-between border-b border-slate-100 pb-5 mb-6">
+                        <div>
+                            <h2 class="text-2xl font-bold text-slate-900">Corporate Phone Directory</h2>
+                            <p class="text-slate-500 text-sm mt-1">Search internal staff extensions, corporate teams, and external sales representatives.</p>
+                        </div>
+                        <div class="mt-4 sm:mt-0 flex bg-slate-100 p-1 rounded-lg text-sm">
+                            <button onclick="switchTab('all')" id="tab-all" class="px-4 py-1.5 rounded-md font-medium transition cursor-pointer bg-white text-slate-900 shadow-xs">All</button>
+                            <button onclick="switchTab('employee')" id="tab-employee" class="px-4 py-1.5 rounded-md font-medium text-slate-600 hover:text-slate-900 transition cursor-pointer">Internal Staff</button>
+                            <button onclick="switchTab('sales')" id="tab-sales" class="px-4 py-1.5 rounded-md font-medium text-slate-600 hover:text-slate-900 transition cursor-pointer">Sales Reps</button>
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <div class="relative rounded-md shadow-xs">
+                            <input type="text" id="directory-search" onkeyup="filterDirectory()" placeholder="Search by name, department, location, or number..." class="w-full pl-4 pr-10 py-2.5 bg-slate-50 border border-slate-200 rounded-lg text-sm focus:outline-hidden focus:ring-2 focus:ring-blue-500 focus:bg-white transition">
+                            <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none text-slate-400">
+                                🔍
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="directory-grid" class="grid grid-cols-1 md:grid-cols-2 gap-4 max-h-[500px] overflow-y-auto pr-2">
+                        </div>
+                    
+                    <div id="no-results" class="hidden text-center py-12 text-slate-400 text-sm">
+                        No directory entries match your search criteria.
+                    </div>
+                </div>
+
             </div>
 
             <div class="space-y-6">
@@ -164,6 +196,12 @@
                             </a>
                         </li>
                         <li>
+                            <a href="#directory-section" class="group flex items-center justify-between p-3 rounded-lg bg-blue-50 border border-blue-200 transition">
+                                <span class="font-semibold text-blue-800">📖 Corporate Phone Directory</span>
+                                <span class="text-blue-600">↓</span>
+                            </a>
+                        </li>
+                        <li>
                             <a href="https://www.concursolutions.com/" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between p-3 rounded-lg bg-slate-50 hover:bg-blue-50 transition">
                                 <span class="font-medium text-slate-700 group-hover:text-blue-700">SAP Concur Expenses</span>
                                 <span class="text-slate-400 group-hover:text-blue-600">→</span>
@@ -197,6 +235,131 @@
     </footer>
 
     <script>
+        // --- Directory Data Array ---
+        // Populated with core sample records directly matching your corporate sheets
+        const directoryData = [
+            // Internal Staff Entries
+            { name: "IT Department / Helpdesk", number: "Ext. 2300", type: "employee", dept: "Information Technology", loc: "Corporate" },
+            { name: "Executive Team / Corporate", number: "Ext. 2056 / 2057", type: "employee", dept: "Management", loc: "Corporate" },
+            { name: "Adam Stevenson", number: "Ext. 2065", type: "employee", dept: "Staff", loc: "Oklahoma" },
+            { name: "Amy McClain", number: "Ext. 2061", type: "employee", dept: "Staff", loc: "Oklahoma" },
+            { name: "Anthony Golriz", number: "Ext. 2302", type: "employee", dept: "Information Technology", loc: "Oklahoma" },
+            { name: "Brandon Murray", number: "Ext. 2063", type: "employee", dept: "Staff", loc: "Oklahoma" },
+            { name: "Chad Hubbard", number: "Ext. 2064", type: "employee", dept: "Staff", loc: "Oklahoma" },
+            { name: "Chris Hicks", number: "(817) 247-9696 / Ext. 2050", type: "employee", dept: "Executive Team", loc: "Grand Prairie" },
+            { name: "Danielle Waddle", number: "Ext. 2003", type: "employee", dept: "Customer Service", loc: "Oklahoma" },
+            { name: "Eric Palmer", number: "Ext. 2017", type: "employee", dept: "Inside Sales", loc: "Oklahoma" },
+            { name: "Haylee Hunt", number: "Ext. 2013", type: "employee", dept: "Customer Service", loc: "Oklahoma" },
+            { name: "Jacob Archer", number: "Ext. 2306", type: "employee", dept: "Staff", loc: "Oklahoma" },
+            { name: "Jason Melton", number: "(405) 664-7901 / Ext. 2037", type: "employee", dept: "Executive Team", loc: "Oklahoma" },
+            { name: "Jeff Williams", number: "Ext. 2072", type: "employee", dept: "Staff", loc: "Oklahoma" },
+            { name: "Jeffrey Thomas", number: "Ext. 2067", type: "employee", dept: "Staff", loc: "Oklahoma" },
+            { name: "Jenny Cripps", number: "(405) 827-6209 / Ext. 2056", type: "employee", dept: "Executive Team", loc: "Oklahoma" },
+            { name: "John Casillas", number: "Ext. 3715", type: "employee", dept: "Staff", loc: "Grand Prairie" },
+            { name: "Marie Stevens", number: "Ext. 2057", type: "employee", dept: "Staff", loc: "Oklahoma" },
+            { name: "Marti Canida", number: "(405) 694-5945 / Ext. 2028", type: "employee", dept: "Executive Team", loc: "Oklahoma" },
+            { name: "Matt Peterman", number: "Ext. 2068", type: "employee", dept: "Staff", loc: "Oklahoma" },
+            { name: "Rodney Wickersham", number: "(405) 834-1210", type: "employee", dept: "Executive Team", loc: "Oklahoma" },
+            { name: "Scott Rott", number: "Ext. 2066", type: "employee", dept: "Staff", loc: "Oklahoma" },
+            { name: "Vickie Scharp", number: "Ext. 2026", type: "employee", dept: "Staff", loc: "Oklahoma" },
+            
+            // Outside Sales Representatives
+            { name: "Mark Baltzley", number: "(515) 620-9673", type: "sales", dept: "Outside Sales", loc: "Midwest Region" },
+            { name: "Michael McCully", number: "(219) 869-8312", type: "sales", dept: "Outside Sales", loc: "Great Lakes Region" },
+            { name: "Michael Griffin", number: "(620) 779-0669", type: "sales", dept: "Outside Sales", loc: "Central Region" },
+            { name: "Michael Mulvenna", number: "(317) 373-3666", type: "sales", dept: "Outside Sales", loc: "East Region" },
+            { name: "Mike Arndt", number: "(612) 868-1904", type: "sales", dept: "Outside Sales", loc: "North Region" },
+            { name: "Mike Green", number: "(405) 550-3076", type: "sales", dept: "Outside Sales", loc: "South Region" },
+            { name: "Pat Abernethy", number: "(541) 816-8982", type: "sales", dept: "Outside Sales", loc: "West Region" },
+            { name: "Paul Korytkowski", number: "(347) 967-6334", type: "sales", dept: "Outside Sales", loc: "Northeast Region" },
+            { name: "Randell Burd", number: "(412) 627-9260", type: "sales", dept: "Outside Sales", loc: "Appalachian Region" },
+            { name: "Rich Ruiz", number: "(631) 459-6096", type: "sales", dept: "Outside Sales", loc: "East Coast" },
+            { name: "Rob Dolman", number: "(405) 641-7390", type: "sales", dept: "Outside Sales", loc: "Southwest Region" },
+            { name: "Syd Light", number: "(954) 729-1246", type: "sales", dept: "Outside Sales", loc: "Southeast Region" },
+            { name: "Tim Strohsnitter", number: "(516) 650-2213 / Ext. 5815", type: "sales", dept: "Inside/Outside Sales", loc: "New York" },
+            { name: "Tyler Due", number: "(707) 344-2837", type: "sales", dept: "Outside Sales", loc: "West Coast" },
+            { name: "Tyler Stutts", number: "(817) 876-5111", type: "sales", dept: "Outside Sales", loc: "Texas Region" }
+        ];
+
+        let currentFilterTab = 'all';
+
+        // Initialize and draw directory
+        function renderDirectory() {
+            const grid = document.getElementById('directory-grid');
+            const noResults = document.getElementById('no-results');
+            const searchVal = document.getElementById('directory-search').value.toLowerCase();
+            
+            grid.innerHTML = '';
+            let visibleCount = 0;
+
+            directoryData.forEach(item => {
+                // Apply Tab Filtering
+                if (currentFilterTab !== 'all' && item.type !== currentFilterTab) return;
+
+                // Apply Search Text Filtering
+                const matchesSearch = item.name.toLowerCase().includes(searchVal) || 
+                                      item.number.toLowerCase().includes(searchVal) || 
+                                      item.dept.toLowerCase().includes(searchVal) || 
+                                      item.loc.toLowerCase().includes(searchVal);
+
+                if (!matchesSearch) return;
+
+                visibleCount++;
+
+                // Build modern directory card structure
+                const card = document.createElement('div');
+                card.className = "p-4 border border-slate-100 rounded-xl bg-slate-50/70 hover:bg-white hover:border-blue-100 hover:shadow-xs transition duration-200 flex flex-col justify-between";
+                
+                const typeLabelColor = item.type === 'employee' ? 'bg-indigo-50 text-indigo-700 border-indigo-100' : 'bg-teal-50 text-teal-700 border-teal-100';
+                const typeLabelText = item.type === 'employee' ? 'Internal' : 'Sales Rep';
+
+                card.innerHTML = `
+                    <div>
+                        <div class="flex items-start justify-between gap-2 mb-1.5">
+                            <h4 class="font-bold text-slate-900 tracking-tight">${item.name}</h4>
+                            <span class="text-[10px] uppercase tracking-wider font-semibold px-2 py-0.5 rounded-sm border ${typeLabelColor}">${typeLabelText}</span>
+                        </div>
+                        <p class="text-xs text-slate-500 font-medium">${item.dept} &bull; <span class="text-slate-400">${item.loc}</span></p>
+                    </div>
+                    <div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center gap-2 text-sm text-blue-700 font-mono font-semibold">
+                        <span>📞</span> ${item.number}
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+
+            if (visibleCount === 0) {
+                noResults.classList.remove('hidden');
+            } else {
+                noResults.classList.add('hidden');
+            }
+        }
+
+        function switchTab(tabName) {
+            currentFilterTab = tabName;
+            
+            // Reset active styles on tabs
+            ['all', 'employee', 'sales'].forEach(t => {
+                const btn = document.getElementById(`tab-${t}`);
+                btn.className = "px-4 py-1.5 rounded-md font-medium transition cursor-pointer text-slate-600 hover:text-slate-900";
+            });
+
+            // Set active styles on current tab
+            const activeBtn = document.getElementById(`tab-${tabName}`);
+            activeBtn.className = "px-4 py-1.5 rounded-md font-medium transition cursor-pointer bg-white text-slate-900 shadow-xs";
+
+            renderDirectory();
+        }
+
+        function filterDirectory() {
+            renderDirectory();
+        }
+
+        // Initial launch rendering run
+        window.addEventListener('DOMContentLoaded', () => {
+            renderDirectory();
+        });
+
         // --- Progress Tracker Logic ---
         const checkboxes = document.querySelectorAll('.todo-item');
         const progressBar = document.getElementById('progress-bar');

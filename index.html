@@ -3,296 +3,364 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gemini Coatings - Employee Onboarding Portal</title>
+    <title>Employee Onboarding Hub</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body class="bg-gray-100 min-h-screen font-sans antialiased text-gray-900">
+<body class="bg-slate-50 text-slate-800 font-sans antialiased">
 
-    <nav class="bg-slate-900 text-white shadow-md">
-        <div class="max-w-6xl mx-auto px-4 py-4 flex flex-col sm:flex-row justify-between items-center gap-4">
-            <div class="flex items-center gap-3">
-                <div class="bg-blue-600 p-2 rounded-lg font-bold tracking-wider text-xl">G</div>
-                <div>
-                    <h1 class="text-lg font-bold leading-tight">Gemini Coatings</h1>
-                    <p class="text-xs text-slate-400">Employee Onboarding & Resources</p>
-                </div>
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center">
+                <img src="image_1d6c3a.png.png" alt="Gemini Industries, Inc. Logo" class="h-12 w-auto object-contain">
             </div>
-            <div class="flex gap-4 text-sm font-medium text-slate-300">
-                <a href="#training" class="hover:text-white transition-colors">Training Checklist</a>
-                <a href="#links" class="hover:text-white transition-colors">Portals & Tools</a>
-                <a href="#directory" class="hover:text-white transition-colors">Phone Directory</a>
+            <div class="flex items-center space-x-4">
+                <span class="text-sm text-slate-500">Need help? <a href="mailto:helpdesk@gemini-coatings.com" class="text-blue-600 hover:underline">Contact IT Helpdesk</a></span>
             </div>
         </div>
-    </nav>
+    </header>
 
-    <main class="max-w-6xl mx-auto px-4 py-8 space-y-12">
+    <section class="bg-slate-900 text-white py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto text-center">
+            <h1 class="text-4xl font-extrabold sm:text-5xl tracking-tight">Welcome to the Team! 🎉</h1>
+            <p class="mt-4 text-xl text-slate-300 max-w-2xl mx-auto">
+                We're thrilled to have you here. This portal contains everything you need to get set up, secure, and ready for your first week.
+            </p>
+        </div>
+    </section>
 
-        <section id="training" class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
-            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6 border-b border-gray-100 pb-4">
-                <div>
-                    <h2 class="text-xl font-bold text-gray-900">Your Onboarding Checklist</h2>
-                    <p class="text-sm text-gray-500">Complete these critical operational setups and compliance modules.</p>
-                </div>
-                <div class="w-full md:w-64 bg-gray-100 rounded-full h-4 relative overflow-hidden shadow-inner">
-                    <div id="progress-bar" class="bg-blue-600 h-full w-0 transition-all duration-500 rounded-full"></div>
-                    <span id="progress-text" class="absolute inset-0 flex items-center justify-center text-xs font-bold text-slate-700 mix-blend-multiply">0% Complete</span>
-                </div>
-            </div>
-
-            <div class="space-y-3">
-                <label class="flex items-start p-4 bg-gray-50 rounded-lg border border-gray-200 cursor-pointer hover:bg-slate-50 transition-colors">
-                    <input type="checkbox" class="task-checkbox mt-1 w-5 h-5 text-blue-600 border-gray-300 rounded focus:ring-blue-500" onchange="updateProgress()">
-                    <div class="ml-4">
-                        <span class="font-semibold block text-sm text-gray-900">EHS Safety Training Modules</span>
-                        <span class="text-xs text-gray-500 block mt-0.5">Review initial material safety handling and factory hazard guidelines.</span>
-                    </div>
-                </label>
-
-                <label class="flex items-start p-4 bg-gray-50 rounded-lg border border-gray-200 cursor-pointer hover:bg-slate-50 transition-colors">
-                    <input type="checkbox" class="task-checkbox mt-1 w-5 h-5 text-blue-600 border-gray-300 rounded focus:ring-blue-500" onchange="updateProgress()">
-                    <div class="ml-4">
-                        <span class="font-semibold block text-sm text-gray-900">Multi-Factor Authentication Setup (MFA)</span>
-                        <span class="text-xs text-gray-500 block mt-0.5">Configure authenticator apps for email, VPN, and network admin credentials.</span>
-                    </div>
-                </label>
-
-                <label class="flex items-start p-4 bg-gray-50 rounded-lg border border-gray-200 cursor-pointer hover:bg-slate-50 transition-colors">
-                    <input type="checkbox" class="task-checkbox mt-1 w-5 h-5 text-blue-600 border-gray-300 rounded focus:ring-blue-500" onchange="updateProgress()">
-                    <div class="ml-4">
-                        <span class="font-semibold block text-sm text-gray-900">Corporate Mobile App Configurations</span>
-                        <span class="text-xs text-gray-500 block mt-0.5">Provision mobile tools for shared operations and field reporting infrastructure.</span>
-                    </div>
-                </label>
-
-                <label class="flex items-start p-4 bg-gray-50 rounded-lg border border-gray-200 cursor-pointer hover:bg-slate-50 transition-colors">
-                    <input type="checkbox" class="task-checkbox mt-1 w-5 h-5 text-blue-600 border-gray-300 rounded focus:ring-blue-500" onchange="updateProgress()">
-                    <div class="ml-4">
-                        <span class="font-semibold block text-sm text-gray-900">Security Awareness Training Completion</span>
-                        <span class="text-xs text-gray-500 block mt-0.5">Complete foundational data-handling and phishing defense evaluations.</span>
-                    </div>
-                </label>
-            </div>
-        </section>
-
-
-        <section id="links" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10">
+        <!-- Top Section Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
             
-            <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6 flex flex-col justify-between">
-                <div>
-                    <h3 class="text-lg font-bold text-gray-900 mb-2">Essential Work Portals</h3>
-                    <p class="text-sm text-gray-500 mb-4">Direct access points to administrative, time-tracking, and functional operations engines.</p>
-                    <div class="grid grid-cols-2 gap-3">
-                        <a href="https://www.gemini-coatings.com" target="_blank" class="p-3 bg-slate-50 rounded-lg border border-gray-200 text-center text-sm font-semibold text-slate-700 hover:bg-slate-100 hover:text-blue-700 transition-all">Company Website</a>
-                        <a href="#" class="p-3 bg-slate-50 rounded-lg border border-gray-200 text-center text-sm font-semibold text-slate-700 hover:bg-slate-100 hover:text-blue-700 transition-all">Knowledge Base</a>
-                        <a href="#" class="p-3 bg-slate-50 rounded-lg border border-gray-200 text-center text-sm font-semibold text-slate-700 hover:bg-slate-100 hover:text-blue-700 transition-all">SAP Concur</a>
-                        <a href="#" class="p-3 bg-slate-50 rounded-lg border border-gray-200 text-center text-sm font-semibold text-slate-700 hover:bg-slate-100 hover:text-blue-700 transition-all">Sage X3 ERP</a>
-                        <a href="#" class="p-3 bg-slate-50 rounded-lg border border-gray-200 text-center text-sm font-semibold text-slate-700 hover:bg-slate-100 hover:text-blue-700 transition-all col-span-2">Assistics Tool Portal</a>
+            <div class="lg:col-span-2 space-y-6">
+                <div class="bg-white rounded-xl shadow-xs border border-slate-200 p-6 sm:p-8">
+                    <div class="flex items-center justify-between border-b border-slate-100 pb-4 mb-6">
+                        <h2 class="text-2xl font-bold text-slate-900">Your Onboarding Checklist</h2>
+                        <span id="progress-text" class="text-sm font-semibold bg-blue-50 text-blue-700 px-3 py-1 rounded-full">0% Completed</span>
                     </div>
-                </div>
-            </div>
 
-            <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6 flex flex-col justify-between">
-                <div>
-                    <h3 class="text-lg font-bold text-gray-900 mb-2">Desktop Environment Shortcuts</h3>
-                    <p class="text-sm text-gray-500 mb-4">Run the following operations utility package to instantly drop network navigation shortcuts directly onto your local Windows workspace.</p>
-                    <div class="p-4 bg-slate-900 rounded-lg border border-slate-800 text-slate-200 font-mono text-xs mb-4 select-all">
-                        Invoke-WebRequest -Uri "https://gemini-coatings.github.io/onboarding/assets/Create-Shortcuts.ps1" -OutFile "$env:TEMP\Create-Shortcuts.ps1"; & "$env:TEMP\Create-Shortcuts.ps1"
+                    <div class="w-full bg-slate-100 rounded-full h-2 mb-8">
+                        <div id="progress-bar" class="bg-blue-600 h-2 rounded-full transition-all duration-500" style="width: 0%"></div>
                     </div>
-                </div>
-                <div class="text-sm text-slate-500 italic flex items-center gap-2">
-                    <svg class="w-4 h-4 text-blue-500 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
-                    Copy code block, open Windows PowerShell, and press Enter to deploy.
-                </div>
-            </div>
-        </section>
 
-
-        <section id="directory" class="bg-white rounded-xl shadow-sm border border-gray-200 p-6 max-w-3xl mx-auto">
-            <div class="text-center mb-6">
-                <h2 class="text-xl font-bold text-gray-900">Internal Phone Directory</h2>
-                <p class="text-sm text-gray-500 mt-1">Real-time keyword lookup for extensions, mobile listings, and facility units.</p>
-            </div>
-
-            <div class="mb-6">
-                <label for="directory-search" class="sr-only">Search Contacts</label>
-                <div class="relative">
-                    <div class="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none">
-                        <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                        </svg>
-                    </div>
-                    <input 
-                        type="search" 
-                        id="directory-search" 
-                        class="block w-full p-4 pl-11 text-base text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all" 
-                        placeholder="Search by name, department, location, or extension..." 
-                        onkeyup="filterDirectory()"
-                        autocomplete="off"
-                    >
-                </div>
-            </div>
-
-            <div id="directory-results" class="space-y-3">
-                <div class="p-6 text-center bg-white rounded-lg border border-gray-200 shadow-sm text-gray-400">
-                    <svg class="w-10 h-10 mx-auto text-gray-300 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                    </svg>
-                    <p class="text-sm font-medium text-gray-600">Ready to search</p>
-                    <p class="text-xs text-gray-400 mt-0.5">Type a team member's name, city, or extension above.</p>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <script>
-        // 1. Checklist Progress Bar Engine
-        function updateProgress() {
-            const checkboxes = document.querySelectorAll('.task-checkbox');
-            const totalTasks = checkboxes.length;
-            let checkedTasks = 0;
-
-            checkboxes.forEach(checkbox => {
-                if (checkbox.checked) checkedTasks++;
-            });
-
-            const percentage = totalTasks > 0 ? Math.round((checkedTasks / totalTasks) * 100) : 0;
-            
-            // Apply visual updates to DOM components
-            document.getElementById('progress-bar').style.width = percentage + '%';
-            document.getElementById('progress-text').innerText = percentage + '% Complete';
-        }
-
-        // 2. Real-time Phone Directory Filter Data Structure
-        const phoneDirectory = [
-            // Core Support Units & Executive Records
-            { name: "I.T. Department", phone: "2300", type: "Extension", location: "El Reno - Corporate" },
-            { name: "Human Resources (Marti Canida)", phone: "2028", type: "Extension", location: "El Reno - Corporate" },
-            { name: "Executive (Chris Hicks)", phone: "(817) 247-9696", type: "Mobile", location: "Executive Team" },
-            { name: "Executive (Rodney Wickersham)", phone: "(405) 834-1210", type: "Mobile", location: "Executive Team" },
-            { name: "Executive (Jason Melton)", phone: "(405) 664-7901", type: "Mobile", location: "Executive Team" },
-            { name: "Executive (Jenny Cripps)", phone: "(405) 827-6209", type: "Mobile", location: "Executive Team" },
-            
-            // El Reno Corporate Operations
-            { name: "Adam Stevenson", phone: "2065", type: "Extension", location: "El Reno" },
-            { name: "Amy McClain", phone: "2061", type: "Extension", location: "El Reno" },
-            { name: "Austin Ferguson", phone: "2075", type: "Extension", location: "El Reno" },
-            { name: "Baylee Williams", phone: "2033", type: "Extension", location: "El Reno" },
-            { name: "Bradey Burge", phone: "2007", type: "Extension", location: "El Reno" },
-            { name: "Brandon Bosler", phone: "2032", type: "Extension", location: "El Reno" },
-            { name: "Brandon McMillan", phone: "2152", type: "Extension", location: "El Reno" },
-            { name: "Brandon Murray", phone: "2063", type: "Extension", location: "El Reno" },
-            { name: "Carly McCaslin", phone: "2014", type: "Extension", location: "El Reno" },
-            { name: "Chad Hubbard", phone: "2064", type: "Extension", location: "El Reno" },
-            { name: "Conference Room (El Reno)", phone: "2069", type: "Extension", location: "El Reno" },
-            { name: "Danielle Waddle", phone: "2003", type: "Extension", location: "El Reno" },
-            { name: "David Jackson", phone: "2054", type: "Extension", location: "El Reno" },
-            { name: "Haylee Hunt", phone: "2013", type: "Extension", location: "El Reno" },
-            { name: "Jacob Archer", phone: "2306", type: "Extension", location: "El Reno" },
-            { name: "Jamie Gulickson", phone: "2005", type: "Extension", location: "El Reno" },
-            { name: "Jeff Williams", phone: "2072", type: "Extension", location: "El Reno" },
-            { name: "Jeffrey Thomas", phone: "2067", type: "Extension", location: "El Reno" },
-            { name: "Jennifer Awbrey", phone: "2040", type: "Extension", location: "El Reno" },
-            { name: "Jennifer Sorrels", phone: "2036", type: "Extension", location: "El Reno" },
-            { name: "John Broyles", phone: "2052", type: "Extension", location: "El Reno" },
-            { name: "Katherine Newsome", phone: "2015", type: "Extension", location: "El Reno" },
-            { name: "Klay Turk", phone: "2009", type: "Extension", location: "El Reno" },
-            { name: "Marie Stevens", phone: "2057", type: "Extension", location: "El Reno" },
-            { name: "Mark Newman", phone: "2049", type: "Extension", location: "El Reno" },
-            { name: "Matt Peterman", phone: "2068", type: "Extension", location: "El Reno" },
-            { name: "Maygan Mitchell", phone: "2315", type: "Extension", location: "El Reno" },
-            { name: "Michael Boblit", phone: "2035", type: "Extension", location: "El Reno" },
-            { name: "Nao Vang", phone: "2313", type: "Extension", location: "El Reno" },
-            { name: "Natalie Evans", phone: "2044", type: "Extension", location: "El Reno" },
-            { name: "Receiving (El Reno)", phone: "2006", type: "Extension", location: "El Reno" },
-            { name: "Scott Rott", phone: "2066", type: "Extension", location: "El Reno" },
-            { name: "Terra Awbrey", phone: "2053", type: "Extension", location: "El Reno" },
-            { name: "Tori Brite", phone: "2012", type: "Extension", location: "El Reno" },
-            { name: "Vanessa Blevins", phone: "2071", type: "Extension", location: "El Reno" },
-            { name: "Vickie Scharp", phone: "2026", type: "Extension", location: "El Reno" },
-            { name: "Zakry Rios", phone: "2320", type: "Extension", location: "El Reno" },
-
-            // Grand Prairie Team Listings
-            { name: "Andres Cruz", phone: "5108", type: "Extension", location: "Grand Prairie" },
-            { name: "Anthony Golriz", phone: "2302", type: "Extension", location: "Grand Prairie" },
-            { name: "Brian Hansen", phone: "5110", type: "Extension", location: "Grand Prairie" },
-            { name: "GP Front Desk", phone: "5107", type: "Extension", location: "Grand Prairie" },
-            { name: "GP Conference Room", phone: "5112", type: "Extension", location: "Grand Prairie" },
-            { name: "GP QC Lab", phone: "5113", type: "Extension", location: "Grand Prairie" },
-            { name: "GP QC Office 2", phone: "5120", type: "Extension", location: "Grand Prairie" },
-            { name: "John Casillas", phone: "3715", type: "Extension", location: "Grand Prairie" },
-            { name: "Martin Negrete", phone: "5115", type: "Extension", location: "Grand Prairie" },
-            { name: "Mike Boyd", phone: "5122", type: "Extension", location: "Grand Prairie" },
-
-            // Holbrook Facilities
-            { name: "Holbrook Main Desk", phone: "5800", type: "Extension", location: "Holbrook" },
-            { name: "Holbrook Shipping", phone: "5806", type: "Extension", location: "Holbrook" },
-            { name: "Larry Blevins", phone: "4010", type: "Extension", location: "Holbrook" },
-
-            // Remote Accounts
-            { name: "Brannon Townsend", phone: "3712", type: "Extension", location: "Remote" },
-            { name: "Bryce Sanders", phone: "2498", type: "Extension", location: "Remote" },
-            { name: "Keith Jones", phone: "7000", type: "Extension", location: "Remote" }
-        ];
-
-        function filterDirectory() {
-            const searchInput = document.getElementById('directory-search').value.toLowerCase().trim();
-            const resultsContainer = document.getElementById('directory-results');
-            
-            // Clear filtering and return to base asset card if string query is blank
-            if (searchInput === '') {
-                resultsContainer.innerHTML = `
-                    <div class="p-6 text-center bg-white rounded-lg border border-gray-200 shadow-sm text-gray-400">
-                        <svg class="w-10 h-10 mx-auto text-gray-300 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                        </svg>
-                        <p class="text-sm font-medium text-gray-600">Ready to search</p>
-                        <p class="text-xs text-gray-400 mt-0.5">Type a team member's name, city, or extension above.</p>
-                    </div>
-                `;
-                return;
-            }
-            
-            // Cross-field lookup engine execution
-            const filtered = phoneDirectory.filter(contact => {
-                return contact.name.toLowerCase().includes(searchInput) || 
-                       contact.phone.toLowerCase().includes(searchInput) ||
-                       contact.location.toLowerCase().includes(searchInput);
-            });
-            
-            // Output injection pipeline
-            resultsContainer.innerHTML = '';
-            if (filtered.length > 0) {
-                filtered.forEach(contact => {
-                    const isExt = contact.type === "Extension";
-                    const cleanPhone = contact.phone.replace(/[^\d+]/g, '');
-                    const callHref = isExt ? `tel:${contact.phone}` : `tel:${cleanPhone}`;
-
-                    const contactCard = `
-                        <div class="p-4 bg-white rounded-lg border border-gray-200 shadow-sm flex justify-between items-center hover:bg-gray-50 transition-colors">
+                    <div class="space-y-6">
+                        <div id="safety-step-container" class="flex items-start space-x-4 p-4 rounded-lg bg-slate-100/50 opacity-60 transition duration-300">
+                            <input type="checkbox" id="safety-checkbox" disabled class="todo-item mt-1.5 h-5 w-5 rounded-sm border-slate-300 text-blue-600 focus:ring-blue-500 cursor-not-allowed">
                             <div>
-                                <h4 class="text-base font-semibold text-gray-900">${contact.name}</h4>
-                                <p class="text-xs text-gray-500 font-medium uppercase tracking-wider mt-0.5">${contact.location}</p>
-                            </div>
-                            <div class="text-right">
-                                <a href="${callHref}" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-semibold text-blue-700 bg-blue-50 rounded-md hover:bg-blue-100 transition-colors">
-                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
-                                    </svg>
-                                    ${isExt ? 'Ext. ' + contact.phone : contact.phone}
-                                </a>
+                                <h3 class="text-lg font-semibold text-slate-900 item-title flex items-center gap-2">
+                                    Review Safety Guidelines & EHS Protocols 
+                                    <span id="lock-badge" class="text-xs font-normal bg-slate-200 text-slate-600 px-2 py-0.5 rounded border border-slate-300">🔒 Locked (Take Test)</span>
+                                </h3>
+                                <p class="text-slate-500 text-sm mt-1">Review the facility safety manual, locate emergency exits, and complete your initial Environmental, Health, and Safety (EHS) orientation.</p>
                             </div>
                         </div>
-                    `;
-                    resultsContainer.innerHTML += contactCard;
-                });
-            } else {
-                resultsContainer.innerHTML = `
-                    <div class="p-8 text-center bg-gray-50 rounded-lg border border-dashed border-gray-300 text-gray-500">
-                        <p class="text-base font-medium">No matches found</p>
-                        <p class="text-sm text-gray-400 mt-1">We couldn't find anyone matching "${searchInput}". Check your spelling or try searching by city.</p>
+
+                        <div class="flex items-start space-x-4 p-4 rounded-lg hover:bg-slate-50 transition">
+                            <input type="checkbox" class="todo-item mt-1.5 h-5 w-5 rounded-sm border-slate-300 text-blue-600 focus:ring-blue-500 cursor-pointer">
+                            <div>
+                                <h3 class="text-lg font-semibold text-slate-900 item-title">Configure Cell Phone Applications</h3>
+                                <p class="text-slate-500 text-sm mt-1">Install **Microsoft Outlook** and **Microsoft Authenticator** from your device's app store. Register your corporate profile to safely access email and approve security prompts on the go.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4 p-4 rounded-lg hover:bg-slate-50 transition">
+                            <input type="checkbox" class="todo-item mt-1.5 h-5 w-5 rounded-sm border-slate-300 text-blue-600 focus:ring-blue-500 cursor-pointer">
+                            <div>
+                                <h3 class="text-lg font-semibold text-slate-900 item-title">Set Up Multi-Factor Authentication (MFA)</h3>
+                                <p class="text-slate-500 text-sm mt-1">Secure your corporate account. Set up your baseline credentials and prepare for secondary verification challenges on your workstation.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4 p-4 rounded-lg hover:bg-slate-50 transition">
+                            <input type="checkbox" class="todo-item mt-1.5 h-5 w-5 rounded-sm border-slate-300 text-blue-600 focus:ring-blue-500 cursor-pointer">
+                            <div>
+                                <h3 class="text-lg font-semibold text-slate-900 item-title">Join Team Communication Channels</h3>
+                                <p class="text-slate-500 text-sm mt-1">Log into Microsoft Teams and ensure your mobile device is added to the relevant department text groups to stay connected with your unit.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4 p-4 rounded-lg hover:bg-slate-50 transition">
+                            <input type="checkbox" class="todo-item mt-1.5 h-5 w-5 rounded-sm border-slate-300 text-blue-600 focus:ring-blue-500 cursor-pointer">
+                            <div>
+                                <h3 class="text-lg font-semibold text-slate-900 item-title">Complete KnowBe4 Security Awareness Training</h3>
+                                <p class="text-slate-500 text-sm mt-1">Log into your corporate email, find the automated invitation link from KnowBe4, and complete your baseline cybersecurity training modules.</p>
+                            </div>
+                        </div>
                     </div>
-                `;
+                </div>
+            </div>
+
+            <div class="space-y-6">
+                <div class="bg-amber-50 border border-amber-200 rounded-xl p-6">
+                    <h3 class="text-xl font-bold text-amber-900 mb-3 flex items-center gap-2">
+                        ⚠️ Safety & EHS Resources
+                    </h3>
+                    <p class="text-amber-800 text-sm mb-4">
+                        Safety is our top priority. Please ensure you familiarize yourself with our facility policies on your first day.
+                    </p>
+                    <ul class="space-y-2 text-sm font-medium text-amber-900">
+                        <li><a href="#" class="underline hover:text-amber-700">📄 Incident Report Portal</a></li>
+                        <li><a href="https://www.geminiindustriesinc.com/product-pds-sds-search/" target="_blank" rel="noopener noreferrer" class="underline hover:text-amber-700">🦺 Product PDS & SDS Search</a></li>
+                        <li><a href="#" class="underline hover:text-amber-700">🚨 Emergency Action Plan</a></li>
+                        <li><a href="#" target="_blank" rel="noopener noreferrer" class="underline hover:text-amber-700">🎥 Safety Orientation Video</a></li>
+                        <li><a href="#" onclick="simulatePassingTest(event)" class="underline text-blue-700 hover:text-blue-900 font-bold">📝 Required Safety Test</a></li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-xs border border-slate-200 p-6">
+                    <h3 class="text-xl font-bold text-slate-900 mb-4">Essential Links</h3>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="https://www.geminiindustriesinc.com/" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between p-3 rounded-lg bg-slate-50 hover:bg-blue-50 transition">
+                                <span class="font-medium text-slate-700 group-hover:text-blue-700">Company Public Website</span>
+                                <span class="text-slate-400 group-hover:text-blue-600">→</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.geminiindustriesinc.com/inside-gemini/" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between p-3 rounded-lg bg-slate-50 hover:bg-blue-50 transition">
+                                <span class="font-medium text-slate-700 group-hover:text-blue-700">Inside Gemini</span>
+                                <span class="text-slate-400 group-hover:text-blue-600">→</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.geminiindustriesinc.com/employee-resources/" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between p-3 rounded-lg bg-slate-50 hover:bg-blue-50 transition">
+                                <span class="font-medium text-slate-700 group-hover:text-blue-700">Employee Resources</span>
+                                <span class="text-slate-400 group-hover:text-blue-600">→</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://10.1.1.42/assistics/index.jsp?menuKey=0" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between p-3 rounded-lg bg-slate-50 hover:bg-blue-50 transition">
+                                <span class="font-medium text-slate-700 group-hover:text-blue-700">Assistics</span>
+                                <span class="text-slate-400 group-hover:text-blue-600">→</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://10.1.1.60:8124/auth/login/page" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between p-3 rounded-lg bg-slate-50 hover:bg-blue-50 transition">
+                                <span class="font-medium text-slate-700 group-hover:text-blue-700">Sage X3</span>
+                                <span class="text-slate-400 group-hover:text-blue-600">→</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://tools.gemini-coatings.com/new/login.php?_gl=1*1auo44t*_gcl_au*MTU3MDkwNzQ1Mi4xNzgzNDU0ODU4" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between p-3 rounded-lg bg-slate-50 hover:bg-blue-50 transition">
+                                <span class="font-medium text-slate-700 group-hover:text-blue-700">Gemini Tools</span>
+                                <span class="text-slate-400 group-hover:text-blue-600">→</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://reports.gemini-coatings.com/jeff-netreportrunnerwebportal/login.aspx" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between p-3 rounded-lg bg-slate-50 hover:bg-blue-50 transition">
+                                <span class="font-medium text-slate-700 group-hover:text-blue-700">Report Runner</span>
+                                <span class="text-slate-400 group-hover:text-blue-600">→</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.paycomonline.net/v4/ee/web.php/app/login" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between p-3 rounded-lg bg-slate-50 hover:bg-blue-50 transition">
+                                <span class="font-medium text-slate-700 group-hover:text-blue-700">Paycom</span>
+                                <span class="text-slate-400 group-hover:text-blue-600">→</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:helpdesk@gemini-coatings.com?subject=IT Helpdesk Ticket Submission" class="group flex items-center justify-between p-3 rounded-lg bg-slate-50 hover:bg-blue-50 transition">
+                                <span class="font-medium text-slate-700 group-hover:text-blue-700">IT Ticket Submission</span>
+                                <span class="text-slate-400 group-hover:text-blue-600">→</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.concursolutions.com/" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between p-3 rounded-lg bg-slate-50 hover:bg-blue-50 transition">
+                                <span class="font-medium text-slate-700 group-hover:text-blue-700">SAP Concur Expenses</span>
+                                <span class="text-slate-400 group-hover:text-blue-600">→</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-slate-900 rounded-xl p-6 text-white border border-slate-800">
+                    <h3 class="text-sm font-bold mb-4 flex items-center gap-2 text-blue-400">
+                        📁 Bookmark Folder Location
+                    </h3>
+                    
+                    <button id="copy-btn" onclick="copyNetworkPath()" class="w-full cursor-pointer bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-3 rounded-lg text-xs text-center transition mb-4">
+                        📋 Copy Folder Path
+                    </button>
+
+                    <div class="text-slate-400 text-xs space-y-2 border-t border-slate-800 pt-3">
+                        <p><strong class="text-slate-200">1.</strong> Press <kbd class="bg-slate-800 px-1 rounded text-slate-300 font-mono">Win + E</kbd> to open File Explorer.</p>
+                        <p><strong class="text-slate-200">2.</strong> Paste the path into the address bar at the top and press Enter.</p>
+                        <p><strong class="text-slate-200">3.</strong> Right-click <strong class="text-slate-300">Quick Access</strong> (or <strong class="text-slate-300">Home/Favorites</strong>) in the left sidebar and choose <span class="text-blue-400">"Pin current folder to Quick Access"</span>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Streamlined Searchable Phone Directory Section -->
+        <div class="bg-white rounded-xl shadow-xs border border-slate-200 p-6">
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
+                <div class="sm:col-span-2 relative">
+                    <input type="text" id="directory-search" onkeyup="filterDirectory()" placeholder="Search by name, title, or extension..." class="w-full pl-4 pr-10 py-2 border border-slate-300 rounded-lg focus:outline-hidden focus:ring-2 focus:ring-blue-500 text-sm bg-slate-50/50">
+                </div>
+                <div>
+                    <select id="directory-dept" onchange="filterDirectory()" class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-hidden focus:ring-2 focus:ring-blue-500 text-sm bg-slate-50/50">
+                        <option value="">All Departments</option>
+                        <option value="IT">IT Support</option>
+                        <option value="HR">Human Resources</option>
+                        <option value="EHS">Safety / EHS</option>
+                        <option value="Operations">Operations</option>
+                        <option value="Finance">Finance</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="overflow-x-auto border border-slate-100 rounded-lg">
+                <table class="min-w-full divide-y divide-slate-200 text-sm text-left">
+                    <thead class="bg-slate-50 text-slate-600 font-semibold uppercase text-xs tracking-wider">
+                        <tr>
+                            <th scope="col" class="px-6 py-3">Name</th>
+                            <th scope="col" class="px-6 py-3">Title / Department</th>
+                            <th scope="col" class="px-6 py-3">Extension</th>
+                            <th scope="col" class="px-6 py-3">Email Address</th>
+                        </tr>
+                    </thead>
+                    <tbody id="directory-body" class="divide-y divide-slate-200 text-slate-700 bg-white">
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="IT">
+                            <td class="px-6 py-4 font-medium text-slate-900">IT Helpdesk Desk</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-blue-50 text-blue-700 mr-2">IT</span> Technical Operations</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 4357</td>
+                            <td class="px-6 py-4"><a href="mailto:helpdesk@gemini-coatings.com" class="text-blue-600 hover:underline">helpdesk@gemini-coatings.com</a></td>
+                        </tr>
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="HR">
+                            <td class="px-6 py-4 font-medium text-slate-900">Human Resources Team</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-purple-50 text-purple-700 mr-2">HR</span> Personnel Admin</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 1120</td>
+                            <td class="px-6 py-4"><a href="mailto:hr@gemini-coatings.com" class="text-blue-600 hover:underline">hr@gemini-coatings.com</a></td>
+                        </tr>
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="EHS">
+                            <td class="px-6 py-4 font-medium text-slate-900">EHS Office</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-amber-50 text-amber-700 mr-2">EHS</span> Safety Coordination</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 2240</td>
+                            <td class="px-6 py-4"><a href="mailto:safety@gemini-coatings.com" class="text-blue-600 hover:underline">safety@gemini-coatings.com</a></td>
+                        </tr>
+                        <tr class="directory-row hover:bg-slate-50/70" data-dept="Finance">
+                            <td class="px-6 py-4 font-medium text-slate-900">Payroll Dept</td>
+                            <td class="px-6 py-4"><span class="px-2 py-0.5 rounded text-xs font-semibold bg-emerald-50 text-emerald-700 mr-2">Finance</span> Accounting</td>
+                            <td class="px-6 py-4 font-mono text-slate-600">Ext. 1050</td>
+                            <td class="px-6 py-4"><a href="mailto:payroll@gemini-coatings.com" class="text-blue-600 hover:underline">payroll@gemini-coatings.com</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div id="no-results" class="hidden text-center py-6 text-slate-400 text-sm">
+                No internal extensions found matching that criteria.
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-white border-t border-slate-200 mt-20 py-6 text-center text-sm text-slate-400">
+        &copy; 2026 Corporate Internal Portal. All rights reserved.
+    </footer>
+
+    <script>
+        // --- Progress Tracker Logic ---
+        const checkboxes = document.querySelectorAll('.todo-item');
+        const progressBar = document.getElementById('progress-bar');
+        const progressText = document.getElementById('progress-text');
+
+        function updateProgress() {
+            const total = checkboxes.length;
+            const checked = document.querySelectorAll('.todo-item:checked').length;
+            const percentage = Math.round((checked / total) * 100);
+
+            progressBar.style.width = `${percentage}%`;
+            progressText.innerText = `${percentage}% Completed`;
+
+            if (percentage === 100) {
+                progressText.classList.remove('bg-blue-50', 'text-blue-700');
+                progressText.classList.add('bg-green-50', 'text-green-700');
+            } else {
+                progressText.classList.remove('bg-green-50', 'text-green-700');
+                progressText.classList.add('bg-blue-50', 'text-blue-700');
+            }
+        }
+
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', (e) => {
+                const title = e.target.nextElementSibling.querySelector('.item-title');
+                if (e.target.checked) {
+                    title.classList.add('line-through', 'text-slate-400');
+                } else {
+                    title.classList.remove('line-through', 'text-slate-400');
+                }
+                updateProgress();
+            });
+        });
+
+        // --- Unlock Logic for Safety Checklist ---
+        function simulatePassingTest(event) {
+            event.preventDefault();
+
+            const container = document.getElementById('safety-step-container');
+            const checkbox = document.getElementById('safety-checkbox');
+            const badge = document.getElementById('lock-badge');
+
+            container.classList.remove('bg-slate-100/50', 'opacity-60');
+            container.classList.add('hover:bg-slate-50');
+
+            checkbox.removeAttribute('disabled');
+            checkbox.classList.remove('cursor-not-allowed');
+            checkbox.classList.add('cursor-pointer');
+
+            badge.innerText = "✅ Test Passed";
+            badge.classList.remove('bg-slate-200', 'text-slate-600', 'border-slate-300');
+            badge.classList.add('bg-green-50', 'text-green-700', 'border-green-200');
+
+            alert("Congratulations! You passed the safety test. The first item on your checklist is now unlocked.");
+        }
+
+        // --- Safe Clipboard Handler ---
+        function copyNetworkPath() {
+            const path = "\\\\gemfs\\Fileshare";
+            navigator.clipboard.writeText(path).then(() => {
+                const btn = document.getElementById('copy-btn');
+                btn.innerText = "✓ Path Copied!";
+                btn.classList.remove('bg-blue-600', 'hover:bg-blue-700');
+                btn.classList.add('bg-green-600');
+                
+                setTimeout(() => {
+                    btn.innerText = "📋 Copy Folder Path";
+                    btn.classList.remove('bg-green-600');
+                    btn.classList.add('bg-blue-600', 'hover:bg-blue-700');
+                }, 2500);
+            }).catch(err => {
+                console.error('Failed to copy text: ', err);
+            });
+        }
+
+        // --- Client-side Searchable Phone Directory Logic ---
+        function filterDirectory() {
+            const query = document.getElementById('directory-search').value.toLowerCase();
+            const deptFilter = document.getElementById('directory-dept').value;
+            const rows = document.querySelectorAll('.directory-row');
+            let matchedAny = false;
+
+            rows.forEach(row => {
+                const text = row.innerText.toLowerCase();
+                const rowDept = row.getAttribute('data-dept');
+                
+                const matchesSearch = text.includes(query);
+                const matchesDept = !deptFilter || rowDept === deptFilter;
+
+                if (matchesSearch && matchesDept) {
+                    row.classList.remove('hidden');
+                    matchedAny = true;
+                } else {
+                    row.classList.add('hidden');
+                }
+            });
+
+            const noResultsEl = document.getElementById('no-results');
+            if (matchedAny) {
+                noResultsEl.classList.add('hidden');
+            } else {
+                noResultsEl.classList.remove('hidden');
             }
         }
     </script>
